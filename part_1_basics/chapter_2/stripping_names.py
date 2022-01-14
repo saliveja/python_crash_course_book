@@ -1,14 +1,14 @@
 
-name = " Emma Goldman \n"
-print(name)
+name_1 = " Emma Goldman \n"
+print(name_1)
 
-name = " \tEmma Goldman\n "
-print(name.lower().rstrip())
+name_2 = " \tEmma Goldman "
+print(name_2.lower().rstrip() + "\n")
 
-name = " Emma Goldman \n"
-print(name.title().lstrip())
+name_3 = " Emma Goldman "
+print(name_3.title().lstrip() + "\n")
 
-name = " Emma Goldman "
-print(name.upper().strip())
+name_4 = " Emma Goldman "
+print(name_4.upper().strip())
 
 
