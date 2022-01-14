@@ -9,3 +9,13 @@ print(message_title)
 
 message_main_text="do not write spaces between the words which are variables"
 print(message_main_text)
+
+print("Python")
+
+print("\tPython")
+
+print("Languages:\nPython\nC\nJavaScript")
+
+print("Python\n\nPython")
+
+print("Languages:\n\tPython\n\tC\n\tJavaScript")
