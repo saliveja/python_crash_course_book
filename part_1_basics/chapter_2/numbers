@@ -19,4 +19,7 @@ It will count 36*15=540, 540-3=537
 15-3*(6*6)
 It will count 6*6=36, 36*3=108, 15-108=-93
 
+Floats
+
+Decimals used only with dot, not comma. 
 
