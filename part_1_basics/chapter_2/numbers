@@ -1,0 +1,22 @@
+Numbers
+
+3**2 – > ** means 3 elevated to 2
+Examples
+3**3=27 (3*3=9, 9*3=27)
+5**5=3125 
+6**3=216
+Two times multiplication in the graphic calculator will result in elevation though it' better if we use Python for calculations.
+
+Which order should we have when counting in Python?
+    • Multiplication and division come before addition and subtraction
+
+(6*6)*15-3
+It will count 36*15=540, 540-3=537
+
+(6*6)*12+3-6=429
+
+
+15-3*(6*6)
+It will count 6*6=36, 36*3=108, 15-108=-93
+
+
