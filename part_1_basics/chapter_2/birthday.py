@@ -9,3 +9,4 @@ message = "\tHappy " + str(age) + "th birthday "
 print(message + name.title() + "!")
 
 
+# it matters which order we place the variables when printing. Initially I just put together the variables and nothing made sense.

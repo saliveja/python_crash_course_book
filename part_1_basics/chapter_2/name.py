@@ -39,7 +39,8 @@ print("Hello, "+full_name.title()+"!")
 message=" "
 print(message)
 
-name="Comrades"
-print("Beloved"+" "+name.lower()+", ""we will believe in each other until the end.")
+name_1= "C"
+name_2 = "omrades"
+print("Beloved"+" "+name_1.upper()+ name_2.lower() + ", ""we will believe in each other until the end.")
 message="Our struggle is for a free life"
 print(message)
