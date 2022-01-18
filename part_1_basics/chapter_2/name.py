@@ -1,3 +1,5 @@
+# printing names as title, upper and lower cases
+
 name="ada lovelace"
 print(name.title())
 

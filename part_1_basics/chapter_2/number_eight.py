@@ -1,3 +1,6 @@
+
+# printing numbers with code
+
 print(4*2)
 
 print(40/5)

@@ -1,4 +1,6 @@
 
+# printing age in a message
+
 age = 23
 message = "Happy " + str(age) + "rd birthday!\n"
 print(message)
