@@ -66,3 +66,5 @@ git pull --rebase --> merging
 git log --> to get out of this press q
 git merge "strategies" --> If we have two branches that we need to merge
 
+# people who are not added to github, can make forks and make pull request (they cannot make own changes)
+
