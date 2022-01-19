@@ -47,5 +47,14 @@ git help --> a command to get more info about git commands
 # to create or delete a Personal access token
 - go to Settings - Developer settings - PAT 
 
+# collaboration
 
+- invite another user by in the repository going to Settings - Collaboration. Your invite will be send to the other users email and need to be accepted before you can continue.
+- Make a folder where you want to store the collaborators repository
+- open the terminal in the repository folder
+# clone their project
+git clone https://nameoftheirrepositoryasitisseeninthebrowser
+git pull --> allow you to see changes
+NOTE: you can add to the collaborators project just as you add to your own. You confirm with your own username and PAT
+git log --pretty=oneline  --> can also be used to see the collaborators total commits
 
