@@ -107,4 +107,15 @@ print(8+3) to show result in terminal window
 print("Hello Pyhton People")
 - Pyhton will only interpret and print the second line.
 
+# lists
+[] --> indicates a list
+# elements in the list are separated by comma
+['shoes', jacket' , 'gloves']
+# if we want to refer to a specific element in the list we write:
+colors = ['red' , 'green' , 'white' , 'black']
+print(colors[0])
+# the first element on the list is numbered 0
+# we can add upper, lower or title to format the element
+colors = ['red' , 'green' , 'white' , 'black']
+print(colors[0].title())
 
