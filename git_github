@@ -60,3 +60,9 @@ git log --pretty=oneline  --> can also be used to see the collaborators total co
 
 git fetch --> download objects and refs from another repository
 
+git config --global core.editor "geany" --> To make geany 
+git diff --> to see what has changed
+git pull --rebase --> merging
+git log --> to get out of this press q
+git merge "strategies" --> If we have two branches that we need to merge
+
