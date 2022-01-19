@@ -114,8 +114,12 @@ print("Hello Pyhton People")
 # if we want to refer to a specific element in the list we write:
 colors = ['red' , 'green' , 'white' , 'black']
 print(colors[0])
-# the first element on the list is numbered 0
+# the first element on the list is numbered 0 (index)
 # we can add upper, lower or title to format the element
 colors = ['red' , 'green' , 'white' , 'black']
 print(colors[0].title())
+
+bicycles = ['trek' , 'cannondale' , 'redline' , 'specialized']
+print(bicycles[-1])
+# -1 shows the last element on the list
 
