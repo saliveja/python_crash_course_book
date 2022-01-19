@@ -122,4 +122,6 @@ print(colors[0].title())
 bicycles = ['trek' , 'cannondale' , 'redline' , 'specialized']
 print(bicycles[-1])
 # -1 shows the last element on the list
+# -2 shows the second last item om the list
+# -3 returns the third item from the end and so forth.
 
