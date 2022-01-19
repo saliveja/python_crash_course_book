@@ -1,0 +1,51 @@
+Git
+
+# version control. saves all changes done to a project and makes it possible to go back to previous versions.
+
+# starting a new repository
+git status
+rm -rf .git
+git status
+git init
+git status
+git add .
+git commit -m "Starting over"
+git status
+
+# deleting repository --> it can be deleted in browser or via command line
+# after ding this we can no longer go back to any other commits
+# if this happens we need to start a new repository
+
+git log --pretty=oneline --> to see all the commits (ID's) from started projects until Extended greeting
+
+git checkout --> when we make a mistake and want to revert back to the previous commit. This also mean that if there are things we didn't commit until this point, these changes will be lost when doing checkout
+git checkout be0176 --> the first six letters in the ID. The ID allows us to look at different commits in the project.
+
+git checkout master --> to get back to master brand.
+
+git reset --hard be017e --> to choose which one to be HEAD of the branch.
+
+# uploading files to github
+# create an account, a repository on github. Fill name, description, if it is to be private or public and if we want to add a README file.
+# go to terminal
+# go to the folder where you have your repository (ie. Desktop/Python)
+git init --> creating repository within the folder
+git remote add origin "link to repository on github"
+git remote -v
+git add . --> adds all new files to the repository. If we want to select certain files we can write the name of those files.
+git commit -m "started project" --> record message about the commit (snapshot)
+git commit -am "Extended greeting" --> can be any name we want to commit changes to projects we already added (with git add .).
+git push origin master --> write username and password for github.
+
+NOTE: We can make many commits and then wait until the end of the session to use git push
+
+git help --> a command to get more info about git commands
+
+# to change default branch in github to the page of the specific respository ie. saliveja/python_crash_course
+- click on Branch
+- there is an option to delete the unwanted branch
+# to create or delete a Personal access token
+- go to Settings - Developer settings - PAT 
+
+
+

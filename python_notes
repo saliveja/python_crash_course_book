@@ -1,0 +1,110 @@
+Python coding
+
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+python --> means 2.7.3
+python3 --> means 3.10.1
+
+***
+
+print("Hello")
+# will show "Hello" in the terminal window
+
+message = "Hello"
+print(message)
+
+# will give the same result, but this time we used a variable
+
+print --> is a function
+message --> is a variable
+"Hello" --> is the value of the variable
+# text that is not code is shown in orange
+
+variables
+# variables can contain letters, numbers, and underscores. They cannot start with a number
+# variable names cannot contain spaces, instad we can use underscore
+# don't use python programming words to describe variables
+# variable names should be consise, but understandable
+# be careful to use letter l and O because they can be confused with 1 and 0
+ 
+ # strings
+ # a string is a series of characters which can have single or double quotes, ie. "this is the text", or 'this is the text'
+ 
+ upper --> capital letters
+ lower --> small letters
+ title --> First letter in first and second name is in capital letters
+ 
+name = "ada lovelace"
+print(name.title())
+# this will print Ada Lovelace
+
+name = "ada lovelace"
+print(name.upper())
+# this will print ADA LOVELACE
+
+# combining strings is called concatenation
+
+# adding whitespace & tabs to strings
+\t - tab
+\n - return, add whitespace between the lines
+
+# remove whitespace
+rstrip() --> stripping whitespace on the right side of the string
+lstrip() --> stripping whitespace on the left side of the string
+strip() --> stripping whitespace on both sides of the string
+
+# printing a .py file directly in terminal instead from geany
+- go to the right folder cd xx/xx
+- python nameoffile.py
+
+# print
+- first write all variables, then print
+name = "emma goldman"
+print(name)
+
+#numbers
+
+3**2 --> means 3 elevated to 2
+examples:
+3**3=27 (3*3*3)
+6**4+1296 (6*6*6*6)
+# for every calculation Python return a result
+# numbers with a decimal point is called a float
+
+#str() function
+
+age = 23
+message = "Happy birthday + str(age) + "rd birthday!"
+print(message)
+# if we use the variable without str(), Pyhton don't understand how to interpret it
+# for calculations in Geany, we use:
+print(8+3) to show result in terminal window
+
+# comments
+# if we want to commnt out project in Python we can use #, Python will ignore what follows after this
+
+# say hello to everyone.
+print("Hello Pyhton People")
+- Pyhton will only interpret and print the second line.
+
+
