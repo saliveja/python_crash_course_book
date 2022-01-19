@@ -1,5 +1,5 @@
 
-bicycles = ['trek' , 'cannondale' , 'redline' , 'specialized']
+bicycles = ['trek' , 'cannondale' , 'redline' , 'specialized', 'bmx']
 print(bicycles)
 
 bicycles = ['trek' , 'cannondale' , 'redline' , 'specialized']
