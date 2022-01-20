@@ -137,3 +137,14 @@ print(motorcycles)
 # with motorcycles[0] = 'ducati' we change the value of the fist item on the list, from honda to ducati.
 
 # append means to add an item, insert mean to at at the specified places in the list. Appending is useful if we don't have the complete list from the beginning and want to add continuously. Insert us useful if we already have a list but need to add something and it needs to be in a specific order.
+
+# removing elements from the list
+- can be done according to position or value
+- del statement is removal
+- example: 
+del motorcycles[0] --> indicates which position is the list should be removed
+
+# pop() method
+
+
+

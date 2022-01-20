@@ -39,3 +39,19 @@ print(motorcycles)
 motorcycles = ['honda' , 'yamaha' , 'suzuki']
 del motorcycles[1]
 print(motorcycles)
+
+# removing item with pop() method
+
+motorcycles = ['honda' , 'yamaha' , 'suzuki']
+print(motorcycles)
+
+popped_motorcycle = motorcycles.pop()
+print(motorcycles)
+print(popped_motorcycle)
+
+# Line 48 and 49 communicated the removal of the last item, as missing from the list. Line 50 shows which item was removed.
+
+motorcycles = ['honda' , 'yamaha' , 'suzuki']
+last_owned = motorcycles.pop()
+print("The last motorcycles I owned was a " + last_owned.title() + ".")
+
