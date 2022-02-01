@@ -44,3 +44,4 @@ del guests[0]
 del guests [0]
 print(guests)
 # deleting the last two names on the list. When printing receiving []
+# exercise finished
