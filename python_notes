@@ -145,6 +145,8 @@ print(motorcycles)
 del motorcycles[0] --> indicates which position is the list should be removed
 
 # pop() method
-
+- With the pop method you can choose any position in the list to print. 
+first_owned = motorcycles.pop(0)
+print(motorcycles.title())
 
 
