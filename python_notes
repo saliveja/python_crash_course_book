@@ -152,6 +152,7 @@ print(motorcycles.title())
 - we can use both del and pop() to remove an iten from a list. If we want to continue to work with the removed ite, we need to use pop() method
 
 # Removing item by value
-remove() method can be used when we want to remove an item without knowing it's position.
-items.remove('whateveritemwewanttoremovefromthelist') 
+- remove() method can be used when we want to remove an item without knowing it's position.
+list.remove('whateveritemwewanttoremovefromthelist') 
+- to be able to understand why we are using remove() we can name the variable and we can point to the variable to print statments about it.
 

@@ -76,5 +76,15 @@ motorcycles = ['honda' , 'yamaha' , 'suzuki' , 'ducati']
 print(motorcycles)
 motorcycles.remove('ducati')
 print(motorcycles)
+# the remove command gives information about which value to remove and then removes it, in the example 'ducati' is removed from the list.
+
+motorcycles = ['honda' , 'yamaha' , 'suzuki' , 'ducati']
+print(motorcycles)
+too_expensive = 'ducati'
+motorcycles.remove(too_expensive)
+print(motorcycles)
+print("\nA " + too_expensive.title() + " is too expensive for me.")
+# with the name of the variable we can communicate the reason for removal, such a in this example.
+
 
 
