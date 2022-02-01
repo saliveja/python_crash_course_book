@@ -148,5 +148,10 @@ del motorcycles[0] --> indicates which position is the list should be removed
 - With the pop method you can choose any position in the list to print. 
 first_owned = motorcycles.pop(0)
 print(motorcycles.title())
+- we can use both pop() and [x] to point to a position in a list, but pop will remove the item while [x] will not
+- we can use both del and pop() to remove an iten from a list. If we want to continue to work with the removed ite, we need to use pop() method
 
+# Removing item by value
+remove() method can be used when we want to remove an item without knowing it's position.
+items.remove('whateveritemwewanttoremovefromthelist') 
 

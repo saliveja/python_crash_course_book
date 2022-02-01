@@ -54,4 +54,27 @@ first_owned = motorcycles.pop(0)
 print("The fist motorcycle I owned was a " + first_owned.title() + ".")
 # pop can select any position to print. In this example position 0, the first position i selected to direct to information about which value was the first motorcycle.
 
+motorcycles = ['honda','yamaha','suzuki']
+print(motorcycles)
+
+first_owned = motorcycles[0]
+print("The fist motorcycle I owned was a " + first_owned.title() + ".")
+
+motorcycles = ['honda' , 'yamaha' , 'suzuki']
+print(motorcycles)
+popped_motorcycle = motorcycles.pop(1)
+print(motorcycles)
+print(popped_motorcycle)
+
+motorcycles = ['honda' , 'yamaha' , 'suzuki']
+print(motorcycles)
+popped_motorcycle = motorcycles[1]
+print(popped_motorcycle)
+# Pop removes while [] only points to a position. 
+
+motorcycles = ['honda' , 'yamaha' , 'suzuki' , 'ducati']
+print(motorcycles)
+motorcycles.remove('ducati')
+print(motorcycles)
+
 
