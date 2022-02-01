@@ -155,4 +155,5 @@ print(motorcycles.title())
 - remove() method can be used when we want to remove an item without knowing it's position.
 list.remove('whateveritemwewanttoremovefromthelist') 
 - to be able to understand why we are using remove() we can name the variable and we can point to the variable to print statments about it.
+- remove() only removes the first value and if we want it to remove a value every time it occurs, we need a loop
 
