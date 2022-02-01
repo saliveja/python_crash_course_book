@@ -1,6 +1,7 @@
 
 guests = ['Kerstin' , 'Erika' , 'mother' , 'beloved comrade' , 'Marie' , 'Birgitta']
 print(guests)
+# guest list before changes
 
 guests.append('Sandra')
 print(guests)
@@ -27,3 +28,4 @@ print(guests)
 comrade_not_coming_1 = guests.pop(4)
 print(guests)
 print("Our " + comrade_not_coming_1 + ", Jiyan, will unfortunately not be able to come due to travels.")
+# 'beloved comrade' is not able to come, removed from the list and other guests are informed
