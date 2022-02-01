@@ -30,7 +30,7 @@ print(guests.pop(0).title() + ", I'm sorry, I'm not able to invite you for dinne
 print(guests.pop(0).title() + ", I'm sorry, I'm not able to invite you for dinner this Sunday. Hope we can meet soon. Take care.")
 print(guests.pop(0).title() + ", I'm sorry, I'm not able to invite you for dinner this Sunday. Hope we can meet soon. Take care.")
 print(guests.pop(0).title() + ", I'm sorry, I'm not able to invite you for dinner this Sunday. Hope we can meet soon. Take care.")
-# changing removal system to include pop methos in the print command for efficiency and adding a message explaining that I can't invite them.
+# changing removal system to include pop methods in the print command for efficiency and adding a message explaining that I can't invite them.
 
 guest_1 = "Sandra"
 guest_2 = "Canfeda"

@@ -161,3 +161,5 @@ list.remove('whateveritemwewanttoremovefromthelist')
 guests = ['Kerstin' , 'Elsa' , 'Erika' , 'mother' , 'Louise' , 'Marie' , 'Birgitta' , 'Sandra']
 print("Hello " + guests[2] + message + "\n")
 
+- when we use pop() to remove values from alist and want to remove several, the number we want to remove will always be 0
+
