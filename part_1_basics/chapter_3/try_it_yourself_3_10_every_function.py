@@ -37,5 +37,7 @@ print(message + str(shoppinglist))
 print("The " + shoppinglist[1] + " didn't arrive yet.")
 
 
-
-
+already_arrived = 'eggs'
+shoppinglist.remove(already_arrived)
+print("\n\nThese items already arrived: " + already_arrived + ".")
+print("\n\nThis is the current version of the list:\n" + str(shoppinglist) + "\nThere are " + str(len(shoppinglist)) + " items left to be aquired.")
