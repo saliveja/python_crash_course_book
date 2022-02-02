@@ -180,3 +180,10 @@ print(sorted(list, reverse=True))
 - len(list) --> in interpreter
 - print(len(list)) --> in ie. geany
 
+# looping
+- can be used if we want to use the same action for every item in a list
+- for list in list:  --> to print each item on a new line/row. This way we can collectivize action for a list, instead of doing an individual action for each item on the list
+- We can choose any name for the variable, ie. for guest in guests, or for cat in cats
+- to use singular and plural in the way shown will help us to know if we are work with one item or a list
+
+

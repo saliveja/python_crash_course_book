@@ -21,7 +21,7 @@ print(places)
 
 places.reverse()
 print(places)
-# using reverser() again to put the list back to original state
+# using reverse() again to put the list back to original state
 
 places.sort()
 print(places)
