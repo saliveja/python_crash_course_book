@@ -8,10 +8,11 @@ print(shoppinglist)
 
 message = "\n\n" + str(sorted(shoppinglist))
 print(message)
+# sorting in alphabetical order, not permanent
 
 message = "\n\n" + str(sorted(shoppinglist, reverse=True))
 print(message)
-
+#  organizing list reversed but not permanent
 
 shoppinglist.reverse()
 message = "\n\nThis is the shoppinglist for this week!"
@@ -35,18 +36,43 @@ print(message + str(shoppinglist))
 # sort() is permanent
 
 print("The " + shoppinglist[1] + " didn't arrive yet.")
+# printing an item (sweet potatoes) that didn't yet arrive
+
+
+message = " didn't arrive yet."
+print(shoppinglist.pop(1) + message)
+print(shoppinglist)
+# printing which item didn't arrive at at the same time remove the item.
+
+del shoppinglist[1]
+print(shoppinglist)
+# deleting soda water from the list
+
+shoppinglist.remove('butter')
+print(shoppinglist)
+# removing yoghurt from the list. Great if one doesn't know the position of the item in the list
+
+remove_item = shoppinglist.pop(1)
+print(shoppinglist)
+print(remove_item)
+#removing mushrooms from the list and printing which item was removed
 
 already_arrived = 'eggs'
 	# QUESTION:
 	# How to add more items, so they get bth printed as "arrived"
-	# And they will be removed together fromt the list, 
+	# And they will be removed together from the list, 
 	# seems like I can only do one at a time
 shoppinglist.remove(already_arrived)
 print("\n\nThese items already arrived: " + already_arrived + ".")
 print("\n\nThis is the current version of the list:\n" + str(shoppinglist) + "\nThere are " + str(len(shoppinglist)) + " items left to be aquired.")
-# removing('eggs') gives the possibility to remove an item without knowing it's position.
 
 print(shoppinglist [-1])
 del shoppinglist[-1]
 print(shoppinglist) 
+# deleting the last item on the list
+
+shoppinglist[2] = 'books'
+print(shoppinglist)
+
+
 
