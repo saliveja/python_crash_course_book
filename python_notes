@@ -163,3 +163,12 @@ print("Hello " + guests[2] + message + "\n")
 
 - when we use pop() to remove values from alist and want to remove several, the number we want to remove will always be 0
 
+# Sorting a list aphabetically with the sort() method
+- It's permanent
+- we can also do it in reverse order by writing reverse=True
+list.sort() --> for alphabetical order
+list.sort(reverse=True)
+
+# sorted() method
+- will organize the list in an alphabetical way but not permanently. It can also be used with reverse=True
+
