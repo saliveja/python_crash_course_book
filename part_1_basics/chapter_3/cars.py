@@ -31,6 +31,14 @@ cars.reverse()
 print(cars)
 # the list is shown with the last value first, but not in alphabetical order
 # reverse() changes the list permanently, but it can be changed back any time with the same method
- 
+
+#finding the length of the list using len()
+cars = ['bmw' , 'audi', 'toyota', 'subaru']
+len(cars)
+# this will, in the interpreter show the number 4
+
+cars = ['bmw' , 'audi', 'toyota', 'subaru']
+print(len(cars))
+# if using the program instead of interpreter, we write like this 
 
 

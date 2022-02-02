@@ -171,4 +171,12 @@ list.sort(reverse=True)
 
 # sorted() method
 - will organize the list in an alphabetical way but not permanently. It can also be used with reverse=True
+print(sorted(list, reverse=True))
+
+# reverse() method
+- this method will print the list in the reverse order. It's permanent, but can be changes back using the reverse() again.
+
+# len() to find the length of a list
+- len(list) --> in interpreter
+- print(len(list)) --> in ie. geany
 
