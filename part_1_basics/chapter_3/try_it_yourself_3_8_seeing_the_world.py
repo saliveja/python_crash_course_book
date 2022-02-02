@@ -15,4 +15,18 @@ print(sorted(places, reverse=True))
 print(places)
 # showing that the original list hasn't been permanently changed
 
+places.reverse()
+print(places)
+# using reverse() to reverse the order of the list permanently
+
+places.reverse()
+print(places)
+# using reverser() again to put the list back to original state
+
+places.sort()
+print(places)
+# sorting the list in alphabetical order permanently
+
+places.sort(reverse=True)
+print(places)
 
