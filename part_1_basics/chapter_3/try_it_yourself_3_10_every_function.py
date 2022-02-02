@@ -1,5 +1,5 @@
 
-shoppinglist = ['eggs', 'milk', 'cheese', 'yogurt', 'almond butter', 'butter', 'soda water', 'coconut cream', 'broccoli', 'onion', 'cauliflower', 'mushrooms', 'carrots', 'garlic', 'ginger', 'earl gay', 'coffee', 'cream']
+shoppinglist = ['eggs', 'milk', 'cheese', 'yoghurt', 'almond butter', 'butter', 'soda water', 'coconut cream', 'broccoli', 'onion', 'cauliflower', 'mushrooms', 'carrots', 'garlic', 'ginger', 'earl gay', 'coffee', 'cream']
 print(shoppinglist)
 
 shoppinglist.append('sweet potatoes')
@@ -46,10 +46,14 @@ del shoppinglist[1]
 print(shoppinglist)
 # deleting soda water from the list
 
+shoppinglist.remove('yoghurt')
+print(shoppinglist)
+# removing yoghurt from the list. Great if one doesn't know the position of the item
+
 remove_item = shoppinglist.pop(1)
 print(shoppinglist)
 print(remove_item)
-#removing onion from the list and printing which item was removed
+#removing mushrooms from the list and printing which item was removed
 
 
 
