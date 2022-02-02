@@ -8,10 +8,11 @@ print(shoppinglist)
 
 message = "\n\n" + str(sorted(shoppinglist))
 print(message)
+# sorting list in alphabetical order which is reversable
 
 message = "\n\n" + str(sorted(shoppinglist, reverse=True))
 print(message)
-
+# sorting list in reverse, but non-permanent order
 
 shoppinglist.reverse()
 message = "\n\nThis is the shoppinglist for this week!"
@@ -35,6 +36,21 @@ print(message + str(shoppinglist))
 # sort() is permanent
 
 print("The " + shoppinglist[1] + " didn't arrive yet.")
+
+message = " didn't arrive yet."
+print(shoppinglist.pop(1) + message)
+print(shoppinglist)
+# printing which item didn't arrive at at the same time remove the item.
+
+del shoppinglist[1]
+print(shoppinglist)
+# deleting soda water from the list
+
+remove_item = shoppinglist.pop(1)
+print(shoppinglist)
+print(remove_item)
+#removing onion from the list and printing which item was removed
+
 
 
 
