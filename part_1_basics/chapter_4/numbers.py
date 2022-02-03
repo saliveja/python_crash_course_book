@@ -18,11 +18,12 @@ for member in members:
 # the value loop inside om member defines how many times each name should be printed
 
 for value in range(1,51):
-	print(value)
+	print(value, "fuck you, I won't do what you tell me")
 	names = ['anna', 'sven', 'danny', 'marie', 'olga']
 	for name in names:
 		print(name.title())
 		# This prints the five name under every number
+		# writing a message next to value will print the text next to the number
 		
 	
 
