@@ -193,6 +193,10 @@ print(sorted(list, reverse=True))
 # indent error stops the entire program. Syntax error runs until the point where there is a problem/error
 - the : tells python to include what follows in the loop
 
+# To know the index number of an item
+- If we don't know the position of an item in a list and want to point to this item, we can:
+- print(listname.index('nameofitem')) --> to know the index number of a specific item
+- list[list.index('nameofitem')] --> if we want to print the name directly in the message
 
 
 
