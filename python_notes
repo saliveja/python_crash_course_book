@@ -198,5 +198,5 @@ print(sorted(list, reverse=True))
 - print(listname.index('nameofitem')) --> to know the index number of a specific item
 - list[list.index('nameofitem')] --> if we want to print the name directly in the message
 
-
+# range() function
 
