@@ -189,7 +189,9 @@ print(sorted(list, reverse=True))
 - A print that is outside of the indent concludes the loop. It will be printed only once.
 - indentation is used to show that one line is connected to another
 - indentation also helps with organization of blocks of code
-
+- we have to be careful to use it correctly as:
+# indent error stops the entire program. Syntax error runs until the point where there is a problem/error
+- the : tells python to include what follows in the loop
 
 
 
