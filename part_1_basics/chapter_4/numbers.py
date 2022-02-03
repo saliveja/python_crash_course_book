@@ -24,6 +24,7 @@ for value in range(1,51):
 		print(name.title())
 		# This prints the five name under every number
 		# writing a message next to value will print the text next to the number
+		# how to pur each name next to a new number on the list?
 		
 	
 
