@@ -10,12 +10,11 @@ for value in range(1,11):
 	
 print(squares)
 
-
-
 squares = []
-# this defines an empty list calles squares
-for value in range(1):
-	square = 'anna', 'sven', 'danny', 'marie', 'olga'
-	squares.append(square)
-	
+for value in range(1,11):
+	squares.append(value**2)
 print(squares)
+# we can write squares.append(value**2) directly to be more concise
+# sometimes it's easier to read when it's organized like line 6 and 8
+# focus on writing code that is understandable first and not efficiency
+
