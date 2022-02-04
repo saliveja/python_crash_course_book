@@ -210,5 +210,38 @@ for value in range(1,51):
 	names = ['anna', 'sven', 'danny', 'marie', 'olga']
 	for name in names:
 		print(name.title())
-# for each line a new number will be printed. The message "fuck you..." will be printed next to each number. Because it's a loop and we told python to print the text repeatedly after print the value which is within range 1-51		
+# for each line a new number will be printed. The message "fuck you..." will be printed next to each number. Because it's a loop and we told python to print the text repeatedly after print the value which is within range 1-51	
+
+#Squares
+squares = []
+# this defines an empty list calles squares
+for value in range(1,11):
+#we are looping and using values from 1-10
+	square = value**2
+	# we are setting a variable inside the loop **2 (square)
+	squares.append(square)
+	# every new value is added to the list	
+print(squares)
+# printing complete list outside of the loop
+
+- squares.append(value**2)
+# we can write squares.append(value**2) directly to be more concise
+# we should focus on writing code that is understandable first and not efficient
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 		
