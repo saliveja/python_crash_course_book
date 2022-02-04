@@ -13,3 +13,7 @@ for three in threes:
 	# first for value in range is definition, the second is the loop
 	# when it is written multiplies --> it's all number divided by three
 	# if it is written multiplied by it would *3
+
+print(list(range(1,101)))
+# if we want to print a list with numbers 1-100
+
