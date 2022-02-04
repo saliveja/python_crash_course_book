@@ -1,5 +1,9 @@
 
 
-cubes = [value**3 for value in range(1,11)]
-for cube in cubes:
-	print(cube)
+cubes = []
+for cube in range(1,11):
+	cube = cube**3
+	cubes.append(cube)
+print(cubes)
+# remember that the definition on cube:
+# cube = cube**3, that for line and the definition need to be the same
