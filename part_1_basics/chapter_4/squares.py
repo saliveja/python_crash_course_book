@@ -18,3 +18,14 @@ print(squares)
 # sometimes it's easier to read when it's organized like line 6 and 8
 # focus on writing code that is understandable first and not efficiency
 
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+min(digits)
+#prints the smallest value
+max(digits)
+# prints the biggest value
+sum(digits)
+# prints the totals sum of values in the list
+
+numbers = list(range(1, 500))
+sum(numbers)
+# printing 124750
