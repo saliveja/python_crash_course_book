@@ -29,3 +29,9 @@ sum(digits)
 numbers = list(range(1, 500))
 sum(numbers)
 # printing 124750
+
+#list comprehension
+squares = [value**2 for value in range(1,11)]
+print(squares)
+
+
