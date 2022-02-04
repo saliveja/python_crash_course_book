@@ -11,3 +11,5 @@ for three in threes:
 	print(three)
 	# trying more concise code to print numbers 1-30 multiplied by three
 	# first for value in range is definition, the second is the loop
+	# when it is written multiplies --> it's all number divided by three
+	# if it is written multiplied by it would *3
