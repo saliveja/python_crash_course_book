@@ -8,3 +8,10 @@ print("\n\n")
 print("Three items from the middle of the list are:")
 for item in items[4:7]:
 	print(item.title())
+print("\n\n")
+
+print("the last three items in the list are:")
+for item in items[-3:]:
+	print(item.title())
+	
+
