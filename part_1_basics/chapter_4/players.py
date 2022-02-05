@@ -5,6 +5,7 @@ print(players[0:3])
 
 players = ['charles', 'martina', 'michael', 'florence', 'eli']
 print(players[1:4])
+# printing part of a list is called slices
 
 
 players = ['charles', 'martina', 'michael', 'florence', 'eli']
