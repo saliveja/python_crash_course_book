@@ -1,6 +1,6 @@
 
 my_foods = ['pizza', 'falafel', 'carrot cake']
-friend_foods = my_foods[:]
+friend_foods = my_foods
 # [:] refers to the whole my_foods list
 
 my_foods.append('cannoli')
