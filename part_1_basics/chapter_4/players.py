@@ -18,5 +18,8 @@ print(players[2:])
 # when the index at the end is not specified - 
 # it will be printed until the end of the list  
 
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players[-3:])
+# print the third last players on the list
 
 
