@@ -1,5 +1,6 @@
 
-guests = ['Kerstin' , 'Elsa' , 'Erika' , 'mother' , 'Louise' , 'Marie' , 'Birgitta' , 'Sandra']
+guests = ['Kerstin' , 'Elsa' , 'Erika' , 'mother' , 'Louise' , 'Marie' , \
+'Birgitta' , 'Sandra']
 print(guests)
 # Total guest list before additions
 
@@ -15,10 +16,12 @@ guests.append('Canfeda')
 print(guests)
 # Adding Canfeda at the end of the list
 
-# List is nor looking like this: ['Karin', 'Kerstin', 'Elsa', 'Erika', 'mother', 'Linnea', 'Louise', 'Marie', 'Birgitta', 'Sandra', 'Canfeda']
+# List is now looking like this: ['Karin', 'Kerstin', 'Elsa', 'Erika', 
+# ~ 'mother', 'Linnea', 'Louise', 'Marie', 'Birgitta', 'Sandra', 'Canfeda']
 
 
-message = ", we are thirteen in total who will join the dinner on Sunday. Looking forward to see you. Bring drinks if you want annything special."
+message = ", we are thirteen in total who will join the dinner on Sunday. \
+Looking forward to see you. Bring drinks if you want annything special."
 print("Hello " + guests[1] + message + "\n")
 print("Hello " + guests[2] + message + "\n")
 print("Hello " + guests[3] + message + "\n")
