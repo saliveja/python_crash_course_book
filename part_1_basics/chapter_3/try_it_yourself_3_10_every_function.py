@@ -1,5 +1,7 @@
 
-shoppinglist = ['eggs', 'milk', 'cheese', 'yogurt', 'almond butter', 'butter', 'soda water', 'coconut cream', 'broccoli', 'onion', 'cauliflower', 'mushrooms', 'carrots', 'garlic', 'ginger', 'earl gay', 'coffee', 'cream']
+shoppinglist = ['eggs', 'milk', 'cheese', 'yogurt', 'almond butter', \
+'butter', 'soda water', 'coconut cream', 'broccoli', 'onion', 'cauliflower', \
+'mushrooms', 'carrots', 'garlic', 'ginger', 'earl gay', 'coffee', 'cream']
 print(shoppinglist)
 
 shoppinglist.append('sweet potatoes')
@@ -23,7 +25,8 @@ print(shoppinglist)
 message = "\n\n"
 shoppinglist.sort()
 print(message + str(shoppinglist))
-# to put things together (for example add a message to our list, we need to use str. print(message + shoppinglist) wouldn't be an understandable command.
+# to put things together (for example add a message to our list,
+# ~ we need to use str. print(message + shoppinglist) is not readable
 
 shoppinglist.insert(3,'apples')
 shoppinglist.insert(0, 'almond drink')
@@ -50,7 +53,7 @@ print(shoppinglist)
 
 shoppinglist.remove('butter')
 print(shoppinglist)
-# removing yoghurt from the list. Great if one doesn't know the position of the item in the list
+# removing butter from the list
 
 remove_item = shoppinglist.pop(1)
 print(shoppinglist)
@@ -64,7 +67,8 @@ already_arrived = 'eggs'
 	# seems like I can only do one at a time
 shoppinglist.remove(already_arrived)
 print("\n\nThese items already arrived: " + already_arrived + ".")
-print("\n\nThis is the current version of the list:\n" + str(shoppinglist) + "\nThere are " + str(len(shoppinglist)) + " items left to be aquired.")
+print("\n\nThis is the current version of the list:\n" + str(shoppinglist) + \
+"\nThere are " + str(len(shoppinglist)) + " items left to be aquired.")
 
 print(shoppinglist [-1])
 del shoppinglist[-1]
