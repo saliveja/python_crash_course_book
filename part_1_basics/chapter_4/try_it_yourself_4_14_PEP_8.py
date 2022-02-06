@@ -32,19 +32,11 @@ print("Dear " + guests[0] + ", " + message + ". " + guests[1] + ", " + \
 
 print("Dear " + guests[1].title() + ", " + message + "\n")
 
-print("Dear " + guests[2].title() + ", " + message + "\n")
 
-print("My beloved " + guests[3].lower() + ", " + message + "\n")
 
-print("Dear " + guests[4].title() + ", so much looking forward to see you, \
-    hope you can make it. We're meeting up at 1900 at our place. see \
-    you!" + "\n")
-
-print("Dear " + guests[5].title() + ", " + message + "\n")
-
-print("Dear " + guests[6].title() + ", " + message + "\n")
-
-print("Dear " + guests[7].title() + ", " + message + ". Louise is probably \
-    also coming.\n")
-# messages to guests participating in the dinner
-
+numbers = [
+    1, 2, 3, 
+    4, 5, 6, 
+    7, 8, 9, 
+    ]
+# ~ organizing number with pep standards should look like this

@@ -343,6 +343,7 @@ https://www.python.org/dev/peps/pep-0008/
 - And also so it's possible to have three windows open at the same time
 - Use blank lines to group parts of the program
 - There may be code written with older python which doesn't support current style guide
+# In Geany --> go to: edit - preferences - editor - indentation (chose replace tabs by spaces, tab width set to 4)
 - ctrl I --> creates an indent
 - ctrl U --> decreases an indent
 - ctrl E --> makes text into a comment in the code
@@ -350,6 +351,8 @@ https://www.python.org/dev/peps/pep-0008/
 number = 42
 number==42
 True --> == testing an argument
+
+
 
 
 
