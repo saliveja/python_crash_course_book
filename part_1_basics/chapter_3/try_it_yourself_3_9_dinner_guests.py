@@ -1,5 +1,6 @@
 
-guests = ['Kerstin' , 'Elsa' , 'Erika' , 'mother' , 'Louise' , 'Marie' , 'Birgitta' , 'Sandra']
+guests = ['Kerstin' , 'Elsa' , 'Erika' , 'mother' , 'Louise' , 'Marie' , \
+'Birgitta' , 'Sandra']
 print(guests)
 # Total guest list before additions
 
