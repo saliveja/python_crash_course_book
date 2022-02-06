@@ -334,6 +334,19 @@ print(dimensions[0])
 # if we want immutable values for the rectangle;
 # it is good that python communicates and error
 
+# PEP8 and styling code
+https://www.python.org/dev/peps/pep-0008/
+- code length should be no longer than 79 characters
+- Some teams use a code length of 99 characters
+- comment length should be no longer than 72 characters
+- The code should aim to be neat and easy to read
+- And also so it's possible to have three windows open at the same time
+- Use blank lines to group parts of the program
+- There may be code written with older python which doesn't support current style guide
+- ctrl I --> creates an indent
+- ctrl U --> decreases an indent
+- ctrl E --> makes text into a comment in the code
+
 
 
 
