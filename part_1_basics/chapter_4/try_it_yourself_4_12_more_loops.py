@@ -15,4 +15,3 @@ print("\nMy friend's favorite foods are:")
 for friend_food in friend_foods:
 	print(friend_food.title())
 
-

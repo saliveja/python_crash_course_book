@@ -270,6 +270,53 @@ players = ['charles', 'martina', 'michael', 'florence', 'eli']
 print(players[-3:])
 # print the last three players
 
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("Here are the first three players on my team:")
+for player in players[:3]:
+	print(player.title())
+	# print the three first players each on a new line
+	# specifying which numbers is don't direcly in for line 
+	
+
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods[:]
+# [:] refers to the whole my_foods list
+# if we remove [:] the two lists will be printed exactly the same
+# we want the two list to have a new and each a different item added
+
+my_foods.append('cannoli')
+friend_foods.append('ice cream')
+# adding a new item on each list
+
+print("My favorite foods are:")
+print(my_foods)
+
+print("\nMy friend's favorite foods are:")
+print(friend_foods)
+# the two prints show the same list because one = the other
+
+
+items = ['hairbrush', 'tshirt', 'pants', 'socks', 'toothbrush', 'sweater', 'hoodie', 'glasses', 'shoes', 'computer', 'camera']
+print("The first three items in the list are:")
+for item in items[:3]:
+	print(item.title())
+print("\n\n")
+# printing the first three items on the list
+
+print("Three items from the middle of the list are:")
+for item in items[4:7]:
+	print(item.title())
+print("\n\n")
+# printing three items on index 4, 5 and 6
+
+print("the last three items in the list are:")
+for item in items[-3:]:
+	print(item.title())
+	# printing the last three items on the list
+
+
+
+
 
 
 
