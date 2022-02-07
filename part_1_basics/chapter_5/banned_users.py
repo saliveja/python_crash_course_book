@@ -13,3 +13,9 @@ if user not in banned_users:
 else:
     print(" good try!")
 # if the user is on the list on banned_users the else option will be printed
+
+# boolean expression (another name for a conditional test)
+game_active = True
+can_edit = False
+# used to keep track  of certain conditions, such as if a game is running\
+# or if a user can edit content on a website
