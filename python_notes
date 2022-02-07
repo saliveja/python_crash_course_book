@@ -384,6 +384,13 @@ True
 # if car is printed it will show 'Audi'still. It doesn't change the variable permanently
 # can for example be used to check availability of usernames
 
+requested_topping = 'mushrooms'
+if requested_topping != 'anchovies':
+    print("Hold the anchovies!")
+# the requested topping is mushrooms
+# if the requested topping is not anchovies, print 'Hold the anchovies!'
+# != mean NOT
+
 
 
 
