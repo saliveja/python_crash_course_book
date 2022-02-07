@@ -368,6 +368,45 @@ car == 'bmw'
 # first car equals bmw
 # second conditional test on if it's a bmw
 # respons is True
+car == 'audi'
+# would return False
+
+# Checking equality is case sensitive
+car = 'Audi'
+car == 'audi'
+# will get the response: False
+
+# managing case sensitivity when checking equality
+car = 'Audi'
+car.lower() == 'audi'
+True
+# we make sure all letters are lower case when testing
+# if car is printed it will show 'Audi'still. It doesn't change the variable permanently
+# can for example be used to check availability of usernames
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
