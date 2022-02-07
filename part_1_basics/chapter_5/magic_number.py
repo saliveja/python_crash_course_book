@@ -23,6 +23,7 @@ age_0 >= 21 and age_1 >= 21
 age_1 = 22
 # age_1 now equals 22
 age_0 >= = 21 and age_1 >= 21
+# AND condition requires both varibles to meet the conditions
 # with the change of age_1 variable, the conditions are not met for both
 
 age_0 = 18
@@ -30,5 +31,14 @@ age_0 = 18
 age_0 >= 21 or age_1 >= 21
 # asking if age_0 or age_1 is bigger than or equals 21
 # the condition is met for age_1 which was changed to 22
+
+# checking if a value is in a list
+requested_toppings = ['mushrooms', 'onions', 'pineapple']
+'mushrooms' in requested_toppings
+# True
+'pepperoni' in requested_toppings
+# False
+# with the keyword - in - we can check for the existence of 'mushrooms' \
+# and 'pepperoni' in the list requested_toppings
 
 
