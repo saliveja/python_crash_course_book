@@ -1,12 +1,11 @@
-
 guests = ['Karin', 'Kerstin', 'Elsa', 'Erika', 'mother', 'Linnea', 'Louise', \
-'Marie', 'Birgitta', 'Sandra', 'Canfeda']
+          'Marie', 'Birgitta', 'Sandra', 'Canfeda']
 print(guests)
 # complete guest list before changes
 
 message = ", due to unforseen changes I'm unable to invite more than two \
 people for dinner. I appologize for this inconvenience, I'll update with more \
-information soon." 
+information soon."
 print("Hello " + guests[1] + message + "\n")
 print("Hello " + guests[2] + message + "\n")
 print("Hello " + guests[3] + message + "\n")
@@ -54,9 +53,9 @@ print("Dear " + guest_1.title() + ", " + message)
 print("Dear " + guest_2.title() + ", " + message)
 # inviting the two remaining people on the guest list
 
-guests = ['Sandra' , 'Canfeda']
+guests = ['Sandra', 'Canfeda']
 del guests[0]
-del guests [0]
+del guests[0]
 print(guests)
 # deleting the last two names on the list. When printing receiving []
 # exercise finished
