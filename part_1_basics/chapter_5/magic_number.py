@@ -13,3 +13,10 @@ age > 21
 # asking if the number is higher than 21
 age >= 21
 # asking if the number is highers than or equals 21
+
+# checking multiple conditions
+age_o = 22
+age_1 = 18
+age_0 >= 21 and age_1 >= 21
+# asking if age_0 is bigger than or equals 21, and
+# if at the same time age_1 is bigger than or equals 21, which as false
