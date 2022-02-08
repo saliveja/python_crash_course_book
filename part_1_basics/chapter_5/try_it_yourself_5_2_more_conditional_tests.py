@@ -2,19 +2,25 @@
 
 
 # tests using the lower() function
+clothes = ['tshirt', 'hoodie', 'pants', 'socks']
+item = 'hoodie'
+if item == 'tshirt':
+    print("i would have preferred a hoodie")
+else:
+    print("Thank you for packing my " + item.lower())
 
+clothes = 'Hoodie'
+clothes.lower() == 'hoodie'
 
 # Numerical test on inequality and equality, greater and lesser than, greater \
 # than and equal to and lesser than or equal to
+# test using the and keyword and the or keyword
 
 marie = 40
 danny = 18
 marie <= 21 and danny >= 15
 marie >= 21 and danny >= 15
 marie > 45 or danny < 60
-
-# test using the and keyword and the or keyword
-
 
 # test whether an item is in the list
 colors = ['red', 'black', 'green', 'purple', 'white', 'grey']
