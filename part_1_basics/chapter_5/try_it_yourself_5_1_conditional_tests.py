@@ -103,3 +103,5 @@ if X1 == 13:
 else:
     print(friend_foods)
 # the different actions we take will lead us to different outcomes and choices
+# if X1 is 13 (which is False) then it will print my_foods
+# if it's not, it will print friends_food
