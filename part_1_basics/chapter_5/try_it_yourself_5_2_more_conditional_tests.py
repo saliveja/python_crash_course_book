@@ -98,5 +98,5 @@ else:
 user = 'emma'
 password = 'hejgej'
 if user.lower() in comrades and password == password_comrades:
-    print(user == 'emma')
+    user == 'emma'
     print("Great to see you, " + user.title())
