@@ -135,18 +135,10 @@ list_xweser_comrades = []
 comrade_1 = 'aaa1'
 comrade_2 = 'aaa2'
 comrade_3 = 'aaa3'
+comrade_4 = 'aaa4'
 comrade_xweser_1 = 'bbb1'
 comrade_xweser_2 = 'bbb2'
 comrade_xweser_3 = 'bbb3'
-
-for list_comrade in list_comrades:
-    list_comrades.append(comrade_1)
-    list_comrades.append(comrade_2)
-    list_comrade.append(comrade_3)
-print(list_comrades)
-
-for list_comrade in list_comrades:
-   list_comrades.append(comrade_*)
 
 list_comrades.extend(
     value for name, value in locals().items() if name.startswith('comrade'))
@@ -154,14 +146,14 @@ list_comrades.extend(
 # local symbol table.
 # These include variable names, methods, classes, etc.
 # items() --> used to return the list with all dictionary keys with values
+# this adds every new value that starts with comrades which is also \
+# printed sorted
 
 list_xweser_comrades.extend(
-    value for name, value in locals().items() if
-    name.startswith('comrade_xweser'))
+    value for name, value in locals().items() if name.startswith \
+        ('comrade_xweser'))
 
-
-if the value is higher than the last value, add the new value to the list
-if value has comrade_...
+print(list_comrades)
 
 # DID NOT WORK:
 # ~for comrade in [comrade_(str(range(1, 100)))]:
@@ -171,5 +163,5 @@ if value has comrade_...
 # ~for comrade in comrade_x:
 # ~    list_comrades.append(comrade)
 
-print(list_comrades)
+print(list_xweser_comrades)
 # print(list_xweser_comrades)
