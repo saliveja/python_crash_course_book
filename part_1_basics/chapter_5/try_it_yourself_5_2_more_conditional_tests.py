@@ -14,7 +14,7 @@ if item == 'tshirt':
     print("i would have preferred a hoodie")
 else:
     print("Thank you for packing my " + item.lower())
-# printing "Thank you for oacking my hoodie"
+# printing "Thank you for packing my hoodie"
 
 clothes = 'Hoodie'
 clothes.lower() == 'hoodie'
@@ -52,3 +52,51 @@ else:
     (color.title() + " is my favorite color")
 # if the color black is not in colors, print "Oh no!" and if it is\
 # print "Black is my favorite color"
+
+# EXCERCISE PROGRAM 3 - for @saliveja:
+# application for log in layers
+# Define a list of comrades - with 8 comrades
+# make another database mirroring the xweser comrades in the contact list
+# make a variable which defines loggin of comrades
+# make a variable which defines password for comrades
+# make a variable for xweser comrades and a password for xweser comrades
+# make a variable user - a field which anyone can fill and
+# user password
+# Print a message to the user if their name and password do not match the list
+# print a message for the user if they loged in as a comrade
+# Print a message if they log in as a xweser comrade
+# Print a message for the system - to quickly categorize the user like:
+# user comrade == True/False
+# user xweser comrade == True/False
+
+comrades = ['anna', 'berit', 'janne', 'can', 'emma', 'kalle', 'samuel',
+            'fiona']
+xweser_comrades = ['anna', 'berit', 'emma', 'fiona']
+password_comrades = 'hejgej'
+password_xweser = 'untilallarefree'
+user = 'emma'
+password = 'hejgej'
+if user in comrades and password is password_comrades:
+    print("Hello " + user.title() + ", welcome to our intranet!")
+else:
+    print("I'm sorry, but you are not registered")
+
+user = 'fiona'
+password = 'untilallarefree'
+if user in xweser_comrades and password is password_xweser:
+    print("To change society we have to kill the dominant mindset")
+else:
+    print("I'm sorry but you are not registered")
+
+user = 'fiona'
+password = 'killthedominantmindset'
+if user in xweser_comrades and password is password_xweser:
+    print("To change society we have to kill the dominant mindset")
+else:
+    print("I'm sorry but you are not registered")
+
+user = 'emma'
+password = 'hejgej'
+if user.lower() in comrades and password == password_comrades:
+    print(user == 'emma')
+    print("Great to see you, " + user.title())
