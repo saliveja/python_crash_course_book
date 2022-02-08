@@ -53,6 +53,8 @@ else:
 # if the color black is not in colors, print "Oh no!" and if it is\
 # print "Black is my favorite color"
 
+print("\n\n")
+
 # EXCERCISE PROGRAM 3 - for @saliveja:
 # application for log in layers
 # Define a list of comrades - with 8 comrades
@@ -80,6 +82,7 @@ if user in comrades and password is password_comrades:
     print("Hello " + user.title() + ", welcome to our intranet!")
 else:
     print("I'm sorry, but you are not registered")
+print(user.lower() in comrades and password == password_comrades)
 
 user = 'fiona'
 password = 'untilallarefree'
@@ -87,6 +90,7 @@ if user in xweser_comrades and password is password_xweser:
     print("To change society we have to kill the dominant mindset")
 else:
     print("I'm sorry but you are not registered")
+print(user.lower() in xweser_comrades and password == password_xweser)
 
 user = 'fiona'
 password = 'killthedominantmindset'
@@ -94,9 +98,10 @@ if user in xweser_comrades and password is password_xweser:
     print("To change society we have to kill the dominant mindset")
 else:
     print("I'm sorry but you are not registered")
+print(user.lower() in xweser_comrades and password == password_xweser)
 
 user = 'emma'
 password = 'hejgej'
 if user.lower() in comrades and password == password_comrades:
-    user == 'emma'
     print("Great to see you, " + user.title())
+print(user.lower() in comrades and password == password_comrades)
