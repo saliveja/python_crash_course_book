@@ -105,3 +105,71 @@ password = 'hejgej'
 if user.lower() in comrades and password == password_comrades:
     print("Great to see you, " + user.title())
 print(user.lower() in comrades and password == password_comrades)
+
+# EXCERCISE PROGRAM 3 - layers of log in:
+# application for log in layers
+# Define a list of comrades - with 8 comrades
+# make another database mirroring the xweser comrades in the contact list
+# make a variable which defines loggin of comrades
+# make a variable which defines password for comrades
+# make a variable for xweser comrades and a password for xweser comrades
+# make a variable user - a field which anyone can fill and
+# user password
+# Print a message to the user if their name and password do not match the list
+# print a message for the user if they loged in as a comrade
+# Print a message if they log in as a xweser comrade
+# Print a message for the system - to quickly categorize the user like:
+# user comrade == True/False
+# user xweser comrade == True/False
+
+# The important point is to focus ont the first step where:
+# the list_comrades and list_xweser_comrades are empty
+# over time we have new users registering
+# those are getting index as comrade_x or comrade_xweser_x
+# the MAIN FOCUS - how do we add them to the list in the simpliest way
+# withot .append() every single one of them manually
+
+list_comrades = []
+list_xweser_comrades = []
+
+comrade_1 = 'aaa1'
+comrade_2 = 'aaa2'
+comrade_3 = 'aaa3'
+comrade_xweser_1 = 'bbb1'
+comrade_xweser_2 = 'bbb2'
+comrade_xweser_3 = 'bbb3'
+
+for list_comrade in list_comrades:
+    list_comrades.append(comrade_1)
+    list_comrades.append(comrade_2)
+    list_comrade.append(comrade_3)
+print(list_comrades)
+
+for list_comrade in list_comrades:
+   list_comrades.append(comrade_*)
+
+list_comrades.extend(
+    value for name, value in locals().items() if name.startswith('comrade'))
+# The locals() method updates and returns a dictionary of the current \
+# local symbol table.
+# These include variable names, methods, classes, etc.
+# items() --> used to return the list with all dictionary keys with values
+
+list_xweser_comrades.extend(
+    value for name, value in locals().items() if
+    name.startswith('comrade_xweser'))
+
+
+if the value is higher than the last value, add the new value to the list
+if value has comrade_...
+
+# DID NOT WORK:
+# ~for comrade in [comrade_(str(range(1, 100)))]:
+# ~    list_comrades.append(comrade)
+
+# ~comrade_x = list(str("comrade_" + str(range(1, 100))))
+# ~for comrade in comrade_x:
+# ~    list_comrades.append(comrade)
+
+print(list_comrades)
+# print(list_xweser_comrades)
