@@ -14,3 +14,41 @@ elif age < 18:
     # the text is printed
 else:
     print("Your admission cost is $10.")
+
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+else:
+    price = 10
+print("Your admission cost is $" + str(price) + ".")
+# this code is more efficient and easier to modify
+
+# using multiple elif blocks
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+else:
+    price = 5
+print("Your admission cost is $" + str(price) + ".")
+# this adds and extra condition. if the person is less than 65 years it cost 10
+# but if not then it cost 5, so everyone older than 65 will pay 5
+
+# we can also do the code without else: at the end
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+elif age >= 65:
+    price = 5
+print("Your admission cost is $" + str(price) + ".")
+# the last elif mean that if a person is more than or equal to 65 then \
+# the cost is 5
