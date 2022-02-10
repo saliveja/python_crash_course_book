@@ -443,7 +443,32 @@ can_edit = False
 # used to keep track  of certain conditions, such as if a game is running\
 # or if a user can edit content on a website
 
+if user_name in list_comrades \
+        and user_password == comrade_password \
+        or user_name in list_xweser_comrades \
+        and user_password == xweser_password:
+    # important to define the whole comparison after 'or" function
+    # not to think about it as spoken language, but define every step again
+    # otherwise the function misbehave
+    # when there are two lists --> on that is a general and one that is xweser, that have different login
+    
+# variable return_comrade = True/False if the criteria are met
+return_comrade = (user_name in list_comrades
+                  and user_password == comrade_password
+                  or user_name in list_xweser_comrades
+                  and user_password == xweser_password)
 
+if not return_comrade:
+    # the variable return_comrade is used
+    # statement: if variable: means it needs value True as a return for action
+    # if not variable: means that the variable value is not True (is False)
+    # that the conditions were not met.
+    # in this case if False (if not True)
+    # the "not a correct login" message prints
+    print(
+        "We are sorry, but your user name and password "
+        "does not match, please try again."
+    )
 
 
 
