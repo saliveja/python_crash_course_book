@@ -442,7 +442,13 @@ game_active = True
 can_edit = False
 # used to keep track  of certain conditions, such as if a game is running\
 # or if a user can edit content on a website
+***
+a = 1			a = 1
+b = a ==1		b = a == 2
+b			b
+# returns True		# returns False
 
+***
 if user_name in list_comrades \
         and user_password == comrade_password \
         or user_name in list_xweser_comrades \
@@ -469,6 +475,64 @@ if not return_comrade:
         "We are sorry, but your user name and password "
         "does not match, please try again."
     )
+
+
+# if-elif-else
+# admissions for anyone under age 4 is free.
+# admission for anyone between the ages of 4 and 18 is $5.
+# admission for anyone age 18 or older is $10.
+
+age = 12
+if age < 4:
+    print("Your admission cost is $0.")
+    # tests if the person is 4 years old
+elif age < 18:
+    print("your admission cost is $5.")
+    # is another conditional test that will only run if the previous fails
+    # because the first test was False, this run and proves True
+    # the text is printed
+else:
+    print("Your admission cost is $10.")
+
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+else:
+    price = 10
+print("Your admission cost is $" + str(price) + ".")
+# this code is more efficient and easier to modify
+
+# using multiple elif blocks
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+else:
+    price = 5
+print("Your admission cost is $" + str(price) + ".")
+# this adds and extra condition. if the person is less than 65 years it cost 10
+# but if not then it cost 5, so everyone older than 65 will pay 5
+
+# we can also do the code without else: at the end
+age = 12
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+elif age >= 65:
+    price = 5
+print("Your admission cost is $" + str(price) + ".")
+# the last elif mean that if a person is more than or equal to 65 then \
+# the cost is 5
+# the else block points to everything that is not included in if or elif
+
 
 
 
