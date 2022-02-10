@@ -52,3 +52,4 @@ elif age >= 65:
 print("Your admission cost is $" + str(price) + ".")
 # the last elif mean that if a person is more than or equal to 65 then \
 # the cost is 5
+# the else block points to everything that is not included in if or elif
