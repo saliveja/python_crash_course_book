@@ -22,8 +22,8 @@ print("\nFinished making your pizza!")
 
 print("\n")
 
+# checking for special items
 requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
-
 for requested_topping in requested_toppings:
     if requested_topping == 'green peppers':
         # if the requested topping is green peppers,
@@ -34,3 +34,14 @@ for requested_topping in requested_toppings:
         # all other items on the list will be added
 
 print("\nFinished making your pizza!")
+
+# checking that a list is not empty
+requested_toppings = []
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print("Adding " + requested_topping + ".")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza?")
+
+# using multiple lists
