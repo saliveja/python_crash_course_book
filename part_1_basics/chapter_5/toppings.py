@@ -20,13 +20,17 @@ for requested_topping in requested_toppings:
 print("\nFinished making your pizza!")
 # using a for loop adding each item on the list to the pizza
 
+print("\n")
+
 requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+
 for requested_topping in requested_toppings:
     if requested_topping == 'green peppers':
         # if the requested topping is green peppers,
         # it will be printed that we are out right now
         print("Sorry, we are out of green peppers right now.")
-else:
-    print("Adding " + requested_topping + ".")
+    else:
+        print("Adding " + requested_topping + ".")
+        # all other items on the list will be added
 
 print("\nFinished making your pizza!")
