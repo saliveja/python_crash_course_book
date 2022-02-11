@@ -13,3 +13,20 @@ print("\nFinished making your pizza!")
 # the code wouldn't work with elif since elif stops after a test passes
 # because of this only mushrooms would be added and printed together\
 # with the text message in the end
+
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+for requested_topping in requested_toppings:
+    print("Adding " + requested_topping + ".")
+print("\nFinished making your pizza!")
+# using a for loop adding each item on the list to the pizza
+
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+for requested_topping in requested_toppings:
+    if requested_topping == 'green peppers':
+        # if the requested topping is green peppers,
+        # it will be printed that we are out right now
+        print("Sorry, we are out of green peppers right now.")
+else:
+    print("Adding " + requested_topping + ".")
+
+print("\nFinished making your pizza!")
