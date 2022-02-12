@@ -45,9 +45,9 @@ else:
     print("Are you sure you want a plain pizza?")
 
 # using multiple lists
+# this list could also be made as a tuple if there is a stable selection
 available_toppings = ['mushrooms', 'olives', 'green peppers',
                       'pepperoni', 'pineapple', 'extra cheese']
-# this list could also be made as a tuple if there is a stable selection
 
 requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
 for requested_topping in requested_toppings:
