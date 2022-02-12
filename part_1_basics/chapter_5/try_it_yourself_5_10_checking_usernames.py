@@ -8,7 +8,7 @@ for new_user in new_users:
         print("This username is available."
               " You are registered as "
               + new_user.title())
-# all users also appearing in the current user list will receive a message
-# that the chosen username is unavailable
-# for those who don't already exist in current user will receive a message\
-# that the username is available and that they are registered
+        # all users also in the current user list will receive message
+        # that the chosen username is unavailable
+        # for those who don't exist in current user will receive a message
+        # message that the username is available and that they are registered
