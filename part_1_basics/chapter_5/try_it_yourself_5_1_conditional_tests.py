@@ -52,7 +52,7 @@ place.upper() == 'rome'
 dessert = "blueberry pie"
 if dessert != 'strawberry pie':
     print("I'm sorry, but I ordered a strawberry pie!")
-# if the variable dessert is not strawberry pie, print message
+    # if the variable dessert is not strawberry pie, print message
 
 food_list = ['apple', 'cheese', 'soda', 'cream']
 food = 'cream'
@@ -60,8 +60,8 @@ if food in food_list:
     print("I love " + food + "!")
 else:
     print("Without cream there is no life")
-# if cream is in the list, we print "I love cream!"
-# if it isn't, we print "Without cream there is no life"
+    # if cream is in the list, we print "I love cream!"
+    # if it isn't, we print "Without cream there is no life"
 
 food_list = ['apple', 'cheese', 'soda', 'cream']
 food = 'pasta'
@@ -69,15 +69,14 @@ if food in food_list:
     print("I love " + food + "!")
 else:
     print("Without cream there is no life")
-# food != cream, it's pasta so else statement is printed
+    # food != cream, it's pasta so else statement is printed
 
 number = 1
 number_1 = range(2, 10)
 number_2 = range(11, 20)
 if number_1 or number_2 == number:
     print("True")
-
-# with if statement, we use == because we are asking a question
+    # with if statement, we use == because we are asking a question
 3 in number_1
 # Will return True because range is 2,10
 1 in number_1
@@ -102,6 +101,5 @@ if X1 == 13:
     print(my_foods)
 else:
     print(friend_foods)
-# the different actions we take will lead us to different outcomes and choices
-# if X1 is 13 (which is False) then it will print my_foods
-# if it's not, it will print friends_food
+    # if X1 is 13 (which is False) then it will print my_foods
+    # if it's not, it will print friends_food
