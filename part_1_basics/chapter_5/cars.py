@@ -3,11 +3,11 @@ cars = ['audio', 'bmw', 'subaru', 'toyota']
 for car in cars:
     if car == 'bmw':
         print(car.upper())
-    # if the car is a bmw it will be printed with upper case letters
+        # if the car is a bmw it will be printed with upper case letters
     else:
         print(car.title())
-# if it's any other car, it will be printed with first letter upper case
-# if --> is a conditional test
+        # if it's any other car, it will be printed with first letter upper case
+        # if --> is a conditional test
 
 car = 'bmw'
 car == 'bmw'
