@@ -1,3 +1,4 @@
+# a simple dictionary
 alien_0 = {'color': 'green', 'points': 5}
 # dictionary storing different values about a particular item
 print(alien_0['color'])
