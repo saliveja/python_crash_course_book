@@ -35,3 +35,11 @@ print(alien_0)
 alien_0['x position'] = 0
 alien_0['y position'] = 25
 print(alien_0)
+
+# starting with an empty dictionary
+alien_0 = {}
+alien_0['color'] = 'green'
+alien_0['points'] = 5
+print(alien_0)
+# works like adding a new key-value pair
+# normally we start with empty dictionaries
