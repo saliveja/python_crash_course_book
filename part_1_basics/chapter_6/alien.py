@@ -54,6 +54,7 @@ alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
 print("Original x_position: " + str(alien_0['x_position']))
 if alien_0['speed'] == 'slow':
     # remember to include colon after the condition
+    # if the alien's speed is slow, it will move one unit to the right
     x_increment = 1
 elif alien_0['speed'] == 'medium':
     x_increment = 2
@@ -66,3 +67,12 @@ alien_0['x_position'] = alien_0['x_position'] + x_increment
 # the new position is the old position + the x_increment
 print("New x_position: " + str(alien_0['x_position']))
 # printing the new position
+
+# removing key-value pair
+alien_0 = {'color': 'green', 'points': 5}
+print(alien_0)
+
+del alien_0['points']
+print(alien_0)
+# this deleted the selected value, in this case 'points'
+# the deleted key-value pair is removed permanently
