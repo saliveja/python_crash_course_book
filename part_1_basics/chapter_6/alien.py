@@ -50,3 +50,19 @@ print('The alien is now ' + alien_0['color'] + '.')
 
 alien_0['color'] = 'yellow'
 print('The alien is now ' + alien_0['color'] + '.')
+alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium'}
+print("Original x_position: " + str(alien_0['x_position']))
+if alien_0['speed'] == 'slow':
+    # remember to include colon after the condition
+    x_increment = 1
+elif alien_0['speed'] == 'medium':
+    x_increment = 2
+    # the original speed is medium
+    # the alien will move two units to the right
+else:
+    x_increment = 3
+
+alien_0['x_position'] = alien_0['x_position'] + x_increment
+# the new position is the old position + the x_increment
+print("New x_position: " + str(alien_0['x_position']))
+# printing the new position
