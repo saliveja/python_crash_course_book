@@ -42,7 +42,7 @@ print("\n")
 print("The following languages have been mentioned:")
 for language in sorted(favorite_languages.values()):
     print(language.title())
-    # pulls all values from the list
+    # pulls all values from the dictionary
     # values() method don't check for repeats
 print("\n")
 
