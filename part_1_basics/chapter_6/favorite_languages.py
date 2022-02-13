@@ -31,4 +31,7 @@ for name in favorite_languages.keys():
     if 'erin' not in favorite_languages.keys():
         print("Erin, please take our poll!")
 
-#
+# looping through dictionaries keys in order
+for name in sorted(favorite_languages.keys()):
+    print(name.title() + ", thank you for taking the poll.")
+    # with sorted() we can organize keys in alphabetical order
