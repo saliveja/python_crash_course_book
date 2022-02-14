@@ -50,4 +50,23 @@ print("\n")
 for language in set(favorite_languages.values()):
     print(language.title())
     # set() identifies unique items
-    # therefore there is nor repetition of values when printing
+    # therefore there is nor repetition of values when printingO
+
+favorite_languages = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+}
+# adding items to the lists
+print("********************")
+for name, languages in favorite_languages.items():
+    if language == 1:
+        print("\n" + name.title() + "'s favorite languages are:")
+    else:
+        print("\n" + name.title() + "'s favorite language is:")
+        for language in languages:
+            print("\t" + language.title())
+            # the item/or items will all be printed
+
+print(len(languages))
