@@ -13,7 +13,7 @@ for alien in aliens:
 aliens = []
 # creating an empty list
 for alien_number in range(30):
-    # defining ow many time to loop:
+    # defining how many time to loop:
     # each time a new alien is created
     new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
     # adding a new alien and key-value pairs to the dictionary
@@ -30,6 +30,13 @@ for alien in aliens[0:3]:
         # and the speed will be changed from slow to medium
         alien['points'] = 10
         # the points will change from 5 to 10
+    elif alien['color'] == 'yellow'
+    # if the alien color is yellow, it will change to red
+        alien['color'] = 'red'
+        alien['speed'] = 'fast'
+        # the speed will change to fast
+        alien['points'] = 15
+        # the points will change to 15
 
 print("\n")
 for alien in aliens[:5]:
@@ -39,3 +46,4 @@ print("...")
 
 print("Total number of aliens: " + str(len(aliens)))
 # printing the total number of aliens
+
