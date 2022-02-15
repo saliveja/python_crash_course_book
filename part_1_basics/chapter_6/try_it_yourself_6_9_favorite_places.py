@@ -5,4 +5,4 @@ favorite_places = {
 }
 
 for name, place in favorite_places.items():
-    print(str(name).title() + "'s favortie place is: " + str(place).title())
+    print(str(name).title() + "'s favorite place is: " + str(place).title())
