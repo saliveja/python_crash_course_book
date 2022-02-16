@@ -33,6 +33,7 @@ for name, info in cities.items():
         print(str(name).title() + ": " + str(value))
     print("\n")
 
+# to get back to:
 # How to make the names in the info text title() when mentioned in the text
 # s = "blaa edmonton foo"
 # edmonton = "edmonton"
