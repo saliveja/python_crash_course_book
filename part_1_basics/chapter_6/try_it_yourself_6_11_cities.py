@@ -12,29 +12,27 @@ cities = {
     'edmonton': {
         'country': 'canada',
         'population': '1.01 million',
-        'fact': 'edmonton is a name that came from capitalists in the Hudsons Bay '
-                ' company as well as Edmonton, Middlesex in England. Edmonton is'
-                ' part of indigenous territory that was colonized.',
+        'fact': 'edmonton is a name that came from capitalists in the '
+                'Hudsons Bay\n company as well as Edmonton, Middlesex in '
+                'England. Edmonton is part of\n indigenous territory that '
+                'was colonized.',
     },
 
     'rome': {
         'country': 'italy',
         'population': '2.86 million',
-        'fact': 'in Rome we can find the Sistine chapel, in Vatican city. It is'
-                ' most known for its frescos that decorates the interior, for'
-                ' example The last judgement by Michelangelo.'
+        'fact': 'in Rome we can find the Sistine chapel, in Vatican city. '
+                'It is\n most known for its frescos that decorates the '
+                'interior, for example\n The last judgement by Michelangelo.'
     },
 }
 
 for name, info in cities.items():
     print(str(name).title())
-    # print(info)
-    # for name, value in info.items():
-    #     if capitols == ['norway', 'germany', 'edmonton', 'rome']:
-    #         capitols = capitols.title()
-    #     # How to make them title() when mentioned in the text
-    #     print(str(name).title() + ": " + str(value))
+    for name, value in info.items():
+        print(str(name).title() + ": " + str(value))
     print("\n")
 
-s = "blaa edmonton foo"
-edmonton = "edmonton"
+# How to make the names in the info text title() when mentioned in the text
+# s = "blaa edmonton foo"
+# edmonton = "edmonton"

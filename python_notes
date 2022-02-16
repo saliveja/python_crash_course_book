@@ -821,6 +821,44 @@ print("...")
 print("Total number of aliens: " + str(len(aliens)))
 # printing the total number of aliens
 
+favorite_languages = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+}
+# adding items to the lists
+print("********************")
+for name, languages in favorite_languages.items():
+    if language == 1:
+        print("\n" + name.title() + "'s favorite languages are:")
+    else:
+        print("\n" + name.title() + "'s favorite language is:")
+        for language in languages:
+            print("\t" + language.title())
+            # the item/or items will all be printed
+
+print(len(languages))
+
+# adding dictionary to list
+# for loop with str()
+
+person_3 = {}
+person_3['first name'] = 'sam'
+person_3['last name'] = 'kant'
+person_3['age'] = 13
+person_3['city'] = 'barcelona'
+
+people = []
+people.append(person)
+people.append(person_2)
+people.append(person_3)
+
+for each_person in people:
+    for name, info in each_person.items():
+        print(name.title() + ": " + str(info).title())
+    print("\n")
+
 
 
 
