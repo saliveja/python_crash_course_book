@@ -898,6 +898,7 @@ print(f"Sending you my love, {full_name.title()}.")
 
 ***
 
+
 # input() function
 - pauses the program and waits for the user to enter some text
 
@@ -922,6 +923,7 @@ print(f"\nHello, {name}!")
 # the second using += is adding a string to the first string called 'prompt'
 # this will be printed on a new line
 
+
 # using int()
 age = input("How old are you? ")
 # if anser ie. with 15
@@ -934,6 +936,8 @@ age >= 15
 # returns True because the string is converted to a numerical representation
 # the comparison is therefore possible
 
+
+# modulo operator
 # divides on number by anther number and returns what remains
 ie.
 	4 % 3 → returns 1
@@ -952,6 +956,38 @@ if number % 2 == 0:
 else:
     print(f"\nThe number {number} is odd.")
 
+
+# while loop
+current_number = 1
+# assigning current number the value 1
+while current_number <= 5:
+    # as long as the current number is less than or equal to 5
+    print(current_number)
+    # printing the current number, which the first time is 1
+    current_number += 1
+    # adding 1 to the value of the current number, which then become two etc
+    # the loop stops running when it reaches 5
+
+
+# repeating a message using input()
+message = input("Tell me something,and I will repeat it back to you ")
+print(message)
+# the user is asked to enter information which will then be repeated back
+# the text edition won't be able to run this program
+# we need to use terminal to run the program:
+go to the repository
+python nameofproject.py
+
+prompt = "Tell me something,and I will repeat it back to you --> "
+# request to make an input
+prompt += "Enter quit to end the program: "
+# if the input is quit. the program will stop running
+message = ""
+while message != 'quit':
+    message = input(prompt)
+
+    if message != 'quit':
+        print(message)
 
 
 
