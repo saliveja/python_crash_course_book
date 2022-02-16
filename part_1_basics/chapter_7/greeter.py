@@ -15,10 +15,10 @@ print(f"\nHello, {name}!")
 
 # using int()
 age = input("How old are you? ")
-# if anser ie. with 15
-# writing age, terminal will return '15'
+# if answer ie. is 15
+# terminal will return '15'
 # if writing age >= 18 there will be an error
-# it's nott possible to compare a string with a numerical value
+# it's not possible to compare a string with a numerical value
 # if we write age == 15 it will return False
 age = int(age)
 age >= 15
