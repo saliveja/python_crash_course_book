@@ -7,7 +7,7 @@ while True:
     # toppings means the input in the request
     response = (f" I'll add {toppings} to your pizza!")
     # every time a new input on toppings is shared
-    # a message confirming that the toppin has been added will be printed
+    # a message confirming that the topping has been added will be printed
     if toppings == 'quit':
         # if the user will write quit instead of a topping the program will stop
         print("\nThank you for your order!")
