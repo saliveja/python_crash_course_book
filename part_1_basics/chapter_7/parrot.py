@@ -24,6 +24,7 @@ while message != 'quit':
 prompt = "Tell me something,and I will repeat it back to you --> "
 prompt += "Enter quit to end the program: "
 
+# using the variable active = True as one condition for the program to run
 active = True
 # variable that the program is in an active state
 while active:
