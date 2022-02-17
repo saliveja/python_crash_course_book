@@ -3,7 +3,7 @@ question = "How old are you? "
 
 answer = input(question)
 if int(answer) < 3:
-    # if the anser is less than 3
+    # if the answer is less than 3
     print("Welcome. Your ticket is free!")
     # this message is printed
 elif int(answer) < 12:
