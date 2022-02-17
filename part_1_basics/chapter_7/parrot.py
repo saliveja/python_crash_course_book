@@ -25,11 +25,18 @@ prompt = "Tell me something,and I will repeat it back to you --> "
 prompt += "Enter quit to end the program: "
 
 active = True
+# variable that the program is in an active state
 while active:
     message = input(prompt)
+    # when the program is active the message is the input
 
     if message == 'quit':
+        # if the message is 'quit'
         active = False
+        # the first variable is no longer true
 
     else:
         print(message)
+        # if the forst variable continues to be true,
+        # if the input is anything else than 'quit'
+        # the message should be printed
