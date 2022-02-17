@@ -38,6 +38,6 @@ while active:
 
     else:
         print(message)
-        # if the forst variable continues to be true,
+        # if the first variable continues to be true,
         # if the input is anything else than 'quit'
         # the message should be printed
