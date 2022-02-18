@@ -1,4 +1,5 @@
 # moving items from one list to another
+# using pop(), append(), sort()
 
 unconfirmed_users = ['alice', 'brian', 'candace']
 confirmed_users = []
