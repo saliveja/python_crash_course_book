@@ -1033,11 +1033,109 @@ while True:
         
 *****
 
+Exercise on using conditions - active, while and if (7-7)
+
+question = "How old are you? "
+active = True
+
+while active:
+    answer = input(question)
+    if answer == 'quit':
+        # the answer is 'quit'
+        print("Hope to see you soon!")
+        # this message will be printed
+        active = False
+        # the condition is no longer true
+
+    elif int(answer) < 3:
+        print("Welcome. Your ticket is free!")
+        # if the input is less than 3
+    elif int(answer) < 12:
+        print("Welcome! Your ticket cost $10")
+        # if the input is less than 12
+    elif int(answer) > 12:
+        print("Welcome! Your ticket cost $15")
+        # if the input is more than 12
 
 
+--------
+
+# using break instead of active
+question = "How old are you? "
+
+while True:
+    answer = input(question)
+    if answer == 'quit':
+        print("Hope to see you soon!")
+        break
+
+    elif int(answer) < 3:
+        print("Welcome. Your ticket is free!")
+    elif int(answer) < 12:
+        print("Welcome! Your ticket cost $10")
+    elif int(answer) > 12:
+        print("Welcome! Your ticket cost $15")
+
+*******
+
+# moving items from one list to another
+# using pop(), append(), sort()
+
+unconfirmed_users = ['alice', 'brian', 'candace']
+confirmed_users = []
+# creating an empty list where we move confirmed users
+
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+    # with pop() we are able to remove from the list of unconfirmed users
+    # and still be able to work with the item
+    # pop() removes from the end of the list
+
+    print(f"Verifying user: {current_user.title()}")
+    # the current user is the one that was removed from unconfirmed users
+    confirmed_users.append(current_user)
+    # adding to the list of current users
+
+confirmed_users.sort()
+# organizing the list in alphabetical order
+print("\nThe following users have been confirmed:")
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+    # printing the users that have just been moved to the list of \
+    # confirmed users
 
 
+# storing input in a dictionary
+# using flag, input(), while, if, for
+responses = {}
+# creating an empty dictionary
 
+polling_active = True
+# setting flag
+
+while polling_active:
+    name = input("\nWhats i your name?")
+    # asking for name
+    response = input("Which mountain would you like to climb someday?")
+    # when submitted, this question follows
+
+    responses[name] = response
+    # key is the name
+    # the value is the response on the question 'which mountain...'
+    # key-value pair is added to the dictionary
+
+    repeat = input("Would you like to let another person respond? (yes/ no) ")
+    # if the response to this question is yes,
+    # the loop will start from the beginning
+    if repeat == 'no':
+        # if the answer is no, the loop will finish
+        polling_active = False
+        # if that answer is no, the condition is no longer met
+
+print("\n--- Polling results ---")
+for name, response in responses.items():
+    print(f" {name.title()} would like to climb {response.title()}.")
+    # the result will be printed
 
 
 
