@@ -10,7 +10,7 @@ while polling_active:
     name = input("\nWhats is your name?")
     # asking for input on name
     if name.lower() == 'no':
-        # if the input is 'no'
+        # if the input is 'no', making all letters lower case
         break
         # the loop stops
 
@@ -28,7 +28,6 @@ while polling_active:
     # if the response to this question is yes,
     # the loop will start from the beginning
     if repeat == 'no':
-        # if the answer is no, the loop will finish
         polling_active = False
         # if that answer is no, the condition is no longer met
 
