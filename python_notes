@@ -1137,9 +1137,93 @@ for name, response in responses.items():
     print(f" {name.title()} would like to climb {response.title()}.")
     # the result will be printed
 
+****
+# polling exercise with several questions and multiple exit points
+
+question_1 = "What is your name?\n"
+question_1 += "If you want to exit write 'quit'."
+
+question_2 = "\nIf you could visit one place in the world..."
+question_2 += "\nWhere would you go?\n"
+
+question_3 = "Do you want another person to respond yes/no \n\n"
+
+answers = {}
+
+active = True
+while active:
+    name = input(question_1.lower())
+    # name is whatever input is given to this question
+    if name.lower() == 'quit':
+        # adding the possibility to quit at any point in the program
+        print("Goodbye!")
+        break
+
+    print(f" \nHello {name.title()}!\n")
+    # using the info that was given and printing a greeting
+
+    answer = input(question_2.lower())
+    # answer is whatever input is given to question_2
+
+    if answer.lower() == 'quit':
+        print("See you next time.")
+        break
+
+    print(f"\n{answer.title()} sounds amazing!")
+    # printing a response including the given information
+
+    answers[name] = answer
+    # adding the key 'name' and the value 'answer' to the dictionary 'answers
+
+    repeat = input(question_3)
+    # repeat is whatever input is given to question_3
+    print("\n")
+    if repeat == 'no':
+        active = False
+
+    print("\nThese are the places in the world we want to visit most:")
+    for name, answer in answers.items():
+        print(f"{answer.title()}")
+        # needed to indent the for loop to be able to give the option to\
+        # quit any time
 
 
+# defining a function
+def greet_user():
+    # defining the function
+    """Display a simple greeting."""
+    # using tripple quotation with text is called a docstring
+    # the tripple quotation is known to python
+    print("Hello!")
+    # anything after colon is the body of the function
 
+
+greet_user()
+
+# to call a function we write the name of the function
+# any other necessary info is added in the parenthesis
+
+# passing information to a function
+users = ['anna', 'jesse', 'can']
+
+
+def greet_user(user):
+    """Display a simple greeting."""
+    print(f"Hello, {user.title()}!")
+
+
+greet_user('jesse')
+# making a list with three names
+# defining a function
+# the variable within the parenthesis is a parameter,
+# information needed for the function to do it's job
+# 'jesse' is a value and an argument
+# passed from a function to call a function
+
+for user in users:
+    greet_user(user)
+    # making a for loop
+    # calling for the function for the list
 
 
 
