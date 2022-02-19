@@ -7,10 +7,17 @@ polling_active = True
 # setting flag
 
 while polling_active:
-    name = input("\nWhats i your name?")
-    # asking for name
+    name = input("\nWhats is your name?")
+    # asking for input on name
+    if name.lower() == 'no':
+        # if the input is 'no'
+        break
+        # the loop stops
+
     response = input("Which mountain would you like to climb someday?")
-    # when submitted, this question follows
+    # if the first input is submitted, this question follows
+    if response.lower() == 'no':
+        break
 
     responses[name] = response
     # key is the name
