@@ -34,3 +34,30 @@ for user in users:
     greet_user(user)
     # making a for loop
     # calling for the function for the list
+
+
+# using a function with a while loop
+def get_formatted_name(first_name, last_name):
+    # in this exercise, the parameters are not defined
+    # there will be an input which will create the value
+    """Return full name, neatly formatted."""
+    full_name = (f"{first_name} {last_name}")
+    return full_name.title()
+    # it is defined how the name will be returned
+
+
+while True:
+    print("\nPlease tell me your name:")
+    print("(enter q at any time to quit)")
+    f_name = input("First name: ")
+    if f_name == 'q':
+        break
+
+    l_name = input("Last name: ")
+    if l_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    # here we are using the values from the input
+    print(f"\nHello, {formatted_name}!")
+    # and printing them in this sentence
