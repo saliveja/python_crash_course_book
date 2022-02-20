@@ -16,3 +16,10 @@ describe_pet('hamster', 'harry')
 describe_pet('dog', 'willie')
 # we can change the value and the function work the same
 # but the new values will be printed instead
+
+# keyword argument (is a name-value pair)
+describe_pet(animal_type='hamster', pet_name='harry')
+# when using keyword arguments the order doesn't matter
+# it's specifies where each value should go
+
+# default value
