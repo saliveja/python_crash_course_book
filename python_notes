@@ -1224,6 +1224,17 @@ for user in users:
     greet_user(user)
     # making a for loop
     # calling for the function for the list
+    
+Parameter:
+The variable within the parenthesis is a parameter
+
+Argument and value:
+The ' ' in the parenthesis is the the value and argument 
+
+
+A funtion definition can have multiple parameters:
+Arguments can be passed to the punction through positional arguments (in the same order as the parameters were written),
+keyword arguments (where each argument contains varibale name and value, list and dictionaries of values.
 
 
 
