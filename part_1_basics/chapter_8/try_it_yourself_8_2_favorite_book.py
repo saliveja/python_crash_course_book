@@ -50,6 +50,10 @@ histories_2 = {'The crisis of the European mind': 'by Paul Hazard',
                'The empire project': 'by John Darwin', }
 
 
+# def books(title, author)
+#
+# books(title='The crisis of the European mind', author='by Paul Hazard')
+
 def book_rec_philosophy():
     """Making a function in the while loop"""
     for key, value in philosophies.items():
