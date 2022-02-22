@@ -1563,6 +1563,34 @@ user_profile = build_profile('Maria (Marusha)', 'Nikiforova',
 
 print(user_profile)
 
+#using important to call for functions in modules
+import pizza
+
+# imports the function in pizza.py
+# if we keep the function without situation specifics,
+# it can be applied in different situations
+
+pizza.make_pizza(16, 'pepperoni')
+pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+
+import filename.py
+module_name.function_name(arguments) → is how we call for the module
+The function name is the name from the module we are calling
+
+We can also import a specific function from a module:
+from module_name import function_name		or:
+from module_name import function_name1, function_name2, function_name3
+
+# alias for function name
+from module_name import function_name as xx
+
+# alias for module name
+import pizza as p
+
+# importing all functions
+from module_name import * → this imports every function in the module
+If we import all we only need to use the function name when calling for it
 
 
 
