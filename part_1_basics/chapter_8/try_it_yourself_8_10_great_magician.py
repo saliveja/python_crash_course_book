@@ -1,4 +1,4 @@
-def magician_list(names):
+def make_great(names):
     """printing names of magicians with text"""
     for name in names:
         info = f"The great {name.title()}!"
@@ -7,4 +7,4 @@ def magician_list(names):
 
 
 show_magicians = ['fyr', 'leo', 'kyro', 'seth']
-magician_list(show_magicians)
+make_great(show_magicians)
