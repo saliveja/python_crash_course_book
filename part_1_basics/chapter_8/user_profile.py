@@ -1,7 +1,8 @@
+# using arbitrary keyword arguments
 def build_profile(first, last, **user_info):
-    # creating parameters which inlcude two positional arguments
-    # and one arbitraty. **user_info creates an empty dictionary
-    # where it store any given key-value pair
+    # creating parameters which include two positional arguments
+    # and one arbitrary. **user_info creates an empty dictionary
+    # where it stores any given key-value pair
     """Build a dictionary containing everything we know about a user."""
     profile = {}
     profile['first_name'] = first
@@ -18,5 +19,5 @@ def build_profile(first, last, **user_info):
 user_profile = build_profile('albert', 'einstein',
                              location='princeton',
                              field='physics')
-                            
+
 print(user_profile)
