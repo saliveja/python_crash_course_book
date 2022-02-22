@@ -5,7 +5,11 @@ def make_pizza(*toppings):
 
 
 make_pizza('pepperoni')
+# first time we call the function, we added one topping
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+
+# second time we call the function we added three toppings
 
 
 def make_pizza(*toppings):
