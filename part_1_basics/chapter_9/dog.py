@@ -33,3 +33,9 @@ print(f"My dog is {str(my_dog.age)} years old.")
 
 my_dog.sit()
 my_dog.roll_over()
+print("\n")
+
+your_dog = Dog('lucy', 3)
+print(f"Your dog's name is {your_dog.name.title()}.")
+print(f"Your dog is {str(your_dog.age)} years old.")
+your_dog.sit()
