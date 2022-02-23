@@ -1,4 +1,5 @@
 class Restaurant():
+    """Using 9-1 exercise and calling instances 3 times wt different info"""
 
     def __init__(
             self, restaurant_name,
