@@ -49,6 +49,13 @@ class Electric_car(Car):
         """Print a statement describing the battery size."""
         print(f"This car has a {str(self.battery_size)}kWh battery.")
 
+    def fill_gas_tank(self):
+        """Electric cars don't have gas tanks."""
+        print("This car doesn't need a gas tank!")
+        # if there is a method like this in the parent class
+        # we can define the method in the child class with new information
+        # instead of filling the gas tank, this message will be printed
+
 
 my_tesla = Electric_car('tesla', 'model s', 2016)
 # making an instance, storing arguments in variable my_tesla
