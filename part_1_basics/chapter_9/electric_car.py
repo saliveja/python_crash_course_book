@@ -43,9 +43,15 @@ class Electric_car(Car):
         # the super().__init__ function makes the connection between the
         # parent (superclass) and child class (subclass)
         # and gives the child class all attributes of the parent class
+        self.battery_size = 70
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {str(self.battery_size)}kWh battery.")
 
 
 my_tesla = Electric_car('tesla', 'model s', 2016)
 # making an instance, storing arguments in variable my_tesla
 print(my_tesla.get_descriptive_name())
 # calling a method in parent class
+my_tesla.describe_battery()
