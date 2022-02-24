@@ -31,6 +31,11 @@ class User():
         # method printing a message of how many times
         # a user tried to login
 
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        print("Data reset.")
+        # resetting the login attempts to zero
+
 
 user_1 = User('kenny', 'svensson')
 user_1.describe_user()
@@ -43,6 +48,10 @@ user_1.increment_login_attempt(5)
 # adding number of login attempts
 user_1.login_message()
 # printing message about the login attempts
+user_1.reset_login_attempts()
+# resetting the login attempts to zero
+user_1.login_message()
+# printing login message to see if it worked
 
 print("\n")
 
