@@ -1,6 +1,5 @@
-# working with classes and instances
-
 class Car():
+    """A simple attempt to represent a car."""
 
     def __init__(self, make, model, year):
         """Initialize attributes to describe a car."""
@@ -8,7 +7,6 @@ class Car():
         self.model = model
         self.year = year
         self.odometer_reading = 0
-        # setting a default value for an attribute
 
     def get_descriptive_name(self):
         """Return neatly formatted descriptive name."""
@@ -20,10 +18,7 @@ class Car():
         Reject the change if it attempts to roll the odometer back"""
 
         if mileage >= self.odometer_reading:
-            # if a new number given is less than previous,
-            # there will be a warning message
             self.odometer_reading = mileage
-            # creating a new parameter
         else:
             print("You can't roll back an odometer!")
 
@@ -32,37 +27,39 @@ class Car():
         print(f"This car has {str(self.odometer_reading)} miles on it.")
 
     def increment_odometer(self, miles):
-        # when we use this method,
-        # the number given in parenthesis will be added to the existing
         """Add the given amount to the odometer reading"""
         self.odometer_reading += miles
 
 
-my_new_car = Car('audi', 'a4', 2016)
-print(my_new_car.get_descriptive_name())
-my_new_car.read_odometer()
+class Battery():
+    """A simple attempt to model a battery for an electric car."""
 
-print('\n')
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()
+    def __init__(self, battery_size=70):
+        """Initialize the battery's attribute."""
+        self.battery_size = battery_size
 
-print('\n')
-my_new_car.update_odometer(23)
-my_new_car.read_odometer()
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {str(self.battery_size)}kWh battery.")
 
-print('\n')
-my_new_car.update_odometer(56)
-my_new_car.read_odometer()
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
 
-print('\n')
-my_used_car = Car('subaru', 'outback', 2013)
-print(my_used_car.get_descriptive_name())
+        message = f"This car can go approximately {str(range)}"
+        message += " miles on a full charge."
+        print(message)
 
-print('\n')
-my_used_car.update_odometer(23500)
-my_used_car.read_odometer()
 
-print('\n')
-my_used_car.increment_odometer(100)
-# this adds 100 to the updates value which is 23500
-my_used_car.read_odometer()
+class Electric_car(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """Initialize attribute of the parent class."""
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+
