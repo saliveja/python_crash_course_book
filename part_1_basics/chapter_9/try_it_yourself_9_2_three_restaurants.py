@@ -16,21 +16,21 @@ class Restaurant():
     def open_restaurant(self):
         print(f"{self.name.title()} is open until {self.open}.")
 
-
-restaurant = Restaurant('Ocean', 'seafood', 2100)
-
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
-
-print("\n")
-
-restaurant_2 = Restaurant('Irene', 'pizza', 1900)
-restaurant_2.describe_restaurant()
-restaurant_2.open_restaurant()
-
-print("\n")
-
-restaurant_3 = Restaurant('Jannes', 'pancakes', 1700)
-restaurant_3.describe_restaurant()
-restaurant_3.open_restaurant()
-# calling instances three times
+#
+# restaurant = Restaurant('Ocean', 'seafood', 2100)
+#
+# restaurant.describe_restaurant()
+# restaurant.open_restaurant()
+#
+# print("\n")
+#
+# restaurant_2 = Restaurant('Irene', 'pizza', 1900)
+# restaurant_2.describe_restaurant()
+# restaurant_2.open_restaurant()
+#
+# print("\n")
+#
+# restaurant_3 = Restaurant('Jannes', 'pancakes', 1700)
+# restaurant_3.describe_restaurant()
+# restaurant_3.open_restaurant()
+# # calling instances three times
