@@ -1,5 +1,5 @@
 class Privileges():
-    """jhgfduihfguhifguhi"""
+    """Making a class for admin privileges."""
 
     def __init__(self, privileges):
         """Listing privileges for user."""
@@ -11,5 +11,3 @@ class Privileges():
         print(f"As {self.first.title()}, you are authorized to:")
         for privilege in self.privileges:
             print(privilege)
-
-
