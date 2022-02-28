@@ -20,49 +20,30 @@ class Looping_numbers():
         print(f"You have chosen the number {the_chosen_number} for "
               f"the lottery draw.")
         self.ticket = int(the_chosen_number)
-        return self.ticket
-
-        # printing the chosen number
+        # defining the number as integer and making if usable in all methods
 
     def randomized_number(self):
         """ The lottery draw."""
         lottery_draw = randrange(1, 801)
+        # randrange will select a number between 1 and 801
         number_of_loops = 0
+        # default number of loops set to zero
 
         while lottery_draw != self.ticket:
+            # while the number in randrange is not the chosen number
             number_of_loops += 1
+            # add 1 for every new loop
             print(f"the draw number {number_of_loops} is"
                   f" ===== {lottery_draw}")
             lottery_draw = randrange(1, 801)
+            # drawing the number
 
         print(f"Congratulation!! Number {self.ticket} is the winner.")
+        # when the number matches the chosen number,
+        # this message is printed
         print(f"It took {number_of_loops} draws before you won.")
-
-
-# retries = 0
-#
-# def random_numbers(self):
-#     prompt = "Write the number you want to use for the lottery."
-#     my_number_1 = input(prompt)
-#     my_number_2 = input("You can choose one more number "
-#                         "for the lottery. ")
-#
-#     tickets = []
-#
-#     for x in range(800):
-#         tickets.append(my_number_1)
-#         tickets.append(my_number_2)
-#
-#
-#     if x == ticket:
-#         number_of_loops += 1
-#
-#
-#     else:
-#         for items in tickets:
-#             print("Lotto number {}".format(item))
-#             lotto_number += 1
-#         print("The number of tries", retries)
+        # prints how many draws were needed before the chosen number
+        # was the winning number
 
 
 check_number = Looping_numbers()
