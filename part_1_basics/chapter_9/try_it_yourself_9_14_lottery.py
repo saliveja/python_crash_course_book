@@ -24,18 +24,18 @@ class Lottery():
         randomized_selection = sample(self.list, desired_number)
         self.selection = randomized_selection
 
-    def message_to_winner(self):
-        """Printing a message to the winners."""
-        message = "Press enter to see the four winners "
-        enter = input(message)
-        if enter == '':
-            print(f"{self.selection}")
-            print("Congratulation, you are one of the lucky winners!!"
-                  " You and another person will travel to Iceland for "
-                  "a weekend.")
+    # def message_to_winner(self):
+    #     """Printing a message to the winners."""
+    #     message = "Press enter to see the four winners "
+    #     enter = input(message)
+    #     if enter == '':
+    #         print(f"{self.selection}")
+    #         print("Congratulation, you are one of the lucky winners!!"
+    #               " You and another person will travel to Iceland for "
+    #               "a weekend.")
 
-
-x = Lottery()
-x.make_lottery_list()
-x.selection_from_list()
-x.message_to_winner()
+#
+# x = Lottery()
+# x.make_lottery_list()
+# x.selection_from_list()
+# # x.message_to_winner()
