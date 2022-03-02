@@ -1,0 +1,4 @@
+In python you can create a program which interacts with the users entered information, using input()
+In python you can write input with you program and the information is stored in a text file. To do this you can use ie. open(), read() and close()
+In Python you can organize your code in classes which gives a good overview and they can be stored in different modules.
+In python you can borrow code that others wrote, this free access to code and knowledge is collaborative, creative, decentralized and efficient.

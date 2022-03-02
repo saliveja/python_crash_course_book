@@ -1,4 +1,4 @@
-opening and reading a file
+# opening and reading a file
 
 with open('pi_digits.txt') as file_object:
     # we are using with open instead of open() and close()
