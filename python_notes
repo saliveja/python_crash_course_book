@@ -1897,6 +1897,21 @@ with open(file_path) as file_object
 # it’s easier to make the absolute file path into a variable. 
 
 
+# reading line by line
+filename = 'pi_digits.txt'
+# we store the name of the file in a variable
+# the name of the file only tells us where the file is located
+with open(filename) as file_object:
+    lines = file_object.readlines()
+    # storing the file representation inside with block
+    # readlines() takes each line from the file and stores it in a list
+
+for line in lines:
+    print(line.rstrip())
+    # using for loop to print each lines
+
+
+
 
 
 
