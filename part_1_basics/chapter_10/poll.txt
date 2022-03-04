@@ -1,0 +1,40 @@
+Why do you like programming? (survey)
+============================================
+Each new answer is separated by a line.
+--------------------------------------------
+
+* It's interesting
+
+* It's fun
+
+* i want to make applications
+
+------------------------------------
+Why do you like programming? (survey)
+============================================
+Each new answer is separated by a line.
+--------------------------------------------
+
+* With python I can make useful programs
+
+* this language give a lot of space for creativity
+
+------------------------------------
+Why do you like programming? (survey)
+============================================
+Each new answer is separated this line.
+--------------------------------------------
+
+* python is very intuitive
+
+* it's useful
+
+---------------------------------------
+Why do you like programming? (survey)
+============================================
+Each new answer is separated this line.
+--------------------------------------------
+
+* I develop in different ways at the same time
+
+--------------------------------------------
