@@ -1910,6 +1910,43 @@ for line in lines:
     print(line.rstrip())
     # using for loop to print each lines
 
+# using replace() to change word inside a textfile
+
+filename_2 = 'learning_python.txt'
+with open(filename_2) as text:
+    lines = text.readlines()
+    # reading each line in the text
+
+    for line in lines:
+        line = line.replace('Python', 'C')
+        line = line.replace('python', 'C')
+        line = line.replace('program', 'world peace')
+        # we can make as many replacements as we want
+        # important to cover both upper case letters and lower case letters
+
+        print(line)
+        # printing inside the for loop
+   
+        
+# writing information to a file
+
+filename = 'programming.txt'
+
+with open(filename, 'a') as file_object:
+    # 'w' opens the file in write mode
+    # 'r+' is read and write mode
+    # default mode if unspecified is read only
+    file_object.write("I love programming.\n")
+    # python can only store string data
+    # numerical data need to be converted
+    file_object.write("I love creating new games.\n")
+    file_object.write("I also love finding meaning in large datasets.\n")
+    file_object.write("I love creating apps that can run in a browser.\n")
+    # after we've used 'w' to write data into the text file
+    # we can change and use 'a' so that the data that already exist won't
+    # be deleted. 'a' means append and will add the data ti the end of the file
+
+
 
 
 
