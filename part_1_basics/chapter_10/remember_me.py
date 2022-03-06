@@ -1,22 +1,40 @@
 import json
 
-filename = 'username.json'
 
-try:
-    with open(filename) as f:
-        username = json.load(f)
-        # trying if the input was made before and if so, it will be loaded
-        # opening in read mode
+# refactoring the code
+# the first function calls the username
+# The second prints a greeting
+# if the user doesn't exist, it prompts the user the enter data
 
-except FileNotFoundError:
-    # if the file is not found, the user will be asked to give input
+def get_stored_username():
+    """Get stored username if available."""
+    filename = 'username.json'
+    try:
+        with open(filename) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        return None
+    else:
+        return username
+
+
+def get_new_username():
+    """Prompt for a new username."""
     username = input("What is your name? ")
+    filename = 'username.json'
     with open(filename, 'w') as f:
-        # opening in write mode which will create the file as well
         json.dump(username, f)
-        # input is saved in the the file
+    return username
+
+
+def greet_user():
+    """Greet the user by name."""
+    username = get_stored_username()
+    if username:
+        print(f"Welcome back, {username}!")
+    else:
+        username = get_new_username()
         print(f"We'll remember you when you come back, {username}!")
 
-else:
-    print(f"Welcome back, {username}!")
-    # if the data already exists, this message will be printed
+
+greet_user()
