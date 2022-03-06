@@ -19,13 +19,12 @@ def count_words(filename, word):
         print(f"The file {filename} contains {number} of the word: {word}.")
 
 
-# word = 'the'
 filenames = ['immortals_without_a_god.txt', 'alice.txt', 'siddharta.txt',
              'moby_dick.txt', 'little_women.txt']
 
-# count_words(filenames[0], 'mountain')
-# count_words(filenames[1], 'love')
-# count_words(filenames[3], 'class')
+count_words(filenames[0], 'mountain')
+count_words(filenames[1], 'love')
+count_words(filenames[3], 'class')
 # using index to choose which file from the list to search
 # second argument defines the word
 
