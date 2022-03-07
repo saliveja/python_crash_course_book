@@ -18,8 +18,16 @@ class NamesTestCase(unittest.TestCase):
         # the received result matches expected result -->
         # comparing the value in formatted_name with 'Janis Joplin'
 
+    # when running test --> a dot on the first line means that a
+    # single test passed
+
+    def test_first_last_middle_name(self):
+        """Do names like Wolfgang Amadeus Mozart' work?"""
+
+        formatted_name = get_formatted_name(
+            'wolfgang', 'mozart', 'amadeus')
+        self.assertEqual(formatted_name, 'Wolfgang Amadeus Mozart')
+
 
 if __name__ == '__main__':
     unittest.main()
-# when running test --> a dot on the first line means that a
-# single test passed
