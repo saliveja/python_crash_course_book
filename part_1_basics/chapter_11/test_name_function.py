@@ -30,4 +30,5 @@ class NamesTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    # to define the order of priority --> starting with 'main'
     unittest.main()
