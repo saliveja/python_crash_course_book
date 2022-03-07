@@ -9,7 +9,7 @@ class CityCountryTestcase(unittest.TestCase):
         """Does city/country like Oslo, Norway work?"""
 
         name_city_country = city_country('oslo', 'norway')
-        self.assertEqual(name_city_country, 'Oslo, Norway')
+        self.assertEqual(name_city_country, 'Oslo Norway')
 
 
 if __name__ == '__main__':
