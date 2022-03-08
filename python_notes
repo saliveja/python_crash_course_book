@@ -2129,6 +2129,14 @@ class NamesTestCase(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
     
+    
+# Assert Methods from unittest Module
+assertEqual(a,b)  -- verify that a == b
+assertNotEqual(a, b) -- verify that a != b
+assertTrue(x) -- verify that x is True
+assertFalse(x) -- verify that x is False
+assertIn(item, list) -- verify that item is in list
+assertNotIn(item, list) -- verify that item is not in list
 
 
 
