@@ -2128,7 +2128,8 @@ class NamesTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    
+
+************************
     
 # Assert Methods from unittest Module
 assertEqual(a,b)  -- verify that a == b
@@ -2138,9 +2139,59 @@ assertFalse(x) -- verify that x is False
 assertIn(item, list) -- verify that item is in list
 assertNotIn(item, list) -- verify that item is not in list
 
+*************************
+
+# Unittest
+
+# program
+# using remove() to remove all instances of value from a list
+
+class NoRepetition:
+    """Making a class to remove an item from a list."""
+
+    def __init__(self, all_items, item):
+        self.all_items = all_items
+        self.item = item
+
+    def poppingItem(self):
+        """Removing specific items from a list."""
+
+        while self.item in self.all_items:
+            self.all_items.remove(self.item)
+            # using the while loop to delete all 'cat' values in the list
+            # the loop ensures that the loop continues until all 'cat'
+            # are removed
+
+    def printPoppedItem(self):
+        """Printing the item that was popped."""
+        print(f"This is the removed item: {self.item}")
 
 
+# test for program
 
+import unittest
+from pets import NoRepetition
+
+
+class TestNoRepetition(unittest.TestCase):
+    """Testing class NoRepetition."""
+
+    def setUp(self):
+        pet_list = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+        remove_animal = 'cat'
+        self.repetition = NoRepetition(pet_list, remove_animal)
+
+    def testPoppingItem(self):
+        """Testing method PoppedItem."""
+        self.repetition.poppingItem()
+
+    def testPrintPoppedItem(self):
+        """Testing method printPoppedItem."""
+        self.repetition.printPoppedItem()
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 
 

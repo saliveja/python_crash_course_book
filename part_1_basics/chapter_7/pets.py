@@ -1,10 +1,21 @@
 # using remove() to remove all instances of value from a list
 
-pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
-print(pets)
+class NoRepetition:
+    """Making a class to remove an item from a list."""
 
-while 'cat' in pets:
-    pets.remove('cat')
-    # using the while loop to delete all 'cat' values in the list
-    # the loop ensures that the loop continues until all 'cat' are removed
-print(pets)
+    def __init__(self, all_items, item):
+        self.all_items = all_items
+        self.item = item
+
+    def poppingItem(self):
+        """Removing specific items from a list."""
+
+        while self.item in self.all_items:
+            self.all_items.remove(self.item)
+            # using the while loop to delete all 'cat' values in the list
+            # the loop ensures that the loop continues until all 'cat'
+            # are removed
+
+    def printPoppedItem(self):
+        """Printing the item that was popped."""
+        print(f"This is the removed item: {self.item}")
