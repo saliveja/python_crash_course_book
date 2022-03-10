@@ -8,6 +8,7 @@ class Ship:
         """Initialize the ship and set its starting position."""
 
         self.screen = ai_game.screen
+        # the screen equals the screen in AlienInvasion
         self.screen_rect = ai_game.screen.get_rect()
         # placing the ship in its current location
         self.image = pygame.image.load('images/ship.bmp')
