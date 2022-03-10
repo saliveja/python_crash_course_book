@@ -39,9 +39,16 @@ class AlienInvasion:
 
         while True:
             self._check_events()
+            # calling the method _check_events()
+            self.ship.update()
+            # refers to the method update in the class Ship
+            # if self.moving_right then it will move one pixel to the right
+            self._update_screen()
+            # calling the method to constantly be updating what is happening
+            # on the screen
 
     def _check_events(self):
-        """Respond to keypresses and mouse events."""
+        """Respond to key presses and mouse events."""
 
         for event in pygame.event.get():
             # an event is the action of a user
@@ -56,9 +63,23 @@ class AlienInvasion:
                 # if a key is pressed down
                 if event.key == pygame.K_RIGHT:
                     # if that key is arrow right
-                    self.ship.rect.x += 1
+                    self.ship.moving_right = True
                     # we move ship one pixel to the right every time the
                     # right arrow key is pressed
+                elif event.key == pygame.K_LEFT:
+                    self.ship.moving_left = True
+                    # if the left arrow key is pressed moving_left is true
+
+                elif event.type == pygame.KEYUP:
+                    # if the key is not pressed anymore
+                    if event.key == pygame.K_RIGHT:
+                        # and that key is right arrow
+                        self.ship.moving_right = False
+                        # moving right is False
+                    elif event.key == pygame.K_LEFT:
+                        self.ship.moving_left = False
+                        # if the left arrow key is no longer pressed
+                        # statement is False
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
