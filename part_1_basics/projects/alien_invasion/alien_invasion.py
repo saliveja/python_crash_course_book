@@ -32,7 +32,7 @@ class AlienInvasion:
 
         self.bg_color = (230, 230, 230)
         # setting the background color
-        # colors in Pygam are RGB colors
+        # colors in Pygame are RGB colors
 
     def run_game(self):
         """Start the main loop for the game"""
@@ -45,7 +45,7 @@ class AlienInvasion:
 
         for event in pygame.event.get():
             # an event is the action of a user
-            # pygame.event.get() returns returns a list of events
+            # pygame.event.get() returns a list of events
             # that have taken place since last time the loop was called
             if event.type == pygame.QUIT:
                 # if the user clicks on the game windows close button
