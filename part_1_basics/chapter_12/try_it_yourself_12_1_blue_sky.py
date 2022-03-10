@@ -27,6 +27,8 @@ class MakeScreen:
         self.draw = DrawCharacter(self)
         # making variable calling the class DrawCharacter
         # 'self' gives access to the programs resources ie. screen
+        # 'self' is referring to __init_(self) to get access to
+        # all the self.variables
 
     def displayScreen(self):
         """Displaying screen."""

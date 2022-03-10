@@ -52,10 +52,10 @@ class AlienInvasion:
                 # the user exits the game
                 sys.exit()
 
-            elif.event.type == pygame.KEYDOWN:
-            # if a key is pressed down
+            elif event.type == pygame.KEYDOWN:
+                # if a key is pressed down
                 if event.key == pygame.K_RIGHT:
-                # if that key is arrow right
+                    # if that key is arrow right
                     self.ship.rect.x += 1
                     # we move ship one pixel to the right every time the
                     # right arrow key is pressed
