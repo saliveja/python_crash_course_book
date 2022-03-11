@@ -19,10 +19,14 @@ class AlienInvasion:
         # the screen by changing it in this class instead of
         # changing it through the program which is inefficient
 
-        self.screen = pygame.display.set_mode((self.settings.screen_width,
-                                               self.settings.screen_height))
-        # creating a game window - 'surface'. Numbers are pixels
-        # creating a variable that works in all methods in the class
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        # creating a game window - 'surface'
+        # the variable self.screen works in all methods in the class
+        # (0, 0) and FULLSCREEN tells python to figure out a size
+        # that will fill the screen
+        self.settings.screen_width = self.screen.get_rect().width
+        self.settings.screen_height = self.screen.get_rect().height
+
         pygame.display.set_caption("Alien Invasion")
         # assigns the name Alien Invasion to the game
 
