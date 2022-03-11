@@ -79,6 +79,9 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
             # if the left arrow key is pressed moving_left is true
+        elif event.key == pygame.K_q:
+            sys.exit()
+            # pressing 'q' ends the game
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
