@@ -27,11 +27,19 @@ class Ship:
 
     def update(self):
         """Update the ship's position based on the movement flag."""
-        if self.moving_right:
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            # self.rect.right return the x-coordinates of the right edge
+            # if the value is less tha self.screen_rect.right
+            # the ships hasn't reached the edge yet
             self.rect.x += self.settings.ship_speed
-            # the speed is now assigned to a variable in settings
+            # the speed is now assigned to a variable in settings module
+            # whenever we want to change the speed we only need
+            # to change it there
 
-        if self.moving_left:
+        if self.moving_left and self.rect.left > 0:
+            # if the value of self.rect is more than 0
+            # hte ship hasn't reached the edge
+            # remember that 0,0 starts in the upper left corner
             self.rect.x -= self.settings.ship_speed
 
         self.rect.x = self.x
