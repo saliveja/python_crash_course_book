@@ -31,7 +31,7 @@ class Ship:
             # self.rect.right return the x-coordinates of the right edge
             # if the value is less tha self.screen_rect.right
             # the ships hasn't reached the edge yet
-            self.rect.x += self.settings.ship_speed
+            self.x += self.settings.ship_speed
             # the speed is now assigned to a variable in settings module
             # whenever we want to change the speed we only need
             # to change it there
@@ -40,7 +40,7 @@ class Ship:
             # if the value of self.rect is more than 0
             # hte ship hasn't reached the edge
             # remember that 0,0 starts in the upper left corner
-            self.rect.x -= self.settings.ship_speed
+            self.x -= self.settings.ship_speed
 
         self.rect.x = self.x
         # the speed variable for moving right or left is connected

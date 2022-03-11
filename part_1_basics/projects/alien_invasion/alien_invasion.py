@@ -61,25 +61,35 @@ class AlienInvasion:
 
             elif event.type == pygame.KEYDOWN:
                 # if a key is pressed down
-                if event.key == pygame.K_RIGHT:
-                    # if that key is arrow right
-                    self.ship.moving_right = True
-                    # we move ship one pixel to the right every time the
-                    # right arrow key is pressed
-                elif event.key == pygame.K_LEFT:
-                    self.ship.moving_left = True
-                    # if the left arrow key is pressed moving_left is true
-
+                self._check_keydown_events(event)
+                # going to the helper method which will move the ship
+                # bcs statement is True
             elif event.type == pygame.KEYUP:
                 # if the key is not pressed anymore
-                if event.key == pygame.K_RIGHT:
-                    # and that key is right arrow
-                    self.ship.moving_right = False
-                    # moving right is False
-                elif event.key == pygame.K_LEFT:
-                    self.ship.moving_left = False
-                    # if the left arrow key is no longer pressed
-                    # statement is False
+                self._check_keyup_events(event)
+                # going to helper method which will
+
+    def _check_keydown_events(self, event):
+        """Respond to keypresses."""
+        if event.key == pygame.K_RIGHT:
+            # if that key is arrow right
+            self.ship.moving_right = True
+            # we move ship one pixel to the right every time the
+            # right arrow key is pressed
+        elif event.key == pygame.K_LEFT:
+            self.ship.moving_left = True
+            # if the left arrow key is pressed moving_left is true
+
+    def _check_keyup_events(self, event):
+        """Respond to key releases."""
+        if event.key == pygame.K_RIGHT:
+            # and that key is right arrow
+            self.ship.moving_right = False
+            # moving right is False
+        elif event.key == pygame.K_LEFT:
+            self.ship.moving_left = False
+            # if the left arrow key is no longer pressed
+            # statement is False
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
