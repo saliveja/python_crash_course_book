@@ -4,6 +4,7 @@ import sys
 import pygame
 from settings import Settings
 from ship import Ship
+from bullet import Bullet
 
 
 class AlienInvasion:
@@ -90,6 +91,9 @@ class AlienInvasion:
         elif event.key == pygame.K_q:
             sys.exit()
             # pressing 'q' ends the game
+        elif event.key == pygame.K_SPACE:
+            self._fire_bullet()
+            # if the space bar is pressed down, the ship will fire bullets
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -101,6 +105,16 @@ class AlienInvasion:
             self.ship.moving_left = False
             # if the left arrow key is no longer pressed
             # statement is False
+        elif event.key == pygame.K_SPACE:
+            self.bullets._fire_bullets = False
+
+    def _fire_bullet(self):
+        """Create a new bullet and add it in to the bullets group."""
+        new_bullet = Bullet(self)
+        # defining variable new_bullet as class Bullet with access to main
+        self.bullets.add(new_bullet)
+        # adding the new bullet to the list
+        # add() is specifically used for pygame
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
@@ -111,6 +125,9 @@ class AlienInvasion:
 
         self.ship.blitme()
         # drawing the ship on the screen
+
+        for bullet in self.bullets.sprites():
+            bullet.draw.bullet()
 
         pygame.display.flip()
         # Makes the most recent screen visible
