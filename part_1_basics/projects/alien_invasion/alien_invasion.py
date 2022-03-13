@@ -34,6 +34,8 @@ class AlienInvasion:
         # making an instance of the ship
         # self refers to the current instance of AlienInvasion
 
+        self.bullets = pygame.sprite.Group()
+
         self.bg_color = (230, 230, 230)
         # setting the background color
         # colors in Pygame are RGB colors
@@ -47,6 +49,8 @@ class AlienInvasion:
             self.ship.update()
             # refers to the method update in the class Ship
             # if self.moving_right then it will move one pixel to the right
+            self.bullets.update()
+            # refers to the method update in class Bullets
             self._update_screen()
             # calling the method to constantly be updating what is happening
             # on the screen
