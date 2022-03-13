@@ -1,6 +1,7 @@
 import pygame
 import sys
-from try_it_yourself_12_2_game_character import DrawCharacter
+# from try_it_yourself_12_2_game_character import DrawCharacter
+from try_it_yourself_12_4_rocket import DrawCharacter
 
 
 class MakeScreen:
@@ -9,20 +10,14 @@ class MakeScreen:
     def __init__(self):
         """Initializing blue screen"""
         pygame.init()
-
-        self.screen_width = 600
-        # defining width
-        self.screen_height = 500
-        # defining height
-        self.bg_color = (40, 180, 255)
-        # setting a blue color
+        self.settings = Settings()
 
         self.screen = pygame.display.set_mode((self.screen_width,
                                                self.screen_height))
         # making a variable self.screen which creates the window with
         # the specified values
 
-        pygame.display.set_caption("Mario")
+        pygame.display.set_caption("Spaceship")
         # on top of the window this message is printed
         self.draw = DrawCharacter(self)
         # making variable calling the class DrawCharacter
