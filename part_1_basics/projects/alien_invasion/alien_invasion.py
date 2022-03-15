@@ -52,16 +52,8 @@ class AlienInvasion:
             # if self.moving_right then it will move one pixel to the right
             self.bullets.update()
             # refers to the method update in class Bullets
-
-            for bullet in self.bullets.copy():
-                # in pygame we can't modify lists or groups
-                # copy enables us to modify bullets inside the loop
-                if bullet.rect.bottom <= 0:
-                    # if the bullet reaches value 0
-                    # which is at the top os the screen
-                    self.bullets.remove(bullet)
-                    # the bullet will be removed
-
+            self._update_bullets()
+            # refers to the help method in AI 
             self._update_screen()
             # calling the method to constantly be updating what is happening
             # on the screen
@@ -118,13 +110,26 @@ class AlienInvasion:
         elif event.key == pygame.K_SPACE:
             self.bullets._fire_bullets = False
 
+    def _update_bullet(self):
+        """Update position of bullets and get rid of old bullets."""
+
+        for bullet in self.bullets.copy():
+            # in pygame we can't modify lists or groups
+            # copy enables us to modify bullets inside the loop
+            if bullet.rect.bottom <= 0:
+                # if the bullet reaches value 0
+                # which is at the top os the screen
+                self.bullets.remove(bullet)
+                # the bullet will be removed
+
     def _fire_bullet(self):
         """Create a new bullet and add it in to the bullets group."""
-        new_bullet = Bullet(self)
-        # defining variable new_bullet as class Bullet with access to main
-        self.bullets.add(new_bullet)
-        # adding the new bullet to the list
-        # add() is specifically used for pygame
+        if len(self.bullets) < self.settings.bullets_allowed:
+            new_bullet = Bullet(self)
+            # defining variable new_bullet as class Bullet with access to main
+            self.bullets.add(new_bullet)
+            # adding the new bullet to the list
+            # add() is specifically used for pygame
 
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
