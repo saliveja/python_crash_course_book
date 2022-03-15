@@ -52,6 +52,16 @@ class AlienInvasion:
             # if self.moving_right then it will move one pixel to the right
             self.bullets.update()
             # refers to the method update in class Bullets
+
+            for bullet in self.bullets.copy():
+                # in pygame we can't modify lists or groups
+                # copy enables us to modify bullets inside the loop
+                if bullet.rect.bottom <= 0:
+                    # if the bullet reaches value 0
+                    # which is at the top os the screen
+                    self.bullets.remove(bullet)
+                    # the bullet will be removed
+
             self._update_screen()
             # calling the method to constantly be updating what is happening
             # on the screen
@@ -127,7 +137,8 @@ class AlienInvasion:
         # drawing the ship on the screen
 
         for bullet in self.bullets.sprites():
-            bullet.draw.bullet()
+            bullet.draw_bullet()
+            # calling draw_bullet method in Bullet class
 
         pygame.display.flip()
         # Makes the most recent screen visible
