@@ -37,7 +37,7 @@ class AlienInvasion:
 
         self.bullets = pygame.sprite.Group()
 
-        self.bg_color = (230, 230, 230)
+        # self.bg_color = (230, 230, 230)
         # setting the background color
         # colors in Pygame are RGB colors
 
@@ -53,7 +53,7 @@ class AlienInvasion:
             self.bullets.update()
             # refers to the method update in class Bullets
             self._update_bullets()
-            # refers to the help method in AI 
+            # refers to the help method in AI
             self._update_screen()
             # calling the method to constantly be updating what is happening
             # on the screen
@@ -110,8 +110,9 @@ class AlienInvasion:
         elif event.key == pygame.K_SPACE:
             self.bullets._fire_bullets = False
 
-    def _update_bullet(self):
+    def _update_bullets(self):
         """Update position of bullets and get rid of old bullets."""
+        self.bullets.update()
 
         for bullet in self.bullets.copy():
             # in pygame we can't modify lists or groups

@@ -2,6 +2,7 @@ import pygame
 import sys
 # from try_it_yourself_12_2_game_character import DrawCharacter
 from try_it_yourself_12_4_rocket import DrawCharacter
+from settingstry import SettingsTry
 
 
 class MakeScreen:
@@ -10,10 +11,10 @@ class MakeScreen:
     def __init__(self):
         """Initializing blue screen"""
         pygame.init()
-        self.settings = Settings()
+        self.settings = SettingsTry()
 
-        self.screen = pygame.display.set_mode((self.screen_width,
-                                               self.screen_height))
+        self.screen = pygame.display.set_mode((self.settings.screen_width,
+                                               self.settings.screen_height))
         # making a variable self.screen which creates the window with
         # the specified values
 
@@ -25,20 +26,35 @@ class MakeScreen:
         # 'self' is referring to __init_(self) to get access to
         # all the self.variables
 
+    def runGame(self):
+        while True:
+            self.displayScreen()
+            self.position()
+            self.events()
+
     def displayScreen(self):
         """Displaying screen."""
         while True:
-            self.screen.fill(self.bg_color)
+            self.screen.fill(self.settings.bg_color)
             # filling screen with background color
 
             self.draw.position()
-            # drawing mario on the screen
+            # drawing picture on the screen
 
             pygame.display.flip()
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+    def events(self):
+        """ Key events"""
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+
+            if event.type == pygame.KEYDOWN:
+                self.screen.moving_right = True
+                self.screen.moving_left = True
+                self.screen.moving_up = True
+                self.screen.moving_down = True
 
 
 if __name__ == '__main__':
