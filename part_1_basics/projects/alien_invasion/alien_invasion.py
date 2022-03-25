@@ -5,6 +5,8 @@ import pygame
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
+from alien import Alien
+import game_functions as gf
 
 
 class AlienInvasion:
@@ -44,17 +46,19 @@ class AlienInvasion:
     def run_game(self):
         """Start the main loop for the game"""
 
+        alien = Alien(ai_settings, screen)
+
         while True:
-            self._check_events()
+            gf._check_events(ai_settings, screen, ship, bullets)
             # calling the method _check_events()
-            self.ship.update()
+            ship.update()
             # refers to the method update in the class Ship
             # if self.moving_right then it will move one pixel to the right
             self.bullets.update()
             # refers to the method update in class Bullets
-            self._update_bullets()
+            gf._update_bullets(bullets)
             # refers to the help method in AI
-            self._update_screen()
+            gf._update_screen(ai_settings, screen, ship, alien, bullets)
             # calling the method to constantly be updating what is happening
             # on the screen
 
@@ -79,23 +83,6 @@ class AlienInvasion:
                 # if the key is not pressed anymore
                 self._check_keyup_events(event)
                 # going to helper method which will
-
-    def _check_keydown_events(self, event):
-        """Respond to keypresses."""
-        if event.key == pygame.K_RIGHT:
-            # if that key is arrow right
-            self.ship.moving_right = True
-            # we move ship one pixel to the right every time the
-            # right arrow key is pressed
-        elif event.key == pygame.K_LEFT:
-            self.ship.moving_left = True
-            # if the left arrow key is pressed moving_left is true
-        elif event.key == pygame.K_q:
-            sys.exit()
-            # pressing 'q' ends the game
-        elif event.key == pygame.K_SPACE:
-            self._fire_bullet()
-            # if the space bar is pressed down, the ship will fire bullets
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
