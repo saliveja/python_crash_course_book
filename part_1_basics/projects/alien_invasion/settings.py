@@ -19,3 +19,4 @@ class Settings:
         self.bullet_color = (60, 60, 60)
         # the color of the bullet is dark grey
         self.bullets_allowed = 3
+        self.alien_speed = 1.0

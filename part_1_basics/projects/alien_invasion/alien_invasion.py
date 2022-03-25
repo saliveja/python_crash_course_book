@@ -36,6 +36,8 @@ class AlienInvasion:
         # making an instance of the ship
         # self refers to the current instance of AlienInvasion
 
+        self.alien = Alien(self)
+
         self.bullets = pygame.sprite.Group()
         # making a group of bullets
         self.aliens = pygame.sprite.Group()
@@ -55,6 +57,7 @@ class AlienInvasion:
             # refers to the method update in class Bullets
             self._update_bullets()
             # refers to the help method in AI
+            self._update_aliens()
             self._update_screen()
             # calling the method to constantly be updating what is happening
             # on the screen
@@ -137,6 +140,7 @@ class AlienInvasion:
         # filling the screen with background color
         # takes only one argument
         self.ship.blitme()
+        self.alien.blitme()
 
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
@@ -181,6 +185,11 @@ class AlienInvasion:
         # creating a space at the top of the screen which is the height
         # of one alien
         self.aliens.add(alien)
+
+    def _update_aliens(self):
+        """Update the position of all aliens in the fleet."""
+        self.aliens.update()
+        # using update method on aliens group
 
 
 if __name__ == '__main__':
