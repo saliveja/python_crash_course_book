@@ -35,6 +35,12 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion")
         # assigns the name Alien Invasion to the game
 
+        self.stats = GameStats(self)
+        # creating an instance that stores statistics
+        # the position of the code is important
+        # it should be after window is created but before
+        # defining other elements
+
         self.ship = Ship(self)
         # making an instance of the ship
         # self refers to the current instance of AlienInvasion
@@ -219,7 +225,21 @@ class AlienInvasion:
             # collideany takes two arguments: a sprite and a group
             # looks for any member of the group that has
             # collided with the sprite
-            print("Ship hit!!!")
+            self._ship_hit()
+            self._check_aliens_bottom()
+
+            # print("Ship hit!!!")
+
+    def _check_aliens_bottom(self):
+        """Check if any aliens have reached the bottom of the screen."""
+        screen_rect = self.screen.get_rect()
+        for alien in self.aliens.sprites():
+            if alien.rect.bottom >= screen_rect.bottom:
+                # checking if any aliens reached the bottom of the screen
+                # this is true when the value is bigger than or equal to the
+                # value of the screen
+                self._ship_hit()
+                break
 
     def _check_fleet_edges(self):
         """Respond appropriately if any alien have reached an edge."""
@@ -237,6 +257,21 @@ class AlienInvasion:
             # this drops the speed of each alien
         self.settings.fleet_direction *= -1
         # changing direction by multiplying current value with -1
+
+    def _ship_hit(self):
+        """Respond to the ship being hit by an alien."""
+        self.stats.ships_left -= 1
+
+        self.aliens.empty()
+        self.bullets.empty()
+        # getting rid of remaining aliens and bullets
+
+        self._create_fleet()
+        self.ship.center_ship()
+        # create new fleet, center ship
+
+        sleep(0.5)
+        # making a pause
 
 
 if __name__ == '__main__':

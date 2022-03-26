@@ -22,7 +22,7 @@ class Settings:
         # the color of the bullet is dark grey
         self.bullets_allowed = 3
         self.alien_speed = 1.0
-        self.fleet_drop_speed = 50
+        self.fleet_drop_speed = 10
         # how fast the aliens drops down from the edge of the screen
         self.fleet_direction = 1
         # direction 1 represents right and -1 left
