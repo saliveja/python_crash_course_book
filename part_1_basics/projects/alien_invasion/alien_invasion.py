@@ -59,14 +59,19 @@ class AlienInvasion:
         while True:
             self._check_events()
             # calling the method _check_events()
-            self.ship.update()
-            # refers to the method update in the class Ship
-            # if self.moving_right then it will move one pixel to the right
-            self.bullets.update()
-            # refers to the method update in class Bullets
-            self._update_bullets()
-            # refers to the help method in AI
-            self._update_aliens()
+            # this is called even if game is inactive
+            # to update screen and if player presses q
+
+            if self.stats.game_active:
+                self.ship.update()
+                # refers to the method update in the class Ship
+                # if self.moving_right then it will move one pixel to the right
+                self.bullets.update()
+                # refers to the method update in class Bullets
+                self._update_bullets()
+                # refers to the help method in AI
+                self._update_aliens()
+
             self._update_screen()
             # calling the method to constantly be updating what is happening
             # on the screen
@@ -260,18 +265,21 @@ class AlienInvasion:
 
     def _ship_hit(self):
         """Respond to the ship being hit by an alien."""
-        self.stats.ships_left -= 1
+        if self.stats.ship_left > 0:
+            self.stats.ships_left -= 1
 
-        self.aliens.empty()
-        self.bullets.empty()
-        # getting rid of remaining aliens and bullets
+            self.aliens.empty()
+            self.bullets.empty()
+            # getting rid of remaining aliens and bullets
 
-        self._create_fleet()
-        self.ship.center_ship()
-        # create new fleet, center ship
+            self._create_fleet()
+            self.ship.center_ship()
+            # create new fleet, center ship
 
-        sleep(0.5)
-        # making a pause
+            sleep(0.5)
+            # making a pause
+        else:
+            self.stats.game_active = False
 
 
 if __name__ == '__main__':
