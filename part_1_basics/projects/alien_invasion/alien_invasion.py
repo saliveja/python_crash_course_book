@@ -123,6 +123,11 @@ class AlienInvasion:
                 # which is at the top os the screen
                 self.bullets.remove(bullet)
                 # the bullet will be removed
+
+        self._check_bullet_alien_collision()
+
+    def _check_bullet_alien_collision(self):
+        """Respond to bullet-alien collisions."""
         collisions = pygame.sprite.groupcollide(self.bullets,
                                                 self.aliens, True, True)
         # this compares the position of all bullets and all aliens and
