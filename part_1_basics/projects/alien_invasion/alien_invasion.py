@@ -1,8 +1,11 @@
-# tools for exiting the game
 import sys
-# used for the functionality of the game
+# tools for exiting the game
+from time import sleep
+# the sleep function is from python standard library
 import pygame
+# used for the functionality of the game
 from settings import Settings
+from game_stats import GameStats
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
@@ -211,6 +214,12 @@ class AlienInvasion:
         # checking if any alien is close to an edge
         self.aliens.update()
         # using update method on aliens group
+
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            # collideany takes two arguments: a sprite and a group
+            # looks for any member of the group that has
+            # collided with the sprite
+            print("Ship hit!!!")
 
     def _check_fleet_edges(self):
         """Respond appropriately if any alien have reached an edge."""
