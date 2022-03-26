@@ -123,6 +123,19 @@ class AlienInvasion:
                 # which is at the top os the screen
                 self.bullets.remove(bullet)
                 # the bullet will be removed
+        collisions = pygame.sprite.groupcollide(self.bullets,
+                                                self.aliens, True, True)
+        # this compares the position of all bullets and all aliens and
+        # identifies overlap
+        # the True arguments tell pygame to delete the bullets and aliens
+        # that have collided
+
+        if not self.aliens:
+            self.bullets.empty()
+            self._create_fleet()
+            # we check if there are any aliens left and if there is not
+            # we get rid of any existing bullets and re-create the alien fleet
+            # every time all aliens have been shot down a new fleet appears
 
     def _fire_bullet(self):
         """Create a new bullet and add it in to the bullets group."""
@@ -187,9 +200,29 @@ class AlienInvasion:
         self.aliens.add(alien)
 
     def _update_aliens(self):
-        """Update the position of all aliens in the fleet."""
+        """Check if the fleet is at an edge, the update the position
+        of all aliens in the fleet."""
+        self._check_fleet_edges()
+        # checking if any alien is close to an edge
         self.aliens.update()
         # using update method on aliens group
+
+    def _check_fleet_edges(self):
+        """Respond appropriately if any alien have reached an edge."""
+        for alien in self.aliens.sprites():
+            if alien.check_edges():
+                self._change_fleet_direction()
+                break
+                # making a for loop to check if each alien is close to an edge
+                # if this returns True, then the whole fleet changes direction
+
+    def _change_fleet_direction(self):
+        """Drop the entire fleet and change the fleet's direction."""
+        for alien in self.aliens.sprites():
+            alien.rect.y += self.settings.fleet_drop_speed
+            # this drops the speed of each alien
+        self.settings.fleet_direction *= -1
+        # changing direction by multiplying current value with -1
 
 
 if __name__ == '__main__':
