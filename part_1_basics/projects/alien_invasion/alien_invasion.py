@@ -175,6 +175,7 @@ class AlienInvasion:
                 # the dictionary will be added to the score
             self.sb.prep_score()
             # new image for the updates score
+            self.sb.check_high_score()
 
         if not self.aliens:
             self.bullets.empty()
