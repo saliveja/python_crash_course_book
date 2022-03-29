@@ -6,6 +6,7 @@ import pygame
 # used for the functionality of the game
 from settings import Settings
 from game_stats import GameStats
+from button import Button
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
@@ -53,6 +54,9 @@ class AlienInvasion:
         # making a group of aliens
         self._create_fleet()
 
+        self.play_button = Button(self, "Play")
+        # making an instance of Button
+
     def run_game(self):
         """Start the main loop for the game"""
 
@@ -93,6 +97,15 @@ class AlienInvasion:
                 # if the key is not pressed anymore
                 self._check_keyup_events(event)
                 # going to helper method, statement is False
+
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                # this gives the position of the mouse click
+                # so instead of random click resulting in new game
+                # it's specifically on the play button
+                self._check_play_button(mouse_pos)
+                # this checks the play button in relation to the position
+                # of the mouse click
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -182,6 +195,11 @@ class AlienInvasion:
         # drawing each alien in the group to the screen
         # the draw method requires one argument,
         # a surface on which to draw the elements from the group
+
+        if not self.stats.game_active:
+            self.play_button.draw_button()
+            # if the game is inactive the button will be active
+            # to have the button in top layer we include the code at the end
 
         pygame.display.flip()
         # Makes the most recent screen visible
@@ -280,6 +298,23 @@ class AlienInvasion:
             # making a pause
         else:
             self.stats.game_active = False
+
+    def _check_play_button(self, mouse_pos):
+        """Start a new game when the player clicks Play."""
+        if self.play_button.rect.collidepoint(mouse_pos):
+            # checking if mouse click overlaps with the play buttons rect
+            self.stats.reset_stats()
+            # resetting game statistics
+            self.stats.game_active = True
+            # then we set the game_active to True
+            self.aliens.empty()
+            # getting rid of remaining aliens
+            self.bullets.empty()
+            # getting rid of remaining bullets
+            self._create_fleet()
+            # creating a new fleet
+            self.ship.center_ship()
+            # centering the ship
 
 
 if __name__ == '__main__':
