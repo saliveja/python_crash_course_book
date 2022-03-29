@@ -17,6 +17,13 @@ class Scoreboard:
 
     def prep_score(self):
         """Turn the score into a rendered image."""
+        rounded_score = round(self.stats.score, -1)
+        # round() rounds a decimal number to a set number of decimals
+        # this is defined with the second argument
+        # if the scond arument is negative round() wil round the value to
+        # the nearest 10, 100 and so on, stored in variable rounded_score
+        score_str = "{:,}".format(rounded_score)
+        # using comma separators ie. 1,000,000 instead if 1000000
         score_str = str(self.stats.score)
         # turning the stats value into a string
         self.score_image = self.font.render(score_str, True, self.text_color,
