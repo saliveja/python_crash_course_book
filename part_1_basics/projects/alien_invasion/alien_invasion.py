@@ -298,10 +298,15 @@ class AlienInvasion:
             # making a pause
         else:
             self.stats.game_active = False
+            pygame.mouse.set_visible(True)
+            # if the game is inactive the mouse cursor will appear again
 
     def _check_play_button(self, mouse_pos):
         """Start a new game when the player clicks Play."""
-        if self.play_button.rect.collidepoint(mouse_pos):
+        button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+        # the game will only start if Play is clicked and the game
+        # is not active
+        if button_clicked and not self.stats.game_active:
             # checking if mouse click overlaps with the play buttons rect
             self.stats.reset_stats()
             # resetting game statistics
@@ -315,6 +320,8 @@ class AlienInvasion:
             # creating a new fleet
             self.ship.center_ship()
             # centering the ship
+            pygame.mouse.set_visible(False)
+            # hiding the mouse cursor during the game
 
 
 if __name__ == '__main__':
