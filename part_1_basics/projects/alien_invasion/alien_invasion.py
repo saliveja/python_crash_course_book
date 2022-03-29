@@ -165,6 +165,17 @@ class AlienInvasion:
         # the True arguments tell pygame to delete the bullets and aliens
         # that have collided
 
+        if collisions:
+            for aliens in collisions.values():
+                # making a for loop with all aliens that have been hit
+                self.stats.score += self.settings.alien_points * len(aliens)
+                # when bullet hits alien
+                # pygame check if there is a dictionary
+                # if yes, the value multiplied by the number of aliens in
+                # the dictionary will be added to the score
+            self.sb.prep_score()
+            # new image for the updates score
+
         if not self.aliens:
             self.bullets.empty()
             # get rid of remaining bullets
@@ -324,6 +335,9 @@ class AlienInvasion:
             # resetting game statistics
             self.stats.game_active = True
             # then we set the game_active to True
+            self.sb.prep_score()
+            # we call this after resetting game statistics
+            # this zeroes to scoreboard
             self.aliens.empty()
             # getting rid of remaining aliens
             self.bullets.empty()
