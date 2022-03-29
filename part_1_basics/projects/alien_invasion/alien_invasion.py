@@ -6,6 +6,7 @@ import pygame
 # used for the functionality of the game
 from settings import Settings
 from game_stats import GameStats
+from scoreboard import Scoreboard
 from button import Button
 from ship import Ship
 from bullet import Bullet
@@ -41,6 +42,8 @@ class AlienInvasion:
         # the position of the code is important
         # it should be after window is created but before
         # defining other elements
+
+        self.sb = Scoreboard(self)
 
         self.ship = Ship(self)
         # making an instance of the ship
@@ -164,10 +167,13 @@ class AlienInvasion:
 
         if not self.aliens:
             self.bullets.empty()
+            # get rid of remaining bullets
             self._create_fleet()
             # we check if there are any aliens left and if there is not
             # we get rid of any existing bullets and re-create the alien fleet
             # every time all aliens have been shot down a new fleet appears
+            self.settings.increase_speed()
+            # increasing speed of attributes defined
 
     def _fire_bullet(self):
         """Create a new bullet and add it in to the bullets group."""
@@ -195,6 +201,8 @@ class AlienInvasion:
         # drawing each alien in the group to the screen
         # the draw method requires one argument,
         # a surface on which to draw the elements from the group
+
+        self.sb.show_score()
 
         if not self.stats.game_active:
             self.play_button.draw_button()
@@ -308,6 +316,10 @@ class AlienInvasion:
         # is not active
         if button_clicked and not self.stats.game_active:
             # checking if mouse click overlaps with the play buttons rect
+            self.settings.initialize_dynamic_settings()
+            # increasing speed of defined attributes
+            # everytime the screen has been cleared of aliens,
+            # the speed of the new fleet will increase
             self.stats.reset_stats()
             # resetting game statistics
             self.stats.game_active = True
