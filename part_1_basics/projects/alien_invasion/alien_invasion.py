@@ -186,6 +186,8 @@ class AlienInvasion:
             # every time all aliens have been shot down a new fleet appears
             self.settings.increase_speed()
             # increasing speed of attributes defined
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _fire_bullet(self):
         """Create a new bullet and add it in to the bullets group."""
@@ -339,6 +341,7 @@ class AlienInvasion:
             self.sb.prep_score()
             # we call this after resetting game statistics
             # this zeroes to scoreboard
+            self.sb.prep_level()
             self.aliens.empty()
             # getting rid of remaining aliens
             self.bullets.empty()

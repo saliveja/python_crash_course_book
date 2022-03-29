@@ -15,6 +15,7 @@ class Scoreboard:
         self.font = pygame.font.SysFont(None, 48)
         self.prep_score()
         self.prep_high_score()
+        self.prep_level()
 
     def prep_score(self):
         """Turn the score into a rendered image."""
@@ -42,6 +43,8 @@ class Scoreboard:
         # draws the score image  on the screen where rect specified
         self.screen.blit(self.high_score_image, self.high_score_rect)
         # drawing high score in top right corner
+        self.screen.blit(self.level_image, self.level_rect)
+        # draws the level on the screen
 
     def prep_high_score(self):
         """Turn the high score into a rendered image."""
@@ -65,3 +68,16 @@ class Scoreboard:
             # if the current score is higher than the high score, the new
             # high score will be displayed
             self.prep_high_score()
+
+    def prep_level(self):
+        """Turn the level into a rendered image."""
+        level_str = str(self.stats.level)
+        self.level_image = self.font.render(level_str, True, self.text_color,
+                                            self.settings.bg_color)
+        # creates an image from values stored in stats.level
+
+        self.level_rect = self.level_image.get_rect()
+        self.level_rect.right = self.score_rect.right
+        # sets the image right attribute to that of the scores right attribute
+        self.level_rect.top = self.score_rect.bottom + 10
+        # the level is places 10 pixels below the score

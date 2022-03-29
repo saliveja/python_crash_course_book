@@ -17,3 +17,4 @@ class GameStats:
         # to in the game. It is defined in Settings
         self.score = 0
         # we reset the score every time a new game starts
+        self.level = 1
