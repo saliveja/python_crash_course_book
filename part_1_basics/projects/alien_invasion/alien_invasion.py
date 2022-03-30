@@ -187,7 +187,9 @@ class AlienInvasion:
             self.settings.increase_speed()
             # increasing speed of attributes defined
             self.stats.level += 1
+            # if the fleet is destroyed then we level up
             self.sb.prep_level()
+            # calling the method prep_level() in scoreboard
 
     def _fire_bullet(self):
         """Create a new bullet and add it in to the bullets group."""
@@ -301,12 +303,13 @@ class AlienInvasion:
             alien.rect.y += self.settings.fleet_drop_speed
             # this drops the speed of each alien
         self.settings.fleet_direction *= -1
-        # changing direction by multiplying current value with -1
+        # changing direction by multiplying current va lue with -1
 
     def _ship_hit(self):
         """Respond to the ship being hit by an alien."""
         if self.stats.ship_left > 0:
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
 
             self.aliens.empty()
             self.bullets.empty()
@@ -342,6 +345,8 @@ class AlienInvasion:
             # we call this after resetting game statistics
             # this zeroes to scoreboard
             self.sb.prep_level()
+            self.sb.prep_ships()
+            # showing player how many ships they have
             self.aliens.empty()
             # getting rid of remaining aliens
             self.bullets.empty()

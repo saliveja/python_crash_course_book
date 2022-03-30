@@ -1,4 +1,6 @@
 import pygame.font
+from pygame.sprite import Group
+from ship import Ship
 
 
 class Scoreboard:
@@ -6,6 +8,7 @@ class Scoreboard:
 
     def __init__(self, ai_game):
         """Initializing scorekeeping attributes."""
+        self.ai_game = ai_game
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
@@ -16,6 +19,7 @@ class Scoreboard:
         self.prep_score()
         self.prep_high_score()
         self.prep_level()
+        self.prep_ships()
 
     def prep_score(self):
         """Turn the score into a rendered image."""
@@ -38,13 +42,15 @@ class Scoreboard:
         # and 20 pixels from the top
 
     def show_score(self):
-        """Draw score to the screen."""
+        """Draw scores, level and ships to the screen."""
         self.screen.blit(self.score_image, self.score_rect)
         # draws the score image  on the screen where rect specified
         self.screen.blit(self.high_score_image, self.high_score_rect)
         # drawing high score in top right corner
         self.screen.blit(self.level_image, self.level_rect)
         # draws the level on the screen
+        self.ships.draw(self.screen)
+        # call draw to display ships on the screen
 
     def prep_high_score(self):
         """Turn the high score into a rendered image."""
@@ -81,3 +87,18 @@ class Scoreboard:
         # sets the image right attribute to that of the scores right attribute
         self.level_rect.top = self.score_rect.bottom + 10
         # the level is places 10 pixels below the score
+
+    def prep_ships(self):
+        """Show how many ships are left."""
+        self.ships = Group()
+        for ship_number in range(self.stats.ships_left):
+            # running a loop for each ship that is left
+            ship = Ship(self.ai_game)
+            ship.rect.x = 10 + ship_number * ship.rect.width
+            # creating a new ship, and set each on the top left corner
+            # ships places next to each other with 10 pixel
+            # margin on the left side
+            ship.rect.y = 10
+            # setting y coordinates 10 pixels down
+            self.ships.add(ship)
+            # adding each new ship to the group
