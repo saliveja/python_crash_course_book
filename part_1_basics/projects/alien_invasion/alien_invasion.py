@@ -207,8 +207,11 @@ class AlienInvasion:
         # drawing ship on screen
         self.alien.blitme()
         # drawing alien on screen
+        # blit() copies one surface to another surface - screen and alien
 
         for bullet in self.bullets.sprites():
+            # Sprites are objects, wt properties like height, width,
+            # color, etc., and methods like moving right, left, up and down etc
             bullet.draw_bullet()
             # calling draw_bullet method in Bullet class
 
@@ -216,6 +219,12 @@ class AlienInvasion:
         # drawing each alien in the group to the screen
         # the draw method requires one argument,
         # a surface on which to draw the elements from the group
+        # These are the shapes that you can draw in python:
+        # - Rectangles.
+        # - Circles.
+        # - Ellipses (squashed circles)
+        # - Lines.
+        # - Polygons
 
         self.sb.show_score()
 
@@ -225,8 +234,7 @@ class AlienInvasion:
             # to have the button in top layer we include the code at the end
 
         pygame.display.flip()
-        # Makes the most recent screen visible
-        # continuously updating
+        # If no argument is passed flip() updates the entire Surface area
 
     def _create_fleet(self):
         """Create the fleet of aliens."""
@@ -306,7 +314,7 @@ class AlienInvasion:
 
     def _ship_hit(self):
         """Respond to the ship being hit by an alien."""
-        if self.stats.ship_left > 0:
+        if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
             self.sb.prep_ships()
 
