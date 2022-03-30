@@ -36,33 +36,29 @@ class AlienInvasion:
 
         pygame.display.set_caption("Alien Invasion")
         # assigns the name Alien Invasion to the game
-
         self.stats = GameStats(self)
         # creating an instance that stores statistics
         # the position of the code is important
         # it should be after window is created but before
         # defining other elements
-
         self.sb = Scoreboard(self)
-
+        # scoreboard instance
         self.ship = Ship(self)
         # making an instance of the ship
         # self refers to the current instance of AlienInvasion
-
         self.alien = Alien(self)
-
+        # alien instance
         self.bullets = pygame.sprite.Group()
         # making a group of bullets
         self.aliens = pygame.sprite.Group()
         # making a group of aliens
         self._create_fleet()
-
+        # create fleet instance
         self.play_button = Button(self, "Play")
         # making an instance of Button
 
     def run_game(self):
         """Start the main loop for the game"""
-
         while True:
             self._check_events()
             # calling the method _check_events()
@@ -86,7 +82,6 @@ class AlienInvasion:
 
     def _check_events(self):
         """Respond to key presses."""
-
         for event in pygame.event.get():
             # an event is the action of a user
             # pygame.event.get() returns a list of events
@@ -174,8 +169,10 @@ class AlienInvasion:
                 # if yes, the value multiplied by the number of aliens in
                 # the dictionary will be added to the score
             self.sb.prep_score()
-            # new image for the updates score
+            # new image to update scores
             self.sb.check_high_score()
+            # check if there is a new high score
+            # if yes, update
 
         if not self.aliens:
             self.bullets.empty()
@@ -197,7 +194,7 @@ class AlienInvasion:
         new_bullet = Bullet(self)
         # defining variable new_bullet as class Bullet with access to main
         self.bullets.add(new_bullet)
-        # adding the new bullet to the list
+        # adding the class to the list self.bullets
         # add() is specifically used for pygame
 
     def _update_screen(self):
@@ -207,7 +204,9 @@ class AlienInvasion:
         # filling the screen with background color
         # takes only one argument
         self.ship.blitme()
+        # drawing ship on screen
         self.alien.blitme()
+        # drawing alien on screen
 
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
