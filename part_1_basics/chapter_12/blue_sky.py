@@ -2,21 +2,23 @@ import pygame
 import sys
 # from try_it_yourself_12_2_game_character import DrawCharacter
 from rocket import Rocket
-from settingstry import SettingsTry
+from settings import Settings
 
 
-class MakeScreen:
-    """Making a blue screen."""
+class BlueSky:
+    """Main program for the game Blue Sky."""
 
     def __init__(self):
         """Initializing blue screen"""
         pygame.init()
-        self.settings = SettingsTry()
+        self.settings = Settings()
 
         self.screen = pygame.display.set_mode((self.settings.screen_width,
                                                self.settings.screen_height))
         # making a variable self.screen which creates the window with
         # the specified values
+        self.settings.screen_width = self.screen.get_rect().width
+        self.settings.screen_height = self.screen.get_rect().height
 
         pygame.display.set_caption("Spaceship")
         # on top of the window this message is printed
@@ -26,67 +28,63 @@ class MakeScreen:
         # 'self' is referring to __init_(self) to get access to
         # all the self.variables
 
-    def runGame(self):
+    def run_game(self):
         """Main loop of the game."""
         while True:
             self.events()
             self.rocket.update()
-
-            self.displayScreen()
+            self.display_screen()
 
     def events(self):
         """Checking key events."""
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                self.keyDownEvents()
+                self.key_down(event)
 
             elif event.type == pygame.KEYUP:
-                self.keyUpEvents()
+                self.key_up(event)
 
-    def keyUpEvents(self, event):
+    def key_up(self, event):
         """Key up events."""
         if event.key == pygame.K_RIGHT:
-            self.moving_right = False
+            self.rocket.moving_right = False
 
         elif event.key == pygame.K_LEFT:
-            self.moving_left = False
+            self.rocket.moving_left = False
 
         elif event.key == pygame.K_UP:
-            self.moving_up = False
+            self.rocket.moving_up = False
 
         elif event.key == pygame.K_DOWN:
-            self.moving_down = False
+            self.rocket.moving_down = False
 
-    def keyDownEvents(self, event):
+    def key_down(self, event):
         """ Key down events"""
+        if event.type == pygame.K_q:
+            sys.exit()
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-
-        if event.key == pygame.K_RIGHT:
-            self.moving_right = True
+        elif event.key == pygame.K_RIGHT:
+            self.rocket.moving_right = True
 
         elif event.key == pygame.K_LEFT:
-            self.moving_left = True
+            self.rocket.moving_left = True
 
         elif event.key == pygame.K_UP:
-            self.moving_up = True
+            self.rocket.moving_up = True
 
         elif event.key == pygame.K_DOWN:
-            self.moving_down = True
+            self.rocket.moving_down = True
 
-    def displayScreen(self):
+    def display_screen(self):
         """Displaying screen."""
-        while True:
-            self.screen.fill(self.settings.bg_color)
-            # filling screen with background color
-            self.rocket.draw()
-            # drawing picture on the screen
-            pygame.display.flip()
-            # updating surface area
+        self.screen.fill(self.settings.bg_color)
+        # filling screen with background color
+        self.rocket.draw()
+        # drawing picture on the screen
+        pygame.display.flip()
+        # updating surface area
 
 
 if __name__ == '__main__':
-    mk = MakeScreen()
-    mk.runGame()
+    bs = BlueSky()
+    bs.run_game()
