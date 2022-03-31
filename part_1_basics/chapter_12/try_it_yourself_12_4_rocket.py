@@ -12,10 +12,10 @@ class DrawCharacter:
         self.image = pygame.image.load('spaceship.bmp')
         self.rect = self.image.get_rect()
         self.rect.center = self.screen_rect.center
-        self.moving_right = False
-        self.moving_left = False
 
     def position(self):
         """Placing the character at the center."""
 
         self.screen.blit(self.image, self.rect)
+
+

@@ -1,7 +1,7 @@
 import pygame
 import sys
 # from try_it_yourself_12_2_game_character import DrawCharacter
-from try_it_yourself_12_4_rocket import DrawCharacter
+from rocket import Rocket
 from settingstry import SettingsTry
 
 
@@ -20,31 +20,22 @@ class MakeScreen:
 
         pygame.display.set_caption("Spaceship")
         # on top of the window this message is printed
-        self.draw = DrawCharacter(self)
+        self.rocket = Rocket(self)
         # making variable calling the class DrawCharacter
         # 'self' gives access to the programs resources ie. screen
         # 'self' is referring to __init_(self) to get access to
         # all the self.variables
 
     def runGame(self):
+        """Main loop of the game."""
         while True:
-            self.displayScreen()
             self.events()
-            self.movement()
+            self.rocket.update()
 
-    def displayScreen(self):
-        """Displaying screen."""
-        while True:
-            self.screen.fill(self.settings.bg_color)
-            # filling screen with background color
-
-            self.draw.position()
-            # drawing picture on the screen
-
-            pygame.display.flip()
+            self.displayScreen()
 
     def events(self):
-        """Ckecking key events."""
+        """Checking key events."""
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 self.keyDownEvents()
@@ -84,6 +75,16 @@ class MakeScreen:
 
         elif event.key == pygame.K_DOWN:
             self.moving_down = True
+
+    def displayScreen(self):
+        """Displaying screen."""
+        while True:
+            self.screen.fill(self.settings.bg_color)
+            # filling screen with background color
+            self.rocket.draw()
+            # drawing picture on the screen
+            pygame.display.flip()
+            # updating surface area
 
 
 if __name__ == '__main__':

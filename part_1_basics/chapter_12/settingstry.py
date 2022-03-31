@@ -1,7 +1,4 @@
-import pygame
-
-
-class SettingsTry:
+class Settings:
     """Settings for the game Bly sky."""
 
     def __init__(self):
@@ -12,3 +9,5 @@ class SettingsTry:
         # defining height
         self.bg_color = (40, 180, 255)
         # setting a blue color
+        self.rocket_speed = 5
+        self.rocket_drop_speed = 10

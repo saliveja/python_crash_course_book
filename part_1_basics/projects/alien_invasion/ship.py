@@ -42,7 +42,7 @@ class Ship(Sprite):
 
         if self.moving_left and self.rect.left > 0:
             # if the value of self.rect is more than 0
-            # hte ship hasn't reached the edge
+            # the ship hasn't reached the edge
             # remember that 0,0 starts in the upper left corner
             self.x -= self.settings.ship_speed
 
