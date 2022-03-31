@@ -1,25 +1,20 @@
-import pygame
 import sys
-# from try_it_yourself_12_2_game_character import DrawCharacter
+import pygame
 from rocket import Rocket
 from settings import Settings
 
 
 class BlueSky:
-    """Main program for the game Blue Sky."""
+    """Main class for the game Blue Sky."""
 
     def __init__(self):
-        """Initializing blue screen"""
+        """Initializing game."""
         pygame.init()
         self.settings = Settings()
 
-        self.screen = pygame.display.set_mode((self.settings.screen_width,
-                                               self.settings.screen_height))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         # making a variable self.screen which creates the window with
         # the specified values
-        self.settings.screen_width = self.screen.get_rect().width
-        self.settings.screen_height = self.screen.get_rect().height
-
         pygame.display.set_caption("Spaceship")
         # on top of the window this message is printed
         self.rocket = Rocket(self)
@@ -60,8 +55,8 @@ class BlueSky:
 
     def key_down(self, event):
         """ Key down events"""
-        if event.type == pygame.K_q:
-            sys.exit()
+        if event.type == pygame.QUIT:
+            pygame.quit()
 
         elif event.key == pygame.K_RIGHT:
             self.rocket.moving_right = True
