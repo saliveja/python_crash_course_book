@@ -1,5 +1,5 @@
 import pygame
-from settingstry import Settings
+from settings import Settings
 
 
 class Rocket:
