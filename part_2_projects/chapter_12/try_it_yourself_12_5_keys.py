@@ -31,10 +31,11 @@ class EmptyScreen:
     def key_down(self, event):
         """Key down events."""
         if event.key == pygame.K_RIGHT:
+            self.bg_color = (100, 30, 200)
             self.image = pygame.image.load('spaceship.bmp')
             self.rect = self.image.get_rect()
             self.screen.blit(self.image, self.rect)
-            
+
         elif event.key == pygame.K_LEFT:
             quit()
         elif event.key == pygame.K_DOWN:
