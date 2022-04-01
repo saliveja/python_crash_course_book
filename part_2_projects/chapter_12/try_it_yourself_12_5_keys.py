@@ -13,6 +13,7 @@ class EmptyScreen:
         self.screen_width = self.screen.get_rect().width
         self.screen_height = self.screen.get_rect().height
         self.image = pygame.image.load('spaceship.bmp')
+        self.rect = self.image.get_rect()
 
     def run_program(self):
         """running the program."""
@@ -20,9 +21,9 @@ class EmptyScreen:
             for event in pygame.event.get():
                 self.screen.fill(self.bg_color)
                 pygame.display.set_caption("Empty screen")
-                if event.type == KEYDOWN:
+                if event.type == pygame.KEYDOWN:
                     self.key_down(event)
-                elif event.type == KEYUP:
+                elif event.type == pygame.KEYUP:
                     self.key_up(event)
 
             pygame.display.flip()
@@ -31,25 +32,27 @@ class EmptyScreen:
         """Key down events."""
         if event.key == pygame.K_RIGHT:
             self.image = pygame.image.load('spaceship.bmp')
+            self.rect = self.image.get_rect()
+            self.screen.blit(self.image, self.rect)
+            
         elif event.key == pygame.K_LEFT:
             quit()
         elif event.key == pygame.K_DOWN:
-            self.screen_width = 2000
-            self.screen_height = 800
+            self.screen = pygame.display.set_mode(2000, 800)
+
         elif event.key == pygame.K_UP:
             self.bg_color = (100, 255, 200)
 
     def key_up(self, event):
         """Key up events."""
         if event.key == pygame.K_RIGHT:
-            self.image = pygame.image.load('spaceship.bmp')
+            return False
         elif event.key == pygame.K_LEFT:
-            quit()
+            return False
         elif event.key == pygame.K_DOWN:
-            self.screen_width = 2000
-            self.screen_height = 800
+            return False
         elif event.key == pygame.K_UP:
-            self.bg_color = (100, 255, 200)
+            return False
 
 
 if __name__ == '__main__':
