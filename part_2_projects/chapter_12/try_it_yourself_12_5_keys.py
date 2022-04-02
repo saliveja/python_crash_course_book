@@ -7,11 +7,11 @@ class EmptyScreen:
         """Initializing empty screen."""
         pygame.init()
         self.bg_color = (100, 30, 200)
-        self.screen_width = 2000
-        self.screen_height = 800
-        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        self.screen_width = self.screen.get_rect().width
-        self.screen_height = self.screen.get_rect().height
+        self.width = 4000
+        self.height = 1600
+        self.screen = pygame.display.set_mode((4000, 1600), pygame.RESIZABLE)
+        # self.screen_width = self.screen.get_rect().width
+        # self.screen_height = self.screen.get_rect().height
         self.image = pygame.image.load('spaceship.bmp')
         self.rect = self.image.get_rect()
 
@@ -39,7 +39,7 @@ class EmptyScreen:
         elif event.key == pygame.K_LEFT:
             quit()
         elif event.key == pygame.K_DOWN:
-            self.screen = pygame.display.set_mode(2000, 800)
+            print("I just wanted to re-size my window")
 
         elif event.key == pygame.K_UP:
             self.bg_color = (100, 255, 200)
