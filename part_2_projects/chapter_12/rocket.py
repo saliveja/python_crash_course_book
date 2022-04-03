@@ -12,13 +12,15 @@ class Rocket:
         self.screen_rect = blue_sky.screen.get_rect()
         self.image = pygame.image.load('spaceship.bmp')
         self.rect = self.image.get_rect()
-        self.rect.bottomleft = self.screen_rect.bottomleft
+        self.rect.midleft = self.screen_rect.midleft
         # self.x = float(self.rect.x)
         self.y = float(self.rect.y)
+        # x and y are defined in pygame
         # self.moving_right = False
         # self.moving_left = False
         self.moving_up = False
         self.moving_down = False
+        self.space = False
 
     def update(self):
         """update on rockets position."""

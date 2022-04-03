@@ -11,18 +11,18 @@ class Bullet(Sprite):
         self.screen = blue_sky.screen
         self.settings = blue_sky.settings
         self.color = self.settings.bullet_color
-
-        self.rect = pygame.Rect((0, 0), self.settings.bullet_width,
+        self.rect = pygame.Rect(0, 0, self.settings.bullet_width,
                                 self.settings.bullet_height)
 
-        self.rect.bottomleft = blue_sky.rocket.rect.bottomleft
-        self.y = float(self.rect.y)
+        self.rect.midright = blue_sky.rocket.rect.midright
+        # this defined where bullets in rocket starts
+        self.x = float(self.rect.x)
 
     def update(self):
         """Move the bullet up the screen."""
-        self.y -= self.settings.bullet_speed
+        self.x += self.settings.bullet_speed
 
-        self.rect.y = self.y
+        self.rect.x = self.x
 
     def draw_bullet(self):
         """Draw the bullet on the screen."""

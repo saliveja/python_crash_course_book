@@ -31,7 +31,6 @@ class EmptyScreen:
     def check_events(self):
         """Key events."""
         for event in pygame.event.get():
-            self.screen.fill(self.settings.bg_color)
             if event.type == pygame.KEYDOWN:
                 self.key_down(event)
             elif event.type == pygame.KEYUP:
@@ -61,7 +60,7 @@ class EmptyScreen:
             self.rocket.moving_up = False
 
         elif event.key == pygame.K_SPACE:
-            return False
+            self.bullets.fire_bullets = False
 
     def update_bullet(self):
         """Update position of bullets, removing old ones."""

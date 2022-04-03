@@ -7,8 +7,8 @@ class Settings:
         self.screen_height = 600
         self.bg_color = (55, 150, 255)
         self.bullet_color = (255, 255, 255)
-        self.bullet_width = 3
-        self.bullet_height = 3
-        self.bullet_speed = 5
-        self.rocket_speed = 3
+        self.bullet_width = 8
+        self.bullet_height = 8
+        self.bullet_speed = 3
+        self.rocket_speed = 1
         self.rocket_drop_speed = 10
