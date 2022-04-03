@@ -2,7 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 
 
-class Ship(Sprite):
+class Star(Sprite):
     """A class to manage the ship."""
 
     def __init__(self, stars_main):

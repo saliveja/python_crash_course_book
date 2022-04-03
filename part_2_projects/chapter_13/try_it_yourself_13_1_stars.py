@@ -1,4 +1,6 @@
+import sys
 import pygame
+from stars import Star
 
 
 class EmptyScreen:
@@ -9,13 +11,18 @@ class EmptyScreen:
         self.bg_color = (100, 30, 200)
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Stars")
-
-        self.rect = self.image.get_rect()
+        self.star = Star(self)
 
     def run_program(self):
         """running the program."""
         while True:
-            pygame.display.flip()
+            self.update_screen()
+
+    def update_screen(self):
+        """Updating screen."""
+        self.screen.fill(self.bg_color)
+        self.star.update()
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
