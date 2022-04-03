@@ -8,29 +8,28 @@ class EmptyScreen:
     def __init__(self, ):
         """Initializing empty screen."""
         pygame.init()
-        self.setting = Settings()
-        self.rocket = Rocket(self)
-        self.bg_color = (100, 30, 200)
-        self.width = 4000
-        self.height = 1600
-        self.screen = pygame.display.set_mode((4000, 1600), pygame.RESIZABLE)
+        self.settings = Settings()
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         # self.screen_width = self.screen.get_rect().width
         # self.screen_height = self.screen.get_rect().height
-        self.image = pygame.image.load('spaceship.bmp')
-        self.rect = self.image.get_rect()
+        self.rocket = Rocket(self)
 
     def run_program(self):
         """running the program."""
         while True:
-            for event in pygame.event.get():
-                self.screen.fill(self.bg_color)
-                pygame.display.set_caption("Empty screen")
-                if event.type == pygame.KEYDOWN:
-                    self.key_down(event)
-                elif event.type == pygame.KEYUP:
-                    self.key_up(event)
+
+    def check_events(self):
+        """Key events."""
+        for event in pygame.event.get():
+            self.screen.fill(self.settings.bg_color)
+            pygame.display.set_caption("Empty screen")
+            if event.type == pygame.KEYDOWN:
+                self.key_down(event)
+            elif event.type == pygame.KEYUP:
+                self.key_up(event)
 
             pygame.display.flip()
+
 
     def key_down(self, event):
         """Key down events."""
@@ -57,6 +56,16 @@ class EmptyScreen:
 
         elif event.key == pygame.K_UP:
             self.rocket.moving_up = False
+
+    def fire_bullet(self):
+        """Create a new bullet and add to the bullet group."""
+        new_bullet = Bullet(self)
+        self.bullets.add(new_bullet)
+
+    def update_screen(self):
+        """Update screen."""
+        self.screen.fill(self.settings.bg_color)
+        self.rocket.draw()
 
 
 if __name__ == '__main__':
