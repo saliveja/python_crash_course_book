@@ -14,6 +14,8 @@ class EmptyScreen:
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Stars")
         self.star = Star(self)
+        self.stars = pygame.sprite.Group()
+        self.create_star_grid()
 
     def run_program(self):
         """running the program."""
@@ -44,12 +46,14 @@ class EmptyScreen:
         star.x = star_width + 2 * star_width * star_number
         star.rect.x = star.x
         star.rect.y = star_height + 2 * star.rect.height * row_number
-        self.star.add(star)
+        self.stars.add(star)
 
     def update_screen(self):
         """Updating screen."""
         self.screen.fill(self.bg_color)
         self.star.update()
+        self.create_star_grid()
+        self.stars.draw(self.screen)
         pygame.display.flip()
 
 
