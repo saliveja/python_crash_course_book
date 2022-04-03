@@ -5,7 +5,7 @@ from settings import Settings
 
 class EmptyScreen:
 
-    def __init__(self, ):
+    def __init__(self):
         """Initializing empty screen."""
         pygame.init()
         self.settings = Settings()
@@ -17,19 +17,19 @@ class EmptyScreen:
     def run_program(self):
         """running the program."""
         while True:
+            self.rocket.update()
+
+        self.update_screen()
 
     def check_events(self):
         """Key events."""
         for event in pygame.event.get():
             self.screen.fill(self.settings.bg_color)
-            pygame.display.set_caption("Empty screen")
+            pygame.display.set_caption("Sideways shooter")
             if event.type == pygame.KEYDOWN:
                 self.key_down(event)
             elif event.type == pygame.KEYUP:
                 self.key_up(event)
-
-            pygame.display.flip()
-
 
     def key_down(self, event):
         """Key down events."""
@@ -66,6 +66,7 @@ class EmptyScreen:
         """Update screen."""
         self.screen.fill(self.settings.bg_color)
         self.rocket.draw()
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
