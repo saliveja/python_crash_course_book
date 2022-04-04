@@ -1,5 +1,6 @@
 import pygame
 import random as random
+from raindrops import Rain
 
 
 class Rain:
@@ -14,9 +15,14 @@ class Rain:
         pygame.display.set_caption("Rain")
         self.rain = Rain(self)
         self.rain_fall = pygame.sprite.Group()
-        self.create_raindrops()
+        self.create_raindrop()
 
-    def create_raindrops(self):
+    def run_program(self):
+        """running the program."""
+        while True:
+            self.update_screen()
+
+    def create_star_grid(self):
         """Drawing a grid of stars on the screen."""
         number = random.randrange(555, 1333)
         # making variable for the wished randomness of numbers
@@ -24,25 +30,40 @@ class Rain:
         for i in range(number):
             # for integer within the range defined in number
             x = random.randrange(
-                self.screen_width - self.star.star_width)
+                self.screen_width - self.rain.star_width)
             # Randomizing stars horizontally
             y = random.randrange(
-                self.screen_height - self.star.star_height)
+                self.screen_height - self.rain.star_height)
             # randomizing stars vertically
             self.create_raindrop(x, y)
             # calling for the method create_star with the randomization
             # defined above
 
-    def create_raindrop(self, alien_number, row_number):
+    def create_raindrop(self, x, y):
         """Create an alien and place it in the row."""
-        alien = Alien(self)
-        alien_width, alien_height = alien.rect.size
-        alien.x = alien_width + 2 * alien_width * alien_number
-        alien.rect.x = alien.x
-        alien.rect.y = alien_height + 2 * alien.rect.height * row_number
-        # creating a space at the top of the screen which is the height
-        # of one alien
-        self.aliens.add(alien)
+        rain = Rain(self)
+        # making an instance of class Star
+        rain.rect.x = x
+        # rect us used to store and manipulate rectangular areas
+        # most of the information comes from the class Stars
+        # here, we get access to the horizontal rect
+        rain.rect.y = y
+        # accessing vertical rect
+        # we wanted to randomize on x and y-axis
+        # we also need access to position the stars on both axis
+        # these two variables gives access to these two rect
+
+        self.rain_fall.add(rain)
+        # adding star to the group stars from the class Star
+
+    def update_screen(self):
+        """Updating screen."""
+        self.screen.fill(self.bg_color)
+        self.rain.update()
+        # self.create_star_grid()
+        pygame.display.flip()
 
 
-
+if __name__ == '__main__':
+    rain = Rain()
+    rain.run_program()

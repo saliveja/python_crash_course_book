@@ -22,6 +22,8 @@ class Rain(Sprite):
         self.rect.y = self.rect.height
 
         self.x = float(self.rect.x)
+        self.width = 3
+        self.height = 3
         self.speed = 3
         self.rect.top = self.screen_rect.top
 
