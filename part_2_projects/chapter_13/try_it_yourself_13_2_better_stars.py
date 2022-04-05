@@ -60,7 +60,6 @@ class EmptyScreen:
         """Updating screen."""
         self.screen.fill(self.bg_color)
         self.stars.update()
-        # self.create_star_grid()
         pygame.display.flip()
 
 

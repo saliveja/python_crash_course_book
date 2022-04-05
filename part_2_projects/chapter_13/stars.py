@@ -3,13 +3,12 @@ from pygame.sprite import Sprite
 
 
 class Star(Sprite):
-    """A class to manage the ship."""
+    """A class to create the star."""
 
     def __init__(self, stars_main):
-        """Initialize the ship and set its starting position."""
+        """Initializing."""
 
         super().__init__()
-        # Ship inherits from Sprite
 
         self.screen = stars_main.screen
         self.screen_rect = stars_main.screen.get_rect()
