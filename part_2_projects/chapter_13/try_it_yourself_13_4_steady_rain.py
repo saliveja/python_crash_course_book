@@ -17,18 +17,16 @@ class FallingRain:
         pygame.display.set_caption("Falling rain")
         self.raindrop = Raindrop(self)
         self.rain_fall = pygame.sprite.Group()
+        self.game_active = False
         self.create_rain_grid()
 
     def run_program(self):
         """running the program."""
         while True:
-            # self.raindrop.movement()
-
+            self.game_active = True
             self.check_key_event()
-
             self.update_screen()
             self.rain_fall.update()
-            self.raindrop.check_position()
 
     def create_rain_grid(self):
         """Drawing a grid of raindrops on the screen."""
@@ -61,10 +59,22 @@ class FallingRain:
                 if event.key == pygame.K_q:
                     sys.exit()
 
+    def loop_rainfall(self):
+        """if raindrop reached the bottom, loop from the beginning."""
+        for raindrop in self.rain_fall.sprites():
+            if raindrop.check_raindrop_position():
+                self.restart_rain()
+                break
+
+    def restart_rain(self):
+        """Start the rain again from the top."""
+        for raindrop in self.rain_fall.sprites():
+            raindrop.rect.x = 0
+            self.rain_fall.update()
+
     def update_screen(self):
         """Updating screen."""
         self.screen.fill(self.bg_color)
-
         self.rain_fall.draw(self.screen)
         pygame.display.flip()
 
