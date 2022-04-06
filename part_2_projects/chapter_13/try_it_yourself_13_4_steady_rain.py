@@ -59,7 +59,7 @@ class FallingRain:
                 if event.key == pygame.K_q:
                     sys.exit()
 
-    def loop_rainfall(self):
+    def check_rain_edges(self):
         """if raindrop reached the bottom, loop from the beginning."""
         for raindrop in self.rain_fall.sprites():
             if raindrop.check_raindrop_position():
@@ -70,7 +70,7 @@ class FallingRain:
         """Start the rain again from the top."""
         for raindrop in self.rain_fall.sprites():
             raindrop.rect.x = 0
-            self.rain_fall.update()
+            self.raindrop.direction = 1
 
     def update_screen(self):
         """Updating screen."""
