@@ -23,9 +23,3 @@ class Raindrop(Sprite):
         # """Rain falling."""
         self.y += (self.rain_speed * self.direction)
         self.rect.y = self.y
-
-    def check_raindrop_position(self):
-        """Checking position of raindrops."""
-        screen_rect = self.screen.get_rect()
-        if self.rect.bottom >= screen_rect.bottom:
-            return True

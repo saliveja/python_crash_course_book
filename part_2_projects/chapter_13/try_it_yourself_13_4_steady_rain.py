@@ -27,6 +27,7 @@ class FallingRain:
             self.check_key_event()
             self.update_screen()
             self.rain_fall.update()
+            self.check_rain_edges()
 
     def create_rain_grid(self):
         """Drawing a grid of raindrops on the screen."""
@@ -61,10 +62,17 @@ class FallingRain:
 
     def check_rain_edges(self):
         """if raindrop reached the bottom, loop from the beginning."""
+        raindrop = Raindrop()
         for raindrop in self.rain_fall.sprites():
-            if raindrop.check_raindrop_position():
+            if raindrop.rain_edges():
                 self.restart_rain()
                 break
+
+    def rain_edges(self):
+        """Checking position of raindrops."""
+        screen_rect = self.screen.get_rect()
+        if self.rect.bottom >= screen_rect.bottom:
+            return True
 
     def restart_rain(self):
         """Start the rain again from the top."""
