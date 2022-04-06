@@ -30,7 +30,6 @@ class MakeScreen:
         while True:
             self.displayScreen()
             self.events()
-            self.movement()
 
     def displayScreen(self):
         """Displaying screen."""

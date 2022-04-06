@@ -1,7 +1,8 @@
 import sys
 import pygame
+from pygame.sprite import Sprite
 import random as random
-from raindrops import Rain
+from raindrops import Raindrop
 
 
 class FallingRain:
@@ -14,34 +15,45 @@ class FallingRain:
         self.screen_height = 1600
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Falling rain")
-        self.rain = Rain(self)
+        self.raindrop = Raindrop(self)
         self.rain_fall = pygame.sprite.Group()
         self.create_rain_grid()
 
     def run_program(self):
         """running the program."""
         while True:
+            # self.raindrop.movement()
+
+            self.check_key_event()
+
             self.update_screen()
+            self.rain_fall.update()
 
     def create_rain_grid(self):
         """Drawing a grid of raindrops on the screen."""
-        number = random.randrange(555, 1333)
+        number = random.randrange(500, 1000)
+
+        raindrop_width, raindrop_height = self.raindrop.rect.size
 
         for i in range(number):
             x = random.randrange(
-                self.screen_width - self.rain.rain_width)
+                self.screen_width - raindrop_width)
             y = random.randrange(
-                self.screen_height - self.rain.rain_height)
+                self.screen_height - raindrop_height) - self.screen_height
+
             self.create_raindrop(x, y)
 
     def create_raindrop(self, x, y):
         """Create a raindrop."""
-        raindrop = Rain(self)
-        raindrop.rect.x = x
-        raindrop.rect.y = y
+        raindrop = Raindrop(self)
+        raindrop.x = x
+        raindrop.rect.x = raindrop.x
+        raindrop.y = y
+        raindrop.rect.y = raindrop.y
+
         self.rain_fall.add(raindrop)
 
-    def stop_screen(self):
+    def check_key_event(self):
         """key event to stop screen."""
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
@@ -51,8 +63,8 @@ class FallingRain:
     def update_screen(self):
         """Updating screen."""
         self.screen.fill(self.bg_color)
-        self.rain_fall.update()
-        self.stop_screen()
+
+        self.rain_fall.draw(self.screen)
         pygame.display.flip()
 
 

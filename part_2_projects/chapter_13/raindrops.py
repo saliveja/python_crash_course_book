@@ -2,7 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 
 
-class Rain(Sprite):
+class Raindrop(Sprite):
     """A class to represent a single raindrop."""
 
     def __init__(self, falling_rain):
@@ -13,11 +13,16 @@ class Rain(Sprite):
         self.screen_rect = falling_rain.screen.get_rect()
         self.image = pygame.image.load('images/raindrop_black.bmp')
         self.rect = self.image.get_rect()
-        self.rain_width = 50
-        self.rain_height = 50
-        self.rect.topleft = self.screen_rect.topleft
-        self.x = self.rect.x
+        self.rect.x = self.rect.width
+        self.rect.y = self.rect.height
+        self.rain_speed = 3
+        self.direction = 1
+        self.y = float(self.rect.y)
 
     def update(self):
-        """Draw the raindrop at its current location."""
-        self.screen.blit(self.image, self.rect)
+        # """Rain falling."""
+        # self.screen.blit(self.image, self.rect)
+
+        # def movement(self):
+        self.y += (self.rain_speed * self.direction)
+        self.rect.y = self.y
