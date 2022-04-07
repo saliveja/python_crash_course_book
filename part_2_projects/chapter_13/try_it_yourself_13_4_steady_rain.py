@@ -1,7 +1,6 @@
 import sys
 import pygame
-from pygame.sprite import Sprite
-import random as random
+import random
 from raindrops import Raindrop
 
 
@@ -15,19 +14,19 @@ class FallingRain:
         self.screen_height = 1600
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         pygame.display.set_caption("Falling rain")
+        self.screen_rect = self.screen.get_rect()
         self.raindrop = Raindrop(self)
         self.rain_fall = pygame.sprite.Group()
-        self.game_active = False
         self.create_rain_grid()
 
     def run_program(self):
         """running the program."""
         while True:
-            self.game_active = True
             self.check_key_event()
-            self.update_screen()
             self.rain_fall.update()
-            self.check_rain_edges()
+            self.update_position()
+
+            self.update_screen()
 
     def create_rain_grid(self):
         """Drawing a grid of raindrops on the screen."""
@@ -53,32 +52,35 @@ class FallingRain:
 
         self.rain_fall.add(raindrop)
 
+    def remove_at_bottom(self):
+        """If the raindrops are at the bottom, remove."""
+        for raindrop in self.rain_fall.sprites():
+            self.rain_fall.remove(raindrop)
+
+    def update_position(self):
+        """Check if the rain is at the bottom,
+        then update position of the rain."""
+        if self.raindrop.check_bottom():
+            self.remove_at_bottom()
+            self.new_rain_grid()
+
+    def new_rain_grid(self):
+        """Creates new raindrop on top of the screen"""
+        number = random.randrange(500, 1000)
+        raindrop_width, raindrop_height = self.raindrop.rect.size
+        self.raindrop.rect.top = self.screen_rect.top
+        for i in range(number):
+            self.x = random.randrange(self.screen_width - raindrop_width)
+            self.y = random.randrange(self.screen_height - raindrop_height)
+
+        self.create_raindrop(self.x, self.y)
+
     def check_key_event(self):
         """key event to stop screen."""
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     sys.exit()
-
-    def check_rain_edges(self):
-        """if raindrop reached the bottom, loop from the beginning."""
-        raindrop = Raindrop()
-        for raindrop in self.rain_fall.sprites():
-            if raindrop.rain_edges():
-                self.restart_rain()
-                break
-
-    def rain_edges(self):
-        """Checking position of raindrops."""
-        screen_rect = self.screen.get_rect()
-        if self.rect.bottom >= screen_rect.bottom:
-            return True
-
-    def restart_rain(self):
-        """Start the rain again from the top."""
-        for raindrop in self.rain_fall.sprites():
-            raindrop.rect.x = 0
-            self.raindrop.direction = 1
 
     def update_screen(self):
         """Updating screen."""

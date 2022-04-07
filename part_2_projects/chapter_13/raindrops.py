@@ -15,11 +15,18 @@ class Raindrop(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
-        self.rain_speed = 3
+        self.rain_speed = 5
         self.direction = 1
         self.y = float(self.rect.y)
 
     def update(self):
-        # """Rain falling."""
+        """Rain falling."""
         self.y += (self.rain_speed * self.direction)
         self.rect.y = self.y
+
+    def check_bottom(self):
+        """Checking position of raindrops."""
+        self.screen_rect = self.screen.get_rect()
+        if self.rect.top >= self.screen_rect.bottom:
+            print("Hit!!")
+            return True
