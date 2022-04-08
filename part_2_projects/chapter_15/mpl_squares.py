@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 
-# importing pyplot as plt
-
+input_values = [1, 2, 3, 4, 5]
+# plot assumes that that the first data point is 0
+# this is the default behavior
+# by adding this variable, we override the default
 squares = [1, 4, 9, 16, 25]
 # list containing a square number sequence
 fig, ax = plt.subplots()
@@ -9,7 +11,7 @@ fig, ax = plt.subplots()
 # can generate one or more plots within the same figure
 # variable fig represent the entire figure (the collection of plots)
 # variable represent a single plot
-ax.plot(squares, linewidth=3)
+ax.plot(input_values, squares, linewidth=3)
 # plotting the data
 # linewidth makes the line thicker than default
 ax.set_title("Square Numbers", fontsize=24)
