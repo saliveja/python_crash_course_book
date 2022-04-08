@@ -68,8 +68,6 @@ class FallingRain:
 
             if raindrop.rect.top >= self.screen_rect.bottom:
                 self.rain_fall.remove(raindrop)
-                print("Hit!!")
-
                 return True
 
     def check_key_event(self):
