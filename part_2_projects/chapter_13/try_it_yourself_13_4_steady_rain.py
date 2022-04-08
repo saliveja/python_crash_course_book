@@ -10,11 +10,14 @@ class FallingRain:
         """Initializing the program."""
         pygame.init()
         self.bg_color = (100, 30, 200)
-        self.screen_width = 4000
-        self.screen_height = 1600
+        # self.screen_width = 4000
+        # self.screen_height = 1600
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+
         pygame.display.set_caption("Falling rain")
         self.screen_rect = self.screen.get_rect()
+        self.screen_width = self.screen_rect.width
+        self.screen_height = self.screen_rect.height
         self.raindrop = Raindrop(self)
         self.rain_fall = pygame.sprite.Group()
         self.create_rain_grid()
@@ -23,14 +26,12 @@ class FallingRain:
         """running the program."""
         while True:
             self.check_key_event()
-            self.rain_fall.update()
             self.update_position()
-
             self.update_screen()
 
     def create_rain_grid(self):
         """Drawing a grid of raindrops on the screen."""
-        number = random.randrange(500, 1000)
+        number = random.randrange(50, 70)
 
         raindrop_width, raindrop_height = self.raindrop.rect.size
 
@@ -42,6 +43,19 @@ class FallingRain:
 
             self.create_raindrop(x, y)
 
+    def new_raindrop(self):
+
+        """Creates new raindrop on top of the screen"""
+        raindrop_width, raindrop_height = self.raindrop.rect.size
+        # number = random.randrange(100, 150)
+        #
+        # for i in range(number):
+        x = random.randrange(self.screen_width -
+                             raindrop_width)
+        y = (0 - raindrop_height)
+
+        self.create_raindrop(x, y)
+
     def create_raindrop(self, x, y):
         """Create a raindrop."""
         raindrop = Raindrop(self)
@@ -52,28 +66,24 @@ class FallingRain:
 
         self.rain_fall.add(raindrop)
 
-    def remove_at_bottom(self):
-        """If the raindrops are at the bottom, remove."""
+    def check_bottom_remove_add_new(self):
+        """Checking position of raindrop and remove."""
+
         for raindrop in self.rain_fall.sprites():
-            self.rain_fall.remove(raindrop)
+            if raindrop.rect.bottom == self.screen_rect.bottom:
+                self.new_raindrop()
+
+            if raindrop.rect.top >= self.screen_rect.bottom:
+                self.rain_fall.remove(raindrop)
+                print("Hit!!")
+
+                return True
 
     def update_position(self):
         """Check if the rain is at the bottom,
         then update position of the rain."""
-        if self.raindrop.check_bottom():
-            self.remove_at_bottom()
-            self.new_rain_grid()
-
-    def new_rain_grid(self):
-        """Creates new raindrop on top of the screen"""
-        number = random.randrange(500, 1000)
-        raindrop_width, raindrop_height = self.raindrop.rect.size
-        self.raindrop.rect.top = self.screen_rect.top
-        for i in range(number):
-            self.x = random.randrange(self.screen_width - raindrop_width)
-            self.y = random.randrange(self.screen_height - raindrop_height)
-
-        self.create_raindrop(self.x, self.y)
+        self.rain_fall.update()
+        self.check_bottom_remove_add_new()
 
     def check_key_event(self):
         """key event to stop screen."""
