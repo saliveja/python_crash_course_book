@@ -22,13 +22,6 @@ class FallingRain:
         self.rain_fall = pygame.sprite.Group()
         self.create_rain_grid()
 
-    def run_program(self):
-        """running the program."""
-        while True:
-            self.check_key_event()
-            self.update_position()
-            self.update_screen()
-
     def create_rain_grid(self):
         """Drawing a grid of raindrops on the screen."""
         number = random.randrange(50, 70)
@@ -79,12 +72,6 @@ class FallingRain:
 
                 return True
 
-    def update_position(self):
-        """Check if the rain is at the bottom,
-        then update position of the rain."""
-        self.rain_fall.update()
-        self.check_bottom_remove_add_new()
-
     def check_key_event(self):
         """key event to stop screen."""
         for event in pygame.event.get():
@@ -97,6 +84,19 @@ class FallingRain:
         self.screen.fill(self.bg_color)
         self.rain_fall.draw(self.screen)
         pygame.display.flip()
+
+    def update_position(self):
+        """Check if the rain is at the bottom,
+        then update position of the rain."""
+        self.rain_fall.update()
+        self.check_bottom_remove_add_new()
+
+    def run_program(self):
+        """running the program."""
+        while True:
+            self.check_key_event()
+            self.update_position()
+            self.update_screen()
 
 
 if __name__ == '__main__':
