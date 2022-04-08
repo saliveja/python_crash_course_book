@@ -11,11 +11,11 @@ class Raindrop(Sprite):
 
         self.screen = falling_rain.screen
         self.screen_rect = falling_rain.screen.get_rect()
-        self.image = pygame.image.load('images/raindrop_black.bmp')
+        self.image = pygame.image.load('images/raindrop.bmp')
         self.rect = self.image.get_rect()
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
-        self.rain_speed = 2
+        self.rain_speed = 1
         self.raindrop_height = 10
         self.raindrop_width = 10
         self.direction = 1
