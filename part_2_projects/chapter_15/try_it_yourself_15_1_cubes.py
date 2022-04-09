@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-x_values = [1, 2, 3, 4, 5]
-# the nnumbers to plot
+x_values = range(1, 5001)
+# the numbers to plot
 y_values = [x ** 3 for x in x_values]
 # making a for loop for cubes
 
@@ -18,6 +18,6 @@ ax.set_xlabel('value', fontsize=10)
 # x label value
 ax.tick_params(axis='both', labelsize=10)
 # size for ticks on both axis is 10
-ax.axis([0, 6, 0, 125])
+ax.axis([0, 6000, 0, 125000000000])
 # defining range, x until 6 and y until 125
 plt.show()
