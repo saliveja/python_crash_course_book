@@ -29,3 +29,7 @@ ax.axis([0, 1100, 0, 1100000])
 # the minimum and the maximum values for the x and y axis
 # specifying the range for each axis
 plt.show()
+# if we want to save the plot to a file we can instead of show() use:
+# plt.savefig('squares_plot.png', bbox_inches='tight')
+# 'squares_plot.png' is the filename
+# bbox_inches='tight' takes away whitespace around the plot
