@@ -11,8 +11,12 @@ y_values = [x ** 2 for x in x_values]
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.scatter(x_values, y_values, s=10)
+ax.scatter(x_values, y_values, c=(0.8, 0.6, 0.9), s=10)
 # s variable defines the size of the dots
+# c defines the color which can be expressed like 'red', 'green' etc
+# or with RGB color model. 0 produces dark colors and values
+# closer to 1 lighter colors
+
 ax.set_title("Square Numbers", fontsize=24)
 ax.set_xlabel("Value", fontsize=14)
 
