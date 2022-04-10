@@ -15,10 +15,16 @@ while True:
     # referring to the variable in RandomWalk, defining the number to 5000
     ax.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,
                edgecolors='none', s=15)
-    # c=point_numbers sayd that the points in RandomWalk should be colored
+    # c=point_numbers said that the points in RandomWalk should be colored
     # the chosen color is blue
     # ew.x_values etc is the list starting with default value 0
-    # removing edge color
+    # removing the black edge of each point
+    ax.scatter(0, 0, c='green', edgecolors='none', s=100)
+    # set the starting point to 0, 0 with color green and in size 100
+    # instead of 15
+    ax.scatter(rw.x_values[-1], rw.y_values[-1], c='red',
+               edgecolors='none', s=100)
+    # the last point, which is defined by the index -1, is red and size 100
     plt.show()
 
     keep_running = input("Make another walk? y/n: ")
