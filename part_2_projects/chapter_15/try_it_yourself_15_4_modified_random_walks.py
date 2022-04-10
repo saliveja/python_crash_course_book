@@ -1,13 +1,15 @@
 import matplotlib.pyplot as plt
+from random import choice
 from random_walk import RandomWalk
 
 while True:
-    rw = RandomWalk(80)
+    rw = RandomWalk()
     # increasing the number of points to 50 000 from 5000
-    x_direction = [-1, 1]
-    x_distance = range(8)
-    y_direction = [1]
-    rw.fill_walk(x_direction, x_distance, y_direction)
+    # x_direction = choice([1, -1])
+    x_distance = choice(range(2000))
+    y_direction = choice([1, -1])
+
+    rw.fill_walk(x_distance, y_direction)
 
     plt.style.use('classic')
     # using the style classic
@@ -16,7 +18,7 @@ while True:
     # figsize is setting the size of the figure
     # if we know the resolution (dpi), we can add this parameter to make
     # more efficient use of available space
-    point_numbers = range(rw.num_points)
+    # point_numbers = range(rw.num_points)
     # referring to the variable in RandomWalk, defining the number to 5000
     ax.plot(rw.x_values, rw.y_values, c='pink', linewidth=0.75)
     # c=point_numbers said that the points in RandomWalk should be colored
