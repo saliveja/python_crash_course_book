@@ -28,12 +28,25 @@ for value in range(1, die.num_sides + 1):
     # appending the count to the list frequencies
 
 x_values = list(range(1, die.num_sides + 1))
+# number 1 to 6
+# plotly doesn't accept range directly which is why we need to
+# convert to a variable
 data = [Bar(x=x_values, y=frequencies)]
+# bars displaying the values and their frequency
+# bar is a class in plotly when formatting data to a bar chart
+# a data set can have multiple elements, therefore we need to wrap in []
 
 x_axis_config = {'title': 'Result'}
+# title on the x axis is Result
 y_axis_config = {'title': 'Frequency of result'}
+# title on the y axis is Frequency of result
 my_layout = Layout(title='Results of rolling one D6 1000 times',
                    xaxis=x_axis_config, yaxis=y_axis_config)
+# layout id the overall visual of the graph
+# title is the overall title of the graph
+# xaxis and yaxis are the side labels
 offline.plot({'data': data, 'layout': my_layout}, filename='d6.html')
+# offline needs a dictionary containing the data
+# and accepts a file name where we will store the output
 
-print(frequencies)
+# print(frequencies)
