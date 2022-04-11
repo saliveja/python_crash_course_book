@@ -32,12 +32,12 @@ x_axis_config = {'title': 'Result', 'dtick': 1}
 # dtick tells plotly to label every tick mark
 y_axis_config = {'title': 'Frequency of result'}
 # title on the y axis is Frequency of result
-my_layout = Layout(title='Results of rolling a D6 and a D10 50000 times',
+my_layout = Layout(title='Results of rolling two D8 1000 times',
                    xaxis=x_axis_config, yaxis=y_axis_config)
 # layout id the overall visual of the graph
 # title is the overall title of the graph
 # xaxis and yaxis are the side labels
-offline.plot({'data': data, 'layout': my_layout}, filename='d6_d10.html')
+offline.plot({'data': data, 'layout': my_layout}, filename='d8_d8.html')
 # offline needs a dictionary containing the data
 # and accepts a file name where we will store the output
 
