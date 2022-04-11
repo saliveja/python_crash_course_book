@@ -7,7 +7,7 @@ die_2 = Die(8)
 # creating two instances of class Die
 results = []
 
-for roll_num in range(700_000):
+for roll_num in range(1200_000):
     result = die_1.roll() + die_2.roll()
     # we have two dice instead of one and the result is the sum of both
     results.append(result)
@@ -32,7 +32,7 @@ x_axis_config = {'title': 'Result', 'dtick': 1}
 # dtick tells plotly to label every tick mark
 y_axis_config = {'title': 'Frequency of result'}
 # title on the y axis is Frequency of result
-my_layout = Layout(title='Results of rolling two D8 700000 times',
+my_layout = Layout(title='Results of rolling two D8 1200000 times',
                    xaxis=x_axis_config, yaxis=y_axis_config)
 # layout id the overall visual of the graph
 # title is the overall title of the graph
