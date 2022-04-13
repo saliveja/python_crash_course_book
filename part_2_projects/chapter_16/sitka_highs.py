@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 filename = 'data/sitka_weather_07-2018_simple.csv'
 with open(filename) as f:
@@ -19,10 +20,12 @@ with open(filename) as f:
         print(index, column_header)
         # ie. 1 STATION
 
-    highs = []
+    dates, highs = [], []
     for row in reader:
+        current_date = datetime.strptime(row[3], '%Y-%m-%d')
         high = int(row[6])
         # this refers to point six in index which is high temperatures
+        dates.append(current_date)
         highs.append(high)
         # each are appended to the list highs
 
