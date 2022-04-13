@@ -2330,9 +2330,151 @@ class RandomWalk:
             self.y_values.append(y)
             # adding y to the list
 
+# visualizing RandomWalk
+
+import matplotlib.pyplot as plt
+from random_walk import RandomWalk
+
+while True:
+    rw = RandomWalk(50_000)
+    # increasing the number of points to 50 000 from 5000
+    rw.fill_walk()
+    # making an instance of the class RandomWalk
+
+    plt.style.use('classic')
+    # using the style classic
+    fig, ax = plt.subplots(figsize=(15, 9), dpi=72)
+    # variable representing the whole figure and a single plot
+    # figsize is setting the size of the figure
+    # if we know the resolution (dpi), we can add this parameter to make
+    # more efficient use of available space
+    point_numbers = range(rw.num_points)
+    # referring to the variable in RandomWalk, defining the number to 5000
+    ax.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,
+               edgecolors='none', s=1)
+    # c=point_numbers said that the points in RandomWalk should be colored
+    # the chosen color is blue
+    # ew.x_values etc is the list starting with default value 0
+    # removing the black edge of each point
+    ax.scatter(0, 0, c='green', edgecolors='none', s=100)
+    # set the starting point to 0, 0 with color green and in size 100
+    # instead of 15
+    ax.scatter(rw.x_values[-1], rw.y_values[-1], c='red',
+               edgecolors='none', s=100)
+    # the last point, which is defined by the index -1, is red and size 100
+    ax.get_xaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
+    # removing both axis
+    plt.show()
+
+    keep_running = input("Make another walk? y/n: ")
+    if keep_running == 'n':
+        break
+
+# using bar() in Matplotlib to make a bar chart
+
+ax.bar(x, height, width, bottom, align)
 
 
+The parameters to the function are −
+-------------------------------------------------------------------------------------------------------------------------------------------
+x	| sequence of scalars representing the x coordinates of the bars. align controls if x is the bar center (default) or left edge.	|
+height	| scalar or sequence of scalars representing the height(s) of the bars.								|
+width	| scalar or array-like, optional. the width(s) of the bars default 0.8								|
+bottom	| scalar or array-like, optional. the y coordinate(s) of the bars default None.							|
+align	| {‘center’, ‘edge’}, optional, default ‘center’											|
+-------------------------------------------------------------------------------------------------------------------------------------------
 
+# datetime module
+
+______________________________________________________________
+Argument	|	Meaning				|
+--------------------------------------------------------------
+%A		| Weekday name, such as Monday		|
+--------------------------------------------------------------
+%B		| Month name, such as January			|
+--------------------------------------------------------------
+%m		| Month as a number (01 to 12)			|
+--------------------------------------------------------------
+%d		| Day of the month, as a number (01 to 31)	|
+--------------------------------------------------------------
+%Y		| Four-digit year, such as 2019		|
+--------------------------------------------------------------
+%y		| Two-digit year, such as 19			|
+--------------------------------------------------------------
+%H		| Hour, in 24H format (00 to 23)		|
+--------------------------------------------------------------
+%I		| Hour in 12H format, (01 to 12)		|
+--------------------------------------------------------------
+%p		| am or pm					|
+--------------------------------------------------------------
+%M		| Minutes (00 to59)				|
+--------------------------------------------------------------
+%S		| Seconds (00 to 61)				|
+--------------------------------------------------------------
+
+# Weather charts
+
+import csv
+import matplotlib.pyplot as plt
+from datetime import datetime
+
+filename = 'data/sitka_weather_2018_simple.csv'
+with open(filename) as f:
+    reader = csv.reader(f)
+    # the csv.reader() returns a reader object
+    # return a string each time the next method is called
+    header_row = next(reader)
+    # the header STATION represent the code for the weather station
+    # NAME indicates that the second value in each line is the name
+    # of the weather station
+    # The rest is the weather data: TMAX (high temperature),
+    # TMIN (low temperature)
+    # print(header_row)
+
+    for index, column_header in enumerate(header_row):
+        # enumerate returns the index and value for each item
+        print(index, column_header)
+        # ie. 1 STATION
+
+    dates, highs, lows = [], [], []
+    # creating two empty lists to store the dates and the high temperatures
+    for row in reader:
+        current_date = datetime.strptime(row[2], '%Y-%m-%d')
+        # converting date to a datetime object
+        high = int(row[5])
+        # this refers to row 5 in index which is high temperatures (TMAX)
+        low = int(row[6])
+        # low equals the low temperatures (TMIN)
+        dates.append(current_date)
+        # datetime object appended to list dates
+        highs.append(high)
+        # each are appended to the list highs
+        lows.append(low)
+        # appending the low temperatures to the list lows
+
+plt.style.use('seaborn')
+fig, ax = plt.subplots()
+ax.plot(dates, highs, c='red', alpha=0.5)
+# graph line is colored red
+# making graph of high temps
+# alpha controls a colors transparency where 0 is complete transparent
+# and 1 is opaque
+ax.plot(dates, lows, c='blue', alpha=0.5)
+# adding dates and data for low temp in blue color
+ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+# filling the space between the highs and lows with a transparent blue color
+ax.set_title('Daily high and low temperatures - 2018', fontsize=24)
+# overall title
+ax.set_xlabel('', fontsize=16)
+# x has no label
+fig.autofmt_xdate()
+# draws the date labels diagonally so they don't overlap
+ax.set_ylabel('Temperature (F)', fontsize=16)
+# y label displays temperatures
+ax.tick_params(axis='both', which='major', labelsize=16)
+
+plt.show()
 
 	
 		
