@@ -17,21 +17,28 @@ with open(filename) as f:
     for index, column_header in enumerate(header_row, +1):
         # enumerate returns the index and value for each item
         print(index, column_header)
+        # ie. 1 STATION 
 
     highs = []
     for row in reader:
         high = int(row[6])
+        # this refers to point six in index which is high temperatures
         highs.append(high)
+        # each are appended to the list highs
 
 print(highs)
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
 ax.plot(highs, c='red')
+# graph line is colored red
 
 ax.set_title('Daily high temperatures, July 2018', fontsize=24)
+# overall title
 ax.set_xlabel('', fontsize=16)
+# x has no label
 ax.set_ylabel('Temperature (F)', fontsize=16)
+# y label displays temperatures
 ax.tick_params(axis='both', which='major', labelsize=16)
 
 plt.show()
