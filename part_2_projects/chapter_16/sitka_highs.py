@@ -40,11 +40,15 @@ print(highs)
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(dates, highs, c='red')
+ax.plot(dates, highs, c='red', alpha=0.5)
 # graph line is colored red
 # making graph of high temps
-ax.plot(dates, lows, c='blue')
+# alpha controls a colors transparency where 0 is complete transparent
+# and 1 is opaque
+ax.plot(dates, lows, c='blue', alpha=0.5)
 # adding dates and data for low temp in blue color
+ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+# filling the space between the highs and lows with a transparent blue color
 ax.set_title('Daily high and low temperatures - 2018', fontsize=24)
 # overall title
 ax.set_xlabel('', fontsize=16)
