@@ -17,7 +17,7 @@ with open(filename) as f:
     for index, column_header in enumerate(header_row, +1):
         # enumerate returns the index and value for each item
         print(index, column_header)
-        # ie. 1 STATION 
+        # ie. 1 STATION
 
     highs = []
     for row in reader:
