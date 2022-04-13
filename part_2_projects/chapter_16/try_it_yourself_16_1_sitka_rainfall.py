@@ -17,7 +17,7 @@ with open(filename) as f:
         # adding format for data
 
         try:
-            rain = int(row[3])
+            rain = float(row[3])
             # PCRP is on row three. making variable of the value
         except ValueError:
             print(f'Missing data for {current_date}')
