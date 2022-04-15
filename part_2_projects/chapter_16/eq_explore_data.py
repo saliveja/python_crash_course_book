@@ -42,8 +42,12 @@ data = [{
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
+    'marker': {
+        'size': [5 * mag for mag in mags]
+    },
 }]
 # making data into a dictionary, which is better for customization
+# changing the size of markers depending on the magnitude of the earthquake
 my_layout = Layout(title='Global Earthquakes')
 # adding a title
 fig = {'data': data, 'layout': my_layout}
