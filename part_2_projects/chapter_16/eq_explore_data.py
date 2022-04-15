@@ -10,3 +10,7 @@ with open(readable_file, 'w') as f:
     json.dump(all_eq_data, f, indent=4)
     # put json data ina file
     # indent to match data structure
+
+all_eq_dicts = all_eq_data['features']
+# pulling out the number of earthquakes from the json file
+print(len(all_eq_dicts))
