@@ -10,28 +10,25 @@ with open(filename) as f:
     for index, column_reader in enumerate(header_row):
         print(index, column_reader)
 
-    dates, highs, lows = [], [], []
+    dates, rains = [], []
     for row in reader:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
         try:
-            high = int(row[6])
-            low = int(row[7])
+            rain = float(row[3])
         except ValueError:
             print(f"Missing data for {current_date}")
         else:
             dates.append(current_date)
-            highs.append(high)
-            lows.append(low)
+            rains.append(rain)
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(dates, highs, c='purple')
-ax.plot(dates, lows, c='blue')
-title = 'Daily high & low temperatures 2022 in Poland'
+ax.plot(dates, rains, c='purple')
+title = 'Daily amount of rain in Poland 2022'
 ax.set_title(title, fontsize=20)
 ax.set_xlabel('', fontsize=16)
 fig.autofmt_xdate()
-ax.set_ylabel('Temperature (F)', fontsize=16)
+ax.set_ylabel('Amount of rain (mm)', fontsize=16)
 ax.tick_params(axis='both', which='major', labelsize=16)
 
 plt.show()
