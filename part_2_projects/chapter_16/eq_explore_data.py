@@ -38,9 +38,12 @@ for eq_dict in all_eq_dicts:
     print(lons[:5])
     print(lats[:5])
 
-data = [Scattergeo(lon=lons, lat=lats)]
-# making a list called data
-# Scattergeo only requires lat and lon
+data = [{
+    'type': 'scattergeo',
+    'lon': lons,
+    'lat': lats,
+}]
+# making data into a dictionary, which is better for customization
 my_layout = Layout(title='Global Earthquakes')
 # adding a title
 fig = {'data': data, 'layout': my_layout}
