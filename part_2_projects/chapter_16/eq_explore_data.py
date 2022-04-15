@@ -13,4 +13,16 @@ with open(readable_file, 'w') as f:
 
 all_eq_dicts = all_eq_data['features']
 # pulling out the number of earthquakes from the json file
-print(len(all_eq_dicts))
+# print(len(all_eq_dicts))
+
+mags = []
+for eq_dict in all_eq_dicts:
+    # for dictionary in all dictionaries
+    mag = eq_dict['properties']['mag']
+    # earthquake magnitude is stored in properties section
+    # and under the key 'mag'
+    # each magnitude is stored in the variable mag
+    mags.append(mag)
+    # and appended to the list mags
+    print(mags[:10])
+    # printing the first ten values
