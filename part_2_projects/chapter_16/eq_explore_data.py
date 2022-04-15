@@ -46,8 +46,14 @@ data = [{
         'size': [5 * mag for mag in mags],
         'color': mags,
         'colorscale': 'Viridis',
+        # a colorscale that ranges from dark blue to bright yellow
         'reversescale': True,
+        # reverse for colors, using yellow for the lowest values
+        # and dark blue for the highest values
+        # the colorbar allow us to control the appearance
         'colorbar': {'title': 'Magnitude'},
+        # the colorbar is called Magnitude so we understand
+        # what we are communicating
     },
 }]
 # making data into a dictionary, which is better for customization
