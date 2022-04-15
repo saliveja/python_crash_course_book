@@ -4,12 +4,12 @@ from plotly import offline
 
 # offline module renders the map
 
-filename = 'data/eq_data_1_day_m1.json'
+filename = 'data/eq_data_30_day_m1.json'
 with open(filename) as f:
     all_eq_data = json.load(f)
     # making datat into dictionary
 
-readable_file = 'data/eq_data_1_day_m1.json'
+readable_file = 'data/eq_data_30_day_m1.json'
 with open(readable_file, 'w') as f:
     json.dump(all_eq_data, f, indent=4)
     # put json data ina file
@@ -43,7 +43,11 @@ data = [{
     'lon': lons,
     'lat': lats,
     'marker': {
-        'size': [5 * mag for mag in mags]
+        'size': [5 * mag for mag in mags],
+        'color': mags,
+        'colorscale': 'Viridis',
+        'reversescale': True,
+        'colorbar': {'title': 'Magnitude'},
     },
 }]
 # making data into a dictionary, which is better for customization
