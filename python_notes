@@ -2477,7 +2477,6 @@ ax.tick_params(axis='both', which='major', labelsize=16)
 plt.show()
 
 # earthquake mag chart
-
 import json
 from plotly.graph_objs import Scattergeo, Layout
 from plotly import offline
@@ -2499,8 +2498,9 @@ all_eq_dicts = all_eq_data['features']
 # pulling out the number of earthquakes from the json file
 # print(len(all_eq_dicts))
 
-mags, lons, lats = [], [], []
+mags, lons, lats, hover_texts = [], [], [], []
 # lists: magnitude, longitude, latitude
+# hover_texts store the label for each marker
 for eq_dict in all_eq_dicts:
     # for dictionary in all dictionaries
     mag = eq_dict['properties']['mag']
@@ -2509,10 +2509,15 @@ for eq_dict in all_eq_dicts:
     # each magnitude is stored in the variable mag
     lon = eq_dict['geometry']['coordinates'][0]
     lat = eq_dict['geometry']['coordinates'][1]
+    title = eq_dict['properties']['title']
+    # this contains a descriptive name of magnitude and location
+    # assigning to variable title
     mags.append(mag)
     # and appended to the list mags
     lons.append(lon)
     lats.append(lat)
+    hover_texts.append(title)
+    # appending title to list hover_texts
     print(mags[:10])
     # printing the first ten values
     print(lons[:5])
@@ -2522,6 +2527,9 @@ data = [{
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
+    'text': hover_texts,
+    # when overing over the marker the name and location of each
+    # mag will be visible
     'marker': {
         'size': [5 * mag for mag in mags],
         'color': mags,
@@ -2544,6 +2552,7 @@ fig = {'data': data, 'layout': my_layout}
 # creating the chart
 offline.plot(fig, filename='global_earthquakes.html')
 # assigning file name
+
 
 # colorscale colors
 
