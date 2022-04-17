@@ -1,7 +1,6 @@
 import json
 from plotly.graph_objs import Scattergeo, Layout
 from plotly import offline
-from datetime import datetime
 
 filename = 'data/significant_month.geojson.json'
 with open(filename) as f:
