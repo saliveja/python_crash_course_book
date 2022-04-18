@@ -12,20 +12,32 @@ print(f"Status code: {r.status_code}")
 response_dict = r.json()
 repo_dicts = response_dict['items']
 
-repo_names, stars = [], []
-# creating two lists to store the names of the repos and
-# the numer of stars they have
+repo_links, stars, labels = [], [], []
 for repo_dict in repo_dicts:
-    repo_names.append(repo_dict['name'])
+    repo_name = repo_dict['name']
+    repo_url = repo_dict['html_url']
+    repo_link = f"<a href='{repo_url}'>{repo_name}</a>"
+    repo_links.append(repo_link)
     stars.append(repo_dict['stargazers_count'])
     # appending data to the lists
+    owner = repo_dict['owner']['login']
+    # pulling the owner info from the repo
+    description = repo_dict['description']
+    # pulling the project description from the repo
+    label = f"{owner}<br />{description}"
+    # the style of the label if to first print the owner
+    # and underneath print the description
+    labels.append(label)
+    # appending label to the list labels
 
 data = [{
     'type': 'bar',
-    'x': repo_names,
+    'x': repo_links,
     # the x axis will show the name of each project
     'y': stars,
     # the y axis will display the height according to number of stars
+    'hovertext': labels,
+    # the text will only be visible when mouse is on the bar
     'marker': {
         'color': 'rgb(60, 100, 150)',
         # setting the color of the bars to blue
