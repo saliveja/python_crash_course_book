@@ -17,6 +17,7 @@ for repo_dict in repo_dicts:
     repo_name = repo_dict['name']
     repo_url = repo_dict['html_url']
     repo_link = f"<a href='{repo_url}'>{repo_name}</a>"
+    # using html anchor address
     repo_links.append(repo_link)
     stars.append(repo_dict['stargazers_count'])
     # appending data to the lists
