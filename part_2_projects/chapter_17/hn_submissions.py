@@ -1,5 +1,6 @@
 from operator import itemgetter
 import requests
+import json
 
 url = 'https://hacker-news.firebaseio.com/v0/topstories.json'
 # making an API call
@@ -7,13 +8,18 @@ r = requests.get(url)
 print(f"Status code: {r.status_code}")
 # printing the status of the response
 
+response_dict = r.json()
+readable_file = 'data/readable_hn_submissions.json'
+with open(readable_file, 'w') as f:
+    json.dump(response_dict, f, indent=4)
+
 submission_ids = r.json()
 # convert object to python list
 submission_dicts = []
 # storing responses in this dictionary
 for submission_id in submission_ids[:30]:
     # looping through the first 30 submission
-    url = 'https://hacker-news.firebaseio.com/v0/item/{submission_id}.json'
+    url = f'https://hacker-news.firebaseio.com/v0/item/{submission_id}.json'
     # making a new API call for each submission including the current value
     # of submission_id
     r = requests.get(url)
@@ -28,7 +34,7 @@ for submission_id in submission_ids[:30]:
         # creating a dictionary, where we store title, link to discussion
         # page for that item and the number of received comments
     }
-    submission_dicts.append(submission_dicts)
+    submission_dicts.append(submission_dict)
     # appending each submission to the list
 
 submission_dicts = sorted(submission_dicts, key=itemgetter('comments'),
