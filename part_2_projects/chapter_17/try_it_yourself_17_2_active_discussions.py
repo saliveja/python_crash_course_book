@@ -5,12 +5,6 @@ from plotly import offline
 
 url = 'https://hacker-news.firebaseio.com/v0/topstories.json'
 r = requests.get(url)
-# print(f"Status code: {r.status_code}")
-#
-# response_dict = r.json()
-# readable_file = 'data/readable_hn_submissions.json'
-# with open(readable_file, 'w') as f:
-#     json.dump(response_dict, f, indent=4)
 
 submission_ids = r.json()
 submission_dicts = []
@@ -51,8 +45,9 @@ data = [{
     'x': sub_links,
     'y': comments,
     'marker': {
-        'color': 'rgb(100, 100, 255)',
-        'line': {'width': 1.5, 'color': 'rgb(50, 50, 50)'}
+        'color': 'rgb(155, 100, 255)',
+        # this changes the bar color
+        'line': {'width': 1.5, 'color': 'rgb(50, 50, 50)'},
     },
     'opacity': 0.6,
 }]
