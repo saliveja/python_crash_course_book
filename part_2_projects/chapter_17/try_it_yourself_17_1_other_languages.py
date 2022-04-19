@@ -7,6 +7,7 @@ r = requests.get(url, headers=headers)
 print(f"Status code: {r.status_code}")
 
 response_dict = r.json()
+total_count = response_dict
 print(f"Total repositories: {response_dict['total_count']}")
 repo_dicts = response_dict['items']
 print(f"Repositories returned: {len(repo_dicts)}")
