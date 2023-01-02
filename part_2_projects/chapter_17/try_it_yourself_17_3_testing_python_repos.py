@@ -18,8 +18,8 @@ class CheckValue(unittest.TestCase):
     def testing_number_of_repositories(self):
         """Testing so the number of repositories are greater
         than a certain amount"""
-        if ol.repo_dicts >= 992000:
-            self.assertE == True
+        repos = len(ol.repo_dict)
+        self.assertTrue(repos < 992000)
 
 
 if __name__ == '__main__':

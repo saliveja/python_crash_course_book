@@ -13,7 +13,7 @@ git commit -m "Starting over"
 git status
 
 # deleting repository --> it can be deleted in browser or via command line
-# after ding this we can no longer go back to any other commits
+# after doing this we can no longer go back to any other commits
 # if this happens we need to start a new repository
 
 git log --pretty=oneline --> to see all the commits (ID's) from started projects until Extended greeting
@@ -22,7 +22,7 @@ git checkout --> when we make a mistake and want to revert back to the previous 
 git checkout be0176 --> the first six letters in the ID. The ID allows us to look at different commits in the project.
 
 git checkout master --> to get back to master brand.
-
+git init
 git reset --hard be017e --> to choose which one to be HEAD of the branch.
 
 # uploading files to github
@@ -36,6 +36,15 @@ git add . --> adds all new files to the repository. If we want to select certain
 git commit -m "started project" --> record message about the commit (snapshot)
 git commit -am "Extended greeting" --> can be any name we want to commit changes to projects we already added (with git add .).
 git push origin master --> write username and password for github.
+
+git remote show origin --> showing the url. Should look like this:
+git+ssh://git@github.com/username/reponame.git
+
+git remote set-url origin git+ssh://git@github.com/username/reponame.git --> if the url is not like the one above, you can change it by doing this
+
+git push --set-upstream origin master --> this make the verification automatic so you don't have to write username and password every time you want to push a commit
+
+
 
 NOTE: We can make many commits and then wait until the end of the session to use git push
 
